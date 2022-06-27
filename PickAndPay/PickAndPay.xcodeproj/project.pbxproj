@@ -1,0 +1,603 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 55;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		84A0D92B286A33AC00FDFC37 /* PickAndPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */; };
+		84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D92C286A33AC00FDFC37 /* ContentView.swift */; };
+		84A0D92F286A33AD00FDFC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A0D92E286A33AD00FDFC37 /* Assets.xcassets */; };
+		84A0D932286A33AD00FDFC37 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A0D931286A33AD00FDFC37 /* Preview Assets.xcassets */; };
+		84A0D934286A33AD00FDFC37 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D933286A33AD00FDFC37 /* Persistence.swift */; };
+		84A0D937286A33AD00FDFC37 /* PickAndPay.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D935286A33AD00FDFC37 /* PickAndPay.xcdatamodeld */; };
+		84A0D941286A33AD00FDFC37 /* PickAndPayTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D940286A33AD00FDFC37 /* PickAndPayTests.swift */; };
+		84A0D94B286A33AE00FDFC37 /* PickAndPayUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D94A286A33AE00FDFC37 /* PickAndPayUITests.swift */; };
+		84A0D94D286A33AE00FDFC37 /* PickAndPayUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D94C286A33AE00FDFC37 /* PickAndPayUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		84A0D93D286A33AD00FDFC37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A0D91F286A33AC00FDFC37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A0D926286A33AC00FDFC37;
+			remoteInfo = PickAndPay;
+		};
+		84A0D947286A33AE00FDFC37 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84A0D91F286A33AC00FDFC37 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 84A0D926286A33AC00FDFC37;
+			remoteInfo = PickAndPay;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		84A0D927286A33AC00FDFC37 /* PickAndPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickAndPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAndPayApp.swift; sourceTree = "<group>"; };
+		84A0D92C286A33AC00FDFC37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		84A0D92E286A33AD00FDFC37 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		84A0D931286A33AD00FDFC37 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		84A0D933286A33AD00FDFC37 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		84A0D936286A33AD00FDFC37 /* PickAndPay.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = PickAndPay.xcdatamodel; sourceTree = "<group>"; };
+		84A0D93C286A33AD00FDFC37 /* PickAndPayTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickAndPayTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A0D940286A33AD00FDFC37 /* PickAndPayTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAndPayTests.swift; sourceTree = "<group>"; };
+		84A0D946286A33AE00FDFC37 /* PickAndPayUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PickAndPayUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		84A0D94A286A33AE00FDFC37 /* PickAndPayUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAndPayUITests.swift; sourceTree = "<group>"; };
+		84A0D94C286A33AE00FDFC37 /* PickAndPayUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAndPayUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		84A0D924286A33AC00FDFC37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A0D939286A33AD00FDFC37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A0D943286A33AE00FDFC37 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		84A0D91E286A33AC00FDFC37 = {
+			isa = PBXGroup;
+			children = (
+				84A0D929286A33AC00FDFC37 /* PickAndPay */,
+				84A0D93F286A33AD00FDFC37 /* PickAndPayTests */,
+				84A0D949286A33AE00FDFC37 /* PickAndPayUITests */,
+				84A0D928286A33AC00FDFC37 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		84A0D928286A33AC00FDFC37 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84A0D927286A33AC00FDFC37 /* PickAndPay.app */,
+				84A0D93C286A33AD00FDFC37 /* PickAndPayTests.xctest */,
+				84A0D946286A33AE00FDFC37 /* PickAndPayUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84A0D929286A33AC00FDFC37 /* PickAndPay */ = {
+			isa = PBXGroup;
+			children = (
+				84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */,
+				84A0D92C286A33AC00FDFC37 /* ContentView.swift */,
+				84A0D92E286A33AD00FDFC37 /* Assets.xcassets */,
+				84A0D933286A33AD00FDFC37 /* Persistence.swift */,
+				84A0D935286A33AD00FDFC37 /* PickAndPay.xcdatamodeld */,
+				84A0D930286A33AD00FDFC37 /* Preview Content */,
+			);
+			path = PickAndPay;
+			sourceTree = "<group>";
+		};
+		84A0D930286A33AD00FDFC37 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				84A0D931286A33AD00FDFC37 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		84A0D93F286A33AD00FDFC37 /* PickAndPayTests */ = {
+			isa = PBXGroup;
+			children = (
+				84A0D940286A33AD00FDFC37 /* PickAndPayTests.swift */,
+			);
+			path = PickAndPayTests;
+			sourceTree = "<group>";
+		};
+		84A0D949286A33AE00FDFC37 /* PickAndPayUITests */ = {
+			isa = PBXGroup;
+			children = (
+				84A0D94A286A33AE00FDFC37 /* PickAndPayUITests.swift */,
+				84A0D94C286A33AE00FDFC37 /* PickAndPayUITestsLaunchTests.swift */,
+			);
+			path = PickAndPayUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		84A0D926286A33AC00FDFC37 /* PickAndPay */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A0D950286A33AE00FDFC37 /* Build configuration list for PBXNativeTarget "PickAndPay" */;
+			buildPhases = (
+				84A0D923286A33AC00FDFC37 /* Sources */,
+				84A0D924286A33AC00FDFC37 /* Frameworks */,
+				84A0D925286A33AC00FDFC37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PickAndPay;
+			productName = PickAndPay;
+			productReference = 84A0D927286A33AC00FDFC37 /* PickAndPay.app */;
+			productType = "com.apple.product-type.application";
+		};
+		84A0D93B286A33AD00FDFC37 /* PickAndPayTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A0D953286A33AE00FDFC37 /* Build configuration list for PBXNativeTarget "PickAndPayTests" */;
+			buildPhases = (
+				84A0D938286A33AD00FDFC37 /* Sources */,
+				84A0D939286A33AD00FDFC37 /* Frameworks */,
+				84A0D93A286A33AD00FDFC37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84A0D93E286A33AD00FDFC37 /* PBXTargetDependency */,
+			);
+			name = PickAndPayTests;
+			productName = PickAndPayTests;
+			productReference = 84A0D93C286A33AD00FDFC37 /* PickAndPayTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		84A0D945286A33AE00FDFC37 /* PickAndPayUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 84A0D956286A33AE00FDFC37 /* Build configuration list for PBXNativeTarget "PickAndPayUITests" */;
+			buildPhases = (
+				84A0D942286A33AE00FDFC37 /* Sources */,
+				84A0D943286A33AE00FDFC37 /* Frameworks */,
+				84A0D944286A33AE00FDFC37 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				84A0D948286A33AE00FDFC37 /* PBXTargetDependency */,
+			);
+			name = PickAndPayUITests;
+			productName = PickAndPayUITests;
+			productReference = 84A0D946286A33AE00FDFC37 /* PickAndPayUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		84A0D91F286A33AC00FDFC37 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1330;
+				LastUpgradeCheck = 1330;
+				TargetAttributes = {
+					84A0D926286A33AC00FDFC37 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					84A0D93B286A33AD00FDFC37 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 84A0D926286A33AC00FDFC37;
+					};
+					84A0D945286A33AE00FDFC37 = {
+						CreatedOnToolsVersion = 13.3;
+						TestTargetID = 84A0D926286A33AC00FDFC37;
+					};
+				};
+			};
+			buildConfigurationList = 84A0D922286A33AC00FDFC37 /* Build configuration list for PBXProject "PickAndPay" */;
+			compatibilityVersion = "Xcode 13.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 84A0D91E286A33AC00FDFC37;
+			productRefGroup = 84A0D928286A33AC00FDFC37 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				84A0D926286A33AC00FDFC37 /* PickAndPay */,
+				84A0D93B286A33AD00FDFC37 /* PickAndPayTests */,
+				84A0D945286A33AE00FDFC37 /* PickAndPayUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		84A0D925286A33AC00FDFC37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A0D932286A33AD00FDFC37 /* Preview Assets.xcassets in Resources */,
+				84A0D92F286A33AD00FDFC37 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A0D93A286A33AD00FDFC37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A0D944286A33AE00FDFC37 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		84A0D923286A33AC00FDFC37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A0D934286A33AD00FDFC37 /* Persistence.swift in Sources */,
+				84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */,
+				84A0D92B286A33AC00FDFC37 /* PickAndPayApp.swift in Sources */,
+				84A0D937286A33AD00FDFC37 /* PickAndPay.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A0D938286A33AD00FDFC37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A0D941286A33AD00FDFC37 /* PickAndPayTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		84A0D942286A33AE00FDFC37 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				84A0D94D286A33AE00FDFC37 /* PickAndPayUITestsLaunchTests.swift in Sources */,
+				84A0D94B286A33AE00FDFC37 /* PickAndPayUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		84A0D93E286A33AD00FDFC37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84A0D926286A33AC00FDFC37 /* PickAndPay */;
+			targetProxy = 84A0D93D286A33AD00FDFC37 /* PBXContainerItemProxy */;
+		};
+		84A0D948286A33AE00FDFC37 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 84A0D926286A33AC00FDFC37 /* PickAndPay */;
+			targetProxy = 84A0D947286A33AE00FDFC37 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		84A0D94E286A33AE00FDFC37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		84A0D94F286A33AE00FDFC37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		84A0D951286A33AE00FDFC37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PickAndPay/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.PickAndPay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		84A0D952286A33AE00FDFC37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"PickAndPay/Preview Content\"";
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.PickAndPay;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		84A0D954286A33AE00FDFC37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.PickAndPayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PickAndPay.app/PickAndPay";
+			};
+			name = Debug;
+		};
+		84A0D955286A33AE00FDFC37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.4;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.PickAndPayTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PickAndPay.app/PickAndPay";
+			};
+			name = Release;
+		};
+		84A0D957286A33AE00FDFC37 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.PickAndPayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PickAndPay;
+			};
+			name = Debug;
+		};
+		84A0D958286A33AE00FDFC37 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = Thomas.PickAndPayUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = PickAndPay;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		84A0D922286A33AC00FDFC37 /* Build configuration list for PBXProject "PickAndPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A0D94E286A33AE00FDFC37 /* Debug */,
+				84A0D94F286A33AE00FDFC37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A0D950286A33AE00FDFC37 /* Build configuration list for PBXNativeTarget "PickAndPay" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A0D951286A33AE00FDFC37 /* Debug */,
+				84A0D952286A33AE00FDFC37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A0D953286A33AE00FDFC37 /* Build configuration list for PBXNativeTarget "PickAndPayTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A0D954286A33AE00FDFC37 /* Debug */,
+				84A0D955286A33AE00FDFC37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		84A0D956286A33AE00FDFC37 /* Build configuration list for PBXNativeTarget "PickAndPayUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				84A0D957286A33AE00FDFC37 /* Debug */,
+				84A0D958286A33AE00FDFC37 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84A0D935286A33AD00FDFC37 /* PickAndPay.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84A0D936286A33AD00FDFC37 /* PickAndPay.xcdatamodel */,
+			);
+			currentVersion = 84A0D936286A33AD00FDFC37 /* PickAndPay.xcdatamodel */;
+			path = PickAndPay.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 84A0D91F286A33AC00FDFC37 /* Project object */;
+}
