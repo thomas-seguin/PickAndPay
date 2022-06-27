@@ -10,7 +10,7 @@ import SwiftUI
 @main
 struct PickAndPayApp: App {
     let persistenceController = PersistenceController.shared
-
+    //hello
     var body: some Scene {
         WindowGroup {
             ContentView()
