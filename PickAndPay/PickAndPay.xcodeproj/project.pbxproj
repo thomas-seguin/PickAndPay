@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7E28DB11286BAFC10078BB30 /* Models.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28DB10286BAFC10078BB30 /* Models.swift */; };
+		7E28DB14286BB03C0078BB30 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28DB13286BB03C0078BB30 /* DBHelper.swift */; };
+		7E28DB16286BB09B0078BB30 /* UserDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28DB15286BB09B0078BB30 /* UserDBHelper.swift */; };
+		7E28DB18286BB0B00078BB30 /* ProductDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28DB17286BB0B00078BB30 /* ProductDBHelper.swift */; };
 		84A0D92B286A33AC00FDFC37 /* PickAndPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */; };
 		84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D92C286A33AC00FDFC37 /* ContentView.swift */; };
 		84A0D92F286A33AD00FDFC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A0D92E286A33AD00FDFC37 /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7E28DB10286BAFC10078BB30 /* Models.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Models.swift; sourceTree = "<group>"; };
+		7E28DB13286BB03C0078BB30 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		7E28DB15286BB09B0078BB30 /* UserDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDBHelper.swift; sourceTree = "<group>"; };
+		7E28DB17286BB0B00078BB30 /* ProductDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDBHelper.swift; sourceTree = "<group>"; };
 		84A0D927286A33AC00FDFC37 /* PickAndPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickAndPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAndPayApp.swift; sourceTree = "<group>"; };
 		84A0D92C286A33AC00FDFC37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -75,6 +83,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7E28DB0F286BAF830078BB30 /* Models-P */ = {
+			isa = PBXGroup;
+			children = (
+				7E28DB10286BAFC10078BB30 /* Models.swift */,
+			);
+			path = "Models-P";
+			sourceTree = "<group>";
+		};
+		7E28DB12286BB0240078BB30 /* SQLDBHelpers */ = {
+			isa = PBXGroup;
+			children = (
+				7E28DB13286BB03C0078BB30 /* DBHelper.swift */,
+				7E28DB15286BB09B0078BB30 /* UserDBHelper.swift */,
+				7E28DB17286BB0B00078BB30 /* ProductDBHelper.swift */,
+			);
+			path = SQLDBHelpers;
+			sourceTree = "<group>";
+		};
 		84A0D91E286A33AC00FDFC37 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +124,8 @@
 		84A0D929286A33AC00FDFC37 /* PickAndPay */ = {
 			isa = PBXGroup;
 			children = (
+				7E28DB12286BB0240078BB30 /* SQLDBHelpers */,
+				7E28DB0F286BAF830078BB30 /* Models-P */,
 				84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */,
 				84A0D92C286A33AC00FDFC37 /* ContentView.swift */,
 				84A0D92E286A33AD00FDFC37 /* Assets.xcassets */,
@@ -264,9 +292,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				84A0D934286A33AD00FDFC37 /* Persistence.swift in Sources */,
+				7E28DB14286BB03C0078BB30 /* DBHelper.swift in Sources */,
 				84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */,
 				84A0D92B286A33AC00FDFC37 /* PickAndPayApp.swift in Sources */,
 				84A0D937286A33AD00FDFC37 /* PickAndPay.xcdatamodeld in Sources */,
+				7E28DB11286BAFC10078BB30 /* Models.swift in Sources */,
+				7E28DB16286BB09B0078BB30 /* UserDBHelper.swift in Sources */,
+				7E28DB18286BB0B00078BB30 /* ProductDBHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
