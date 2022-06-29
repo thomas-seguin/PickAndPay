@@ -60,7 +60,7 @@ extension DBHelper{
 
     }
     
-//MARK: searhcProducts Overloads
+//MARK: searhcProducts Overloads with different parameters
     
     func searchProducts() -> [Product]{
         products.removeAll()

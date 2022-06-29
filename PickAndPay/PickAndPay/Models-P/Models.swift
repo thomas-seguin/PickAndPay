@@ -64,7 +64,7 @@ class WishListItem{
     var wishListId = 0 //assigned by databse on creation
     var userId = ""
     var productId = 0
-    
+    var wishProduct = Product() //details of wished product
     init(){
         
     }
@@ -72,6 +72,7 @@ class WishListItem{
         self.wishListId = id
         self.userId = userId
         self.productId = productId
+        wishProduct = DBHelper.dbHelper.getProduct(productId: self.productId)
     }
 }
 

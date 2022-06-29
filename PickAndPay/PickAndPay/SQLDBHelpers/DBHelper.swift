@@ -12,6 +12,7 @@ class DBHelper{
     var dbpointer : OpaquePointer?
     var users = [User]()
     var products = [Product]()
+    var wishList = [WishListItem]()
     private init(){
         
     }
