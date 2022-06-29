@@ -9,7 +9,7 @@ import Foundation
 import SQLite3
 extension DBHelper{
     
-    
+//MARK: Register User
     func insertUser(username : NSString, password : NSString, name : NSString, address : NSString, number : NSString){
         var stmt : OpaquePointer?
         let query = "insert into User (UserId, Password, Name, Address, PhoneNumber, Balance) values (?,?,?,?,?,?);"
@@ -64,7 +64,7 @@ extension DBHelper{
         }
 
     }
-    
+//MARK: Get all registered users
     func getAllUsers() -> [User]{
         users.removeAll()
         var stmt : OpaquePointer?
@@ -87,7 +87,7 @@ extension DBHelper{
 
         return users
     }
-    
+//MARK: validation
     func doesUserExist(username : NSString) -> Bool{
         var stmt : OpaquePointer?
         let query = "Select * from User where UserId = '\(username)'"
@@ -127,7 +127,7 @@ extension DBHelper{
             return true
         }
     }
-    
+//MARK: Get single user data
     func getUser(username : NSString) -> User{
         let query = "select * from User where UserId = '\(username)'"
         var stmt : OpaquePointer?
@@ -149,6 +149,8 @@ extension DBHelper{
         
         return user
     }
+    
+//MARK: Update User details
     func updateUser(username : NSString, password : NSString, name : NSString, address : NSString, number : NSString, balance : Double){
         let query = "update User SET Password = '\(password)', Name = '\(name)', Address = '\(address)' ,PhoneNumber = '\(number)', Balance = \(balance) where UserId = ?;"
         var stmt : OpaquePointer?
@@ -158,30 +160,14 @@ extension DBHelper{
                 print("user updated")
             }
             else{
-                print("error in updating balance")
+                print("error in updating details")
             }
         }
         else{
             print("Error in update user query")
         }
     }
-    func updateUserBalance(username : NSString, balance : Double){
-        let query = "update User SET Balance = \(balance) where UserId = ?;"
-        var stmt : OpaquePointer?
-        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
-            sqlite3_bind_text(stmt, 1, username.utf8String, -1, nil)
-            if sqlite3_step(stmt) == SQLITE_DONE{
-                print("user balance updated")
-            }
-            else{
-                print("error in updating balance")
-            }
-        }
-        else{
-            print("Error in update userbalance query")
-        }
-
-    }
+    
     
     func changePassword(username : NSString, password : NSString){
         let query = "update User SET Password = '\(password)' where UserId = ?;"
@@ -200,7 +186,26 @@ extension DBHelper{
         }
 
     }
-    
+//MARK: when user uses balance or got a refund (add to balance)
+    func updateUserBalance(username : NSString, balance : Double){
+        let query = "update User SET Balance = \(balance) where UserId = ?;"
+        var stmt : OpaquePointer?
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
+            sqlite3_bind_text(stmt, 1, username.utf8String, -1, nil)
+            if sqlite3_step(stmt) == SQLITE_DONE{
+                print("user balance updated")
+            }
+            else{
+                print("error in updating balance")
+            }
+        }
+        else{
+            print("Error in update userbalance query")
+        }
+
+    }
+
+//MARK: Get user's reamining balance
     func getUserBalance(username : NSString) -> Double{
         let query = "select Balance from User where UserId = '\(username)'"
         var stmt : OpaquePointer?

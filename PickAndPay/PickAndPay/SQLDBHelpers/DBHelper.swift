@@ -4,7 +4,6 @@
 //
 //  Created by Philip Janzel Paradeza on 2022-06-28.
 //
-
 import Foundation
 import SQLite3
 class DBHelper{
@@ -16,8 +15,7 @@ class DBHelper{
     private init(){
         
     }
-    
-    //call this when app opens
+//MARK: Call createDB and createTAbles at program start
     func createDB(){
         
         //create file path for db
@@ -28,7 +26,6 @@ class DBHelper{
         }
     }
     
-    //call this when app opens
     func createTables(){
         createUserTable()
         createProductTable()
@@ -172,4 +169,5 @@ class DBHelper{
     }
 
 }
+
 
