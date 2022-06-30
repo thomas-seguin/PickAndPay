@@ -9,17 +9,17 @@ import Foundation
 import SQLite3
 extension DBHelper{
 //MARK: Insert Product to WishList
-    func insertToWishList(UserId : NSString, ProductId : Int){
+    func insertToWishList(userId : NSString, productId : Int){
         var stmt : OpaquePointer?
         let query = "insert into WishList (UserId, ProductId) values (?,?);"
         if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
             //bind parameters
-            if sqlite3_bind_text(stmt, 1, UserId.utf8String, -1, nil) != SQLITE_OK{
+            if sqlite3_bind_text(stmt, 1, userId.utf8String, -1, nil) != SQLITE_OK{
                 let err = String(cString: sqlite3_errmsg(dbpointer)!)
                 print("error in binding User Id", err)
 
             }
-            if sqlite3_bind_int(stmt, 2, Int32(ProductId)) != SQLITE_OK{
+            if sqlite3_bind_int(stmt, 2, Int32(productId)) != SQLITE_OK{
                 let err = String(cString: sqlite3_errmsg(dbpointer)!)
                 print("error in binding Product Id", err)
 

@@ -6,7 +6,7 @@
 //
 
 import Foundation
-class User{
+struct User{
     var userId = ""
     var password = ""
     var name = ""
@@ -30,7 +30,7 @@ class User{
     
 }
 
-class Product{
+struct Product{
     var productId = 0 // assigned by database on creation
     var productName = ""
     var productImage = ""
@@ -60,11 +60,12 @@ enum Category : String{
     case NoCategory
 }
 
-class WishListItem{
+struct WishListItem{
     var wishListId = 0 //assigned by databse on creation
     var userId = ""
     var productId = 0
     var wishProduct = Product() //details of wished product
+    
     init(){
         
     }
@@ -76,41 +77,44 @@ class WishListItem{
     }
 }
 
-class SearchHistoryItem{
-    var searchHistoryId = 0 // assigned by database on creationm
+struct SearchHistoryItem{
+    var searchHistoryId = 0 // assigned by database on creation
+    var searchPhrase = ""
     var timesSearched = 0
     var userId = ""
-    var productId = 0
     init(){
         
     }
-    init(id : Int, timesSearched : Int, userId : String, productId : Int){
+    init(id : Int, searchPhrase : String, timesSearched : Int, userId : String){
         self.searchHistoryId = id
+        self.searchPhrase = searchPhrase
         self.timesSearched = timesSearched
         self.userId = userId
-        self.productId = productId
     }
 }
 
-class Review{
+struct Review{
     var reviewId = 0 // assigned by databse on creation
     var body = ""
     var rating = 0.0
+    var date = ""
     var userId = ""
     var productId = 0
     init(){
         
     }
-    init(id : Int, body : String, rating : Double, userId : String, productId : Int){
+    init(id : Int, body : String, rating : Double, date : String, userId : String, productId : Int){
         self.reviewId = id
         self.body = body
         self.rating = rating
+        self.date = date
         self.userId = userId
         self.productId = productId
+        
     }
 }
 
-class CartItem{
+struct CartItem{
     var itemCartId = 0 // assigned by database on creation
     var quantity = 0
     var userId = ""
@@ -130,7 +134,7 @@ class CartItem{
     
 }
 
-class Card{
+struct Card{
     var cardId = 0 // assigned by database on creation
     var cardNumber = "00000000000000000000" //16 digits
     var address = ""
@@ -160,7 +164,7 @@ enum OrderStatus : String{
     case Delayed
 }
 
-class Order{
+struct Order{
     var orderId = 0 // assigned by databse on creation
     var status = OrderStatus.NotOrdered
     var numOfProducts = 0
@@ -183,7 +187,7 @@ class Order{
     }
 }
 
-class ProductOrder{
+struct ProductOrder{
     var productOrderId = 0 // assigned by databse on creation
     var orderId = 0
     var productId = 0

@@ -15,10 +15,6 @@ extension DBHelper{
         let query = "insert into User (UserId, Password, Name, Address, PhoneNumber, Balance) values (?,?,?,?,?,?);"
         if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
             //bind parameters
-            if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) != SQLITE_OK{
-                let err = String(cString: sqlite3_errmsg(dbpointer)!)
-                print("error in creating query", err)
-            }
             if sqlite3_bind_text(stmt, 1, username.utf8String, -1, nil) != SQLITE_OK{
                 let err = String(cString: sqlite3_errmsg(dbpointer)!)
                 print("error in binding password", err)
@@ -131,7 +127,7 @@ extension DBHelper{
     func getUser(username : NSString) -> User{
         let query = "select * from User where UserId = '\(username)'"
         var stmt : OpaquePointer?
-        let user = User()
+        var user = User()
         if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
             while (sqlite3_step(stmt) == SQLITE_ROW){
                 user.userId = String(cString: sqlite3_column_text(stmt, 0))

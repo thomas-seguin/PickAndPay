@@ -14,10 +14,6 @@ extension DBHelper{
         let query = "insert into Product (ProductName, Image, Price, Category, InStock) values (?,?,?,?,?);"
         if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
             //bind parameters
-            if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) != SQLITE_OK{
-                let err = String(cString: sqlite3_errmsg(dbpointer)!)
-                print("error in creating query", err)
-            }
             if sqlite3_bind_text(stmt, 1, name.utf8String, -1, nil) != SQLITE_OK{
                 let err = String(cString: sqlite3_errmsg(dbpointer)!)
                 print("error in binding product name", err)
@@ -159,7 +155,7 @@ extension DBHelper{
     func getProduct(productId : Int) -> Product{
         let query = "select * from Product where ProductId = \(productId)"
         var stmt : OpaquePointer?
-        let product = Product()
+        var product = Product()
         if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
             while (sqlite3_step(stmt) == SQLITE_ROW){
                 product.productId = Int(sqlite3_column_int(stmt, 0))
@@ -243,24 +239,25 @@ extension DBHelper{
         
         return stockNum
     }
+    
 //MARK: Delete a product
-        func deleteProduct(productId : Int){
-            let query = "delete from Product where ProductId = \(productId)"
-            var stmt : OpaquePointer?
-            if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
-                if sqlite3_step(stmt) == SQLITE_DONE{
-                    print("product deleted")
-                }
-                else{
-                    let err = String(cString: sqlite3_errmsg(dbpointer)!)
-                    print("Error in Deleting prodcut", err)
-                }
+    func deleteProduct(productId : Int){
+        let query = "delete from Product where ProductId = \(productId)"
+        var stmt : OpaquePointer?
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
+            if sqlite3_step(stmt) == SQLITE_DONE{
+                print("product deleted")
             }
             else{
                 let err = String(cString: sqlite3_errmsg(dbpointer)!)
-                print("Error in delete product query", err)
+                print("Error in Deleting prodcut", err)
             }
-
         }
-    
+        else{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("Error in delete product query", err)
+        }
+
+    }
+        
 }
