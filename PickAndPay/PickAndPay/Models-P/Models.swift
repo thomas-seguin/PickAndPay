@@ -120,6 +120,7 @@ struct CartItem{
     var userId = ""
     var productId = 0
     var totalPrice = 0.0
+    var cartProduct = Product() //Details of the single product in this cartitem
     init(){
         
     }
@@ -130,6 +131,7 @@ struct CartItem{
         self.userId = userId
         self.productId = productId
         self.totalPrice = totalPrice
+        self.cartProduct = DBHelper.dbHelper.getProduct(productId: self.productId)
     }
     
 }
