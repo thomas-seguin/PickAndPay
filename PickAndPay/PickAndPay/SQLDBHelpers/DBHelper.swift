@@ -15,6 +15,7 @@ class DBHelper{
     var wishList = [WishListItem]()
     var history = [SearchHistoryItem]()
     var reviews = [Review]()
+    var cart = [CartItem]()
     private init(){
         
     }

@@ -13,6 +13,7 @@
 		7E28DB18286BB0B00078BB30 /* ProductDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E28DB17286BB0B00078BB30 /* ProductDBHelper.swift */; };
 		7E2A410A286E3AA200F69FE8 /* SearchHistoryDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A4109286E3AA200F69FE8 /* SearchHistoryDBHelper.swift */; };
 		7E2A410C286E567700F69FE8 /* ReviewDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E2A410B286E567700F69FE8 /* ReviewDBHelper.swift */; };
+		7E3707FC2871070800B39321 /* CartDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3707FB2871070800B39321 /* CartDBHelper.swift */; };
 		7EB0231A286D0092008895B0 /* WishListDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB02319286D0092008895B0 /* WishListDBHelper.swift */; };
 		84A0D92B286A33AC00FDFC37 /* PickAndPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */; };
 		84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D92C286A33AC00FDFC37 /* ContentView.swift */; };
@@ -49,6 +50,7 @@
 		7E28DB17286BB0B00078BB30 /* ProductDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDBHelper.swift; sourceTree = "<group>"; };
 		7E2A4109286E3AA200F69FE8 /* SearchHistoryDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchHistoryDBHelper.swift; sourceTree = "<group>"; };
 		7E2A410B286E567700F69FE8 /* ReviewDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDBHelper.swift; sourceTree = "<group>"; };
+		7E3707FB2871070800B39321 /* CartDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDBHelper.swift; sourceTree = "<group>"; };
 		7EB02319286D0092008895B0 /* WishListDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDBHelper.swift; sourceTree = "<group>"; };
 		84A0D927286A33AC00FDFC37 /* PickAndPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickAndPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAndPayApp.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				7EB02319286D0092008895B0 /* WishListDBHelper.swift */,
 				7E2A4109286E3AA200F69FE8 /* SearchHistoryDBHelper.swift */,
 				7E2A410B286E567700F69FE8 /* ReviewDBHelper.swift */,
+				7E3707FB2871070800B39321 /* CartDBHelper.swift */,
 			);
 			path = SQLDBHelpers;
 			sourceTree = "<group>";
@@ -305,6 +308,7 @@
 				7EB0231A286D0092008895B0 /* WishListDBHelper.swift in Sources */,
 				7E28DB14286BB03C0078BB30 /* DBHelper.swift in Sources */,
 				84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */,
+				7E3707FC2871070800B39321 /* CartDBHelper.swift in Sources */,
 				84A0D92B286A33AC00FDFC37 /* PickAndPayApp.swift in Sources */,
 				84A0D937286A33AD00FDFC37 /* PickAndPay.xcdatamodeld in Sources */,
 				7E28DB11286BAFC10078BB30 /* Models.swift in Sources */,
