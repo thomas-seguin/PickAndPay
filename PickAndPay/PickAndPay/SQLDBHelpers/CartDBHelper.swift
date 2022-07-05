@@ -13,7 +13,13 @@ extension DBHelper{
         let item = getProduct(productId: productId)
         if(isInStock(productId: productId, qty: qty))
         {
-            insertToCart(itemQty: qty, itemPrice: item.price, username: username, productId: item.productId)
+            let id = getItemCartId(username: username, productId: productId)
+            if(id != 0){
+                addToCartQty(qty: qty, itemCartId: id, price: item.price)
+            }
+            else{
+                insertToCart(itemQty: qty, itemPrice: item.price, username: username, productId: item.productId)
+            }
         }
         else{
             print("Not enough stock")
@@ -61,7 +67,59 @@ extension DBHelper{
         }
 
     }
+//MARK: Check if product is already in user's cart
+    private func doesProductExistInCart(username : NSString, productID : Int) -> Bool{
+        var stmt : OpaquePointer?
+        let query = "Select * from ItemCart where ProductId = '\(productID)' and UserId = '\(username)'"
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbpointer))
+            print("Error in creating doesProductExistInCart query", err)
+        }
+        var resultCount = 0
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            resultCount = 1
+        }
+        if(resultCount == 0)
+        {
+            print("product not yet in cart")
+            return false
+        }
+        else{
+            print("product already in cart")
+            return true
+        }
+    }
+//MARK: Check if user's cart is empty overloads
+    func isCartEmpty(username : NSString) -> Bool{
+        var stmt : OpaquePointer?
+        let query = "Select * from ItemCart where UserId = '\(username)'"
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbpointer))
+            print("Error in creating doesProductExistInCart query", err)
+        }
+        var resultCount = 0
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            resultCount = 1
+        }
+        if(resultCount == 0)
+        {
+            print("user's cart is empty")
+            return true
+        }
+        else{
+            print("user's cart is not empty")
+            return false
+        }
     
+    }
+    func isCartEmpty(userCart : [CartItem]) -> Bool{
+        if(userCart.count > 0){
+            return false
+        }
+        else{
+            return true
+        }
+    }
 //MARK: Get ALL products in wishlist
     func getAllCartItems() -> [CartItem]{
             cart.removeAll()
@@ -83,7 +141,8 @@ extension DBHelper{
 
             return cart
     }
-    func getUserCart(username : String) -> [CartItem]{
+//MARK: Get user's cart
+    func getUserCart(username : NSString) -> [CartItem]{
         cart.removeAll()
         var stmt : OpaquePointer?
         let query = "Select * from ItemCart where UserId = '\(username)'"
@@ -103,10 +162,27 @@ extension DBHelper{
 
         return cart
     }
+//MARK: Get ItemCartID
+    func getItemCartId(username : NSString, productId : Int) -> Int{
+        var stmt : OpaquePointer?
+        let query = "Select * from ItemCart where UserId = '\(username)' and ProductId = \(productId)"
+        var num = 0
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbpointer))
+            print("Error in creating getUserCart query", err)
+            return num
+        }
+        while(sqlite3_step(stmt) == SQLITE_ROW){
+            num = Int(sqlite3_column_int(stmt, 0))
+        }
+
+        return num
+    }
     
-//MARK: Update quantity of pproduct in the cart
+    
+//MARK: Update quantity of pproduct in the cart and also the total price
     func updateCartItemQty(qty : Int, itemCartId : Int){
-        let query = "update ItemCart SET Quantity = '\(qty)' where ItemCartId = ?;"
+        let query = "update ItemCart SET TotalPrice = (TotalPrice/Quantity) * \(qty), Quantity = \(qty) where ItemCartId = ?;"
         var stmt : OpaquePointer?
         if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
             
@@ -116,10 +192,10 @@ extension DBHelper{
 
             }
             if sqlite3_step(stmt) == SQLITE_DONE{
-                print("cart item qtyupdated")
+                print("cart item qty and total price updated")
             }
             else{
-                print("error in updating cart item qty")
+                print("error in updating cart item qty and total price")
             }
         }
         else{
@@ -127,7 +203,32 @@ extension DBHelper{
         }
         
     }
-//MARK: Remove an item from the cart
+    
+//MARK: Add to item quantity and total price of the cartItem
+    private func addToCartQty(qty : Int, itemCartId : Int, price : Double){
+    let addedCost = Double(qty) * price
+    let query = "update ItemCart SET Quantity = Quantity + \(qty), TotalPrice = TotalPrice + \(addedCost) where ItemCartId = ?;"
+    var stmt : OpaquePointer?
+    if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
+        
+        if sqlite3_bind_int(stmt, 1, Int32(itemCartId)) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("error in binding itemCartId", err)
+
+        }
+        if sqlite3_step(stmt) == SQLITE_DONE{
+            print("cart item qty and total price increased")
+        }
+        else{
+            print("error in adding to cart item qty and total price")
+        }
+    }
+    else{
+        print("Error in add to cart item query")
+    }
+    
+}
+//MARK: Remove an item from the cart / automatically called when item is ordered and paid
     func removeFromCart(itemCartId : Int){
         let query = "delete from ItemCart where ItemCartId = \(itemCartId)"
         var stmt : OpaquePointer?
@@ -182,3 +283,4 @@ extension DBHelper{
         }
     }
 }
+

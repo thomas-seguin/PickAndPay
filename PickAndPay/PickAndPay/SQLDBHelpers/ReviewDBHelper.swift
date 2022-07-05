@@ -10,7 +10,7 @@ import SQLite3
 extension DBHelper{
 
     
-    private func getCurrentDate() -> NSString{
+    func getCurrentDate() -> NSString{
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy/MM/dd"
         return NSString(string: dateFormatter.string(from: Date()))
@@ -235,4 +235,3 @@ extension DBHelper{
         }
     }
 }
-

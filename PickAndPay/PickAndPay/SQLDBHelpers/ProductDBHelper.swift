@@ -36,7 +36,7 @@ extension DBHelper{
             }
             if sqlite3_bind_int(stmt, 5, Int32(stock)) != SQLITE_OK{
                 let err = String(cString: sqlite3_errmsg(dbpointer)!)
-                print("error in binding phone number", err)
+                print("error in binding stock qty", err)
 
             }
 
@@ -188,7 +188,7 @@ extension DBHelper{
 
             }
             if sqlite3_step(stmt) == SQLITE_DONE{
-                print("prduct details updated")
+                print("prodduct details updated")
             }
             else{
                 print("error in updating product details")

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SQLite3
 struct User{
     var userId = ""
     var password = ""
@@ -13,8 +14,37 @@ struct User{
     var address = ""
     var phoneNumber = "123456789"
     var currentBalance = 0.0 //for refunds
-    var wishList = [WishListItem]()
-    var searchHistory = [SearchHistoryItem]()
+    // user's wishlist
+    var wishList : [WishListItem]{
+        return DBHelper.dbHelper.getUserWishList(username: userId as NSString)
+    }
+    //user's search history
+    var searchHistory : [SearchHistoryItem]{
+        get{
+            return DBHelper.dbHelper.getUserSearchHistory(username: userId as NSString)
+        }
+    }
+    //user reviews
+    var reviews : [Review]{
+        get{
+            return DBHelper.dbHelper.getUserReviews(username: userId as NSString)
+        }
+    }
+    var itemCart : [CartItem]{
+        get{
+            return DBHelper.dbHelper.getUserCart(username: userId as NSString)
+        }
+    }
+    var cards : [Card]{
+        get{
+            return DBHelper.dbHelper.getUserCards(username: userId as NSString)
+        }
+    }
+    var orders : [Order]{
+        get{
+            return DBHelper.dbHelper.getUserOrders(username: userId as NSString)
+        }
+    }
     init(){
         
     }
@@ -37,7 +67,11 @@ struct Product{
     var price = 0.0
     var category = Category.NoCategory
     var stock = 0
-    
+    var reviews : [Review]{
+        get{
+            return DBHelper.dbHelper.getProductReviews(productId: productId)
+        }
+    }
     init(){
         
     }
@@ -64,7 +98,12 @@ struct WishListItem{
     var wishListId = 0 //assigned by databse on creation
     var userId = ""
     var productId = 0
-    var wishProduct = Product() //details of wished product
+    //details of wished product
+    var wishProduct : Product{
+        get{
+            return DBHelper.dbHelper.getProduct(productId: self.productId)
+        }
+    }
     
     init(){
         
@@ -73,7 +112,7 @@ struct WishListItem{
         self.wishListId = id
         self.userId = userId
         self.productId = productId
-        wishProduct = DBHelper.dbHelper.getProduct(productId: self.productId)
+        
     }
 }
 
@@ -120,7 +159,12 @@ struct CartItem{
     var userId = ""
     var productId = 0
     var totalPrice = 0.0
-    var cartProduct = Product() //Details of the single product in this cartitem
+    //Details of the single product in this cartitem
+    var cartProduct : Product{
+        get{
+            return DBHelper.dbHelper.getProduct(productId: self.productId)
+        }
+    }
     init(){
         
     }
@@ -131,7 +175,7 @@ struct CartItem{
         self.userId = userId
         self.productId = productId
         self.totalPrice = totalPrice
-        self.cartProduct = DBHelper.dbHelper.getProduct(productId: self.productId)
+        
     }
     
 }
@@ -147,45 +191,55 @@ struct Card{
     init(){
         
     }
-    init(id : Int, cardNumber : String, address : String, name : String, code : String, userId : String){
+    init(id : Int, cardNumber : String, address : String, name : String, userId : String){
         self.cardId = id
         self.cardNumber = cardNumber
         self.address = address
         self.cardName = name
-        self.securityCode = code
         self.userId = userId
     }
 }
 
 enum OrderStatus : String{
-    case NotOrdered
     case Confirmed
     case Shipped
     case Delivered
     case Refunded
     case Delayed
+    case NoOrder  //can't find order in database
+    case NoStatus //default
 }
 
 struct Order{
     var orderId = 0 // assigned by databse on creation
-    var status = OrderStatus.NotOrdered
+    var status = OrderStatus.NoOrder
+    var shippingAddress = ""
     var numOfProducts = 0
     var totalPrice = 0.0
     var date = ""
+    var paymentMode = ""
+    var billingAddress = ""
     var userId = ""
-    var cardId = 0
-    var productOrders = [ProductOrder]()
+    //array of ordered products
+    var productOrders : [ProductOrder]{
+        get{
+            return DBHelper.dbHelper.getProductOrders(orderId: orderId)
+        }
+    }
     init(){
         
     }
-    init(id : Int, status : OrderStatus, numOfProducts : Int, totalPrice : Double, date : String, userId : String, cardId : Int){
+    init(id : Int, status : OrderStatus, shipAddress : String, numOfProducts : Int, totalPrice : Double, date : String, payMode : String, billAddress : String, userId : String){
         self.orderId = id
         self.status = status
+        self.shippingAddress = shipAddress
         self.numOfProducts = numOfProducts
         self.totalPrice = totalPrice
         self.date = date
+        self.paymentMode = payMode
+        self.billingAddress = billAddress
         self.userId = userId
-        self.cardId = cardId
+        
     }
 }
 
@@ -195,7 +249,13 @@ struct ProductOrder{
     var productId = 0
     var quantity = 0
     var totalPrice = 0.0
-    
+    //details of ordered Product
+    var orderedProduct: Product{
+        get{
+            return DBHelper.dbHelper.getProduct(productId: productId)
+        }
+        
+    }
     init(){
         
     }
