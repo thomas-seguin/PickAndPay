@@ -27,24 +27,33 @@ struct ProductRow: View {
             Spacer()
             //addPlus()
             HStack {
-                Image(systemName: "minus").onTapGesture {
+                Image(systemName: "minus.circle")
+                    .resizable()
+                    .frame(width: 20, height: 40, alignment: .center)
+                    .onTapGesture {
                     cartManager.quantity -= 1
-                }.frame(width: 40, height: 40, alignment: .center)
+                }
                 Text(String(cartManager.quantity))
-                Image(systemName: "plus").onTapGesture {
+                    .font(.largeTitle)
+                    .frame(width: 20, height: 40, alignment: .center)
+                Image(systemName: "plus.circle")
+                    .resizable()
+                    .frame(width: 20, height: 40, alignment: .center)
+                    .onTapGesture {
                     cartManager.quantity += 1
-                }.frame(width: 40, height: 40, alignment: .center)
-
+                }
             }
             Image(systemName: "trash")
-                .foregroundColor(.white)
+                .resizable()
+                .frame(width: 20, height: 40, alignment: .center)
+                .foregroundColor(.red)
                 .onTapGesture {
                     cartManager.removeFromCart(product: product)
                 }
                 .padding()
         }
-        .background(.indigo, in: RoundedRectangle(cornerRadius: 1))
-        .foregroundColor(.white)
+        .background(.white, in: RoundedRectangle(cornerRadius: 1))
+        .foregroundColor(.green)
         .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
     }
 
