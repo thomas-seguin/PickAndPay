@@ -27,7 +27,7 @@ struct ProductRow: View {
             Spacer()
             //addPlus()
             HStack {
-                Image(systemName: "minus.circle")
+                Image(systemName: "minus.rectangle")
                     .resizable()
                     .frame(width: 20, height: 40, alignment: .center)
                     .onTapGesture {
@@ -36,7 +36,7 @@ struct ProductRow: View {
                 Text(String(cartManager.quantity))
                     .font(.largeTitle)
                     .frame(width: 20, height: 40, alignment: .center)
-                Image(systemName: "plus.circle")
+                Image(systemName: "plus.rectangle")
                     .resizable()
                     .frame(width: 20, height: 40, alignment: .center)
                     .onTapGesture {
@@ -53,7 +53,7 @@ struct ProductRow: View {
                 .padding()
         }
         .background(.white, in: RoundedRectangle(cornerRadius: 1))
-        .foregroundColor(.green)
+        .foregroundColor(.black)
         .frame(maxWidth: .infinity, maxHeight: 100, alignment: .leading)
     }
 
