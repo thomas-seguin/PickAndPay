@@ -36,7 +36,7 @@ extension DBHelper{
             }
             if sqlite3_bind_int(stmt, 5, Int32(stock)) != SQLITE_OK{
                 let err = String(cString: sqlite3_errmsg(dbpointer)!)
-                print("error in binding phone number", err)
+                print("error in binding stock qty", err)
 
             }
 
@@ -188,7 +188,7 @@ extension DBHelper{
 
             }
             if sqlite3_step(stmt) == SQLITE_DONE{
-                print("prduct details updated")
+                print("prodduct details updated")
             }
             else{
                 print("error in updating product details")
@@ -221,6 +221,58 @@ extension DBHelper{
         }
         
     }
+    //can be called when product is refeunded to update stock
+    func addToProductStock(productId : Int, qty: Int){
+        let query = "update Product SET InStock = InStock + \(qty) where ProductId = ?;"
+        var stmt : OpaquePointer?
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
+            
+            if sqlite3_bind_int(stmt, 1, Int32(productId)) != SQLITE_OK{
+                let err = String(cString: sqlite3_errmsg(dbpointer)!)
+                print("error in binding productId", err)
+
+            }
+            if sqlite3_step(stmt) == SQLITE_DONE{
+                print("prduct stock increased")
+            }
+            else{
+                print("error in adding to product stock")
+            }
+        }
+        else{
+            print("Error in update add to product stock query")
+        }
+        
+    }
+    //can be called when order is placed to update stock also checks stock before removing to prevent negative stock
+    func removeFromProductStock(productId : Int, qty: Int){
+        if(isInStock(productId: productId, qty: qty)){
+            let query = "update Product SET InStock = InStock - \(qty) where ProductId = ?;"
+            var stmt : OpaquePointer?
+            if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
+                
+                if sqlite3_bind_int(stmt, 1, Int32(productId)) != SQLITE_OK{
+                    let err = String(cString: sqlite3_errmsg(dbpointer)!)
+                    print("error in binding productId", err)
+
+                }
+                if sqlite3_step(stmt) == SQLITE_DONE{
+                    print("prduct stock decreased")
+                }
+                else{
+                    print("error in subtracting product stock")
+                }
+            }
+            else{
+                print("Error in update subtract from product stock query")
+            }
+        }
+        else{
+            print("Not enough in stock")
+        }
+        
+        
+    }
     
 //MARK: get a product's remaining stock quantity
     func getStockQty(productId : Int) -> Int{
@@ -234,10 +286,39 @@ extension DBHelper{
         }
         else{
             let err = String(cString: sqlite3_errmsg(dbpointer)!)
-            print("error in creating getStockQty", err)
+            print("error in creating getStockQty query", err)
         }
         
         return stockNum
+    }
+//MARK: check if product in stock
+    func isInStock(productId : Int) -> Bool{
+        isInStock(productId: productId, qty: 1)
+        
+    }
+    //compare to a quantity
+    func isInStock(productId : Int, qty : Int) -> Bool{
+        let query = "select InStock from Product where ProductId = \(productId)"
+        var stmt : OpaquePointer?
+        var stockNum = 0
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
+            while (sqlite3_step(stmt) == SQLITE_ROW){
+                stockNum = Int(sqlite3_column_int(stmt, 0))
+            }
+            if(stockNum >= qty)
+            {
+                return true
+            }
+            else{
+                return false
+            }
+        }
+        else{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("error in creating is in  stock query", err)
+            return false
+        }
+        
     }
     
 //MARK: Delete a product

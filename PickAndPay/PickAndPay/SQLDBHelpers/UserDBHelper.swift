@@ -17,7 +17,7 @@ extension DBHelper{
             //bind parameters
             if sqlite3_bind_text(stmt, 1, username.utf8String, -1, nil) != SQLITE_OK{
                 let err = String(cString: sqlite3_errmsg(dbpointer)!)
-                print("error in binding password", err)
+                print("error in binding username", err)
 
             }
             if sqlite3_bind_text(stmt, 2, password.utf8String, -1, nil) != SQLITE_OK{

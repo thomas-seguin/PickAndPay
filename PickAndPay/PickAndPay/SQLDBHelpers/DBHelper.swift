@@ -15,10 +15,15 @@ class DBHelper{
     var wishList = [WishListItem]()
     var history = [SearchHistoryItem]()
     var reviews = [Review]()
+    var cart = [CartItem]()
+    var cards = [Card]()
+    var orders = [Order]()
+    var orderedProducts = [ProductOrder]()
     private init(){
         
     }
 //MARK: Call createDB and createTAbles at program start
+    //creates db if it doesnt exist / opens it if it is created
     func createDB(){
         
         //create file path for db
@@ -28,7 +33,7 @@ class DBHelper{
             print("Cannot open database")
         }
     }
-    
+    //Doesn't do anything if tables were already created
     func createTables(){
         createUserTable()
         createProductTable()
@@ -40,7 +45,12 @@ class DBHelper{
         createOrderDetailsTable()
         createProductOrderTable()
     }
-    
+    //Not neccessary (ARC closes connection at deinit)
+    func closeDB(){
+        if sqlite3_close(dbpointer) != SQLITE_OK{
+            print("Error in closing databse")
+        }
+    }
     func createUserTable(){
         
         let query = "create table if not exists User (UserId text primary key, Name text, Password text, Address text, PhoneNumber text, Balance double)"
@@ -113,7 +123,7 @@ class DBHelper{
     
     func createReviewTable(){
         
-        let query = "create table if not exists Review (ReviewId integer primary key autoincrement, Body text, Rating double, date text, UserId text, ProductId integer)"
+        let query = "create table if not exists Review (ReviewId integer primary key autoincrement, Body text, Rating double, Date text, UserId text, ProductId integer)"
         if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
             let err = String(cString: sqlite3_errmsg(dbpointer)!)
             print("error in creating Review Table", err)
@@ -148,7 +158,7 @@ class DBHelper{
     
     func createCardTable(){
         
-        let query = "create table if not exists Card (CardId integer primary key autoincrement, CardNumber text, Address text, CardName text, SecurityCode text, UserId text)"
+        let query = "create table if not exists Card (CardId integer primary key autoincrement, CardNumber text, Address text, CardName text, UserId text)"
         if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
             let err = String(cString: sqlite3_errmsg(dbpointer)!)
             print("error in creating CardTable", err)
@@ -172,13 +182,23 @@ class DBHelper{
     
     func createOrderDetailsTable(){
         
-        let query = "create table if not exists OrderDetails (OrderId integer primary key autoincrement, Status text, NumberOfProducts integer, TotalPrice double, Date text, UserId text, CardId integer)"
+        let query = "create table if not exists OrderDetails (OrderId integer primary key autoincrement, Status text, ShippingAddress, NumberOfProducts integer, TotalPrice double, Date text, PaymentMode text, BillingAddress text, UserId text)"
         if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
             let err = String(cString: sqlite3_errmsg(dbpointer)!)
             print("error in creating OrderDetails Table", err)
         }
         else{
             print("success creating OrderDetails table")
+        }
+    }
+    func dropOrderDetailsTable(){
+        let query = "DROP TABLE IF EXISTS OrderDetails"
+        if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("error in dropping OrderDetails table", err)
+        }
+        else{
+            print("success dropping OrderDetails table")
         }
     }
     
@@ -190,6 +210,16 @@ class DBHelper{
         }
         else{
             print("success creating ProductOrder table")
+        }
+    }
+    func dropProductOrderTable(){
+        let query = "DROP TABLE IF EXISTS ProductOrder"
+        if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("error in dropping ProductOrder table", err)
+        }
+        else{
+            print("success dropping ProductOrder table")
         }
     }
 
