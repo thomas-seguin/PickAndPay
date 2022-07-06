@@ -11,6 +11,7 @@ struct tiles {
     var id : Int
     var title : String
 }
+
 struct homeView: View {
     
     let categories : [tiles] = [
@@ -53,7 +54,7 @@ struct homeView: View {
                 Spacer()
             }
             
-            .navigationBarTitle(Text("Categories"))
+            .navigationBarTitle(Text("Home"))
             
         }
             
