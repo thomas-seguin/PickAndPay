@@ -14,26 +14,26 @@ struct User{
     var address = ""
     var phoneNumber = "123456789"
     var currentBalance = 0.0 //for refunds
-    // user's wishlist
+     
     var wishList : [WishListItem]{
         return DBHelper.dbHelper.getUserWishList(username: userId as NSString)
     }
-    //user's search history
+    
     var searchHistory : [SearchHistoryItem]{
-        get{
-            return DBHelper.dbHelper.getUserSearchHistory(username: userId as NSString)
-        }
-    }
-    //user reviews
+       get{
+          return DBHelper.dbHelper.getUserSearchHistory(username: userId as NSString)
+      }
+   }
+    
     var reviews : [Review]{
         get{
             return DBHelper.dbHelper.getUserReviews(username: userId as NSString)
-        }
+       }
     }
     var itemCart : [CartItem]{
-        get{
+       get{
             return DBHelper.dbHelper.getUserCart(username: userId as NSString)
-        }
+       }
     }
     var cards : [Card]{
         get{
@@ -43,7 +43,7 @@ struct User{
     var orders : [Order]{
         get{
             return DBHelper.dbHelper.getUserOrders(username: userId as NSString)
-        }
+       }
     }
     init(){
         
