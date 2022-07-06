@@ -21,15 +21,17 @@ struct PickAndPayApp: App {
     //hello
     var body: some Scene {
         WindowGroup {
+            homeView()
             //DBHelper.dbHelper.createTables()
-            if authentication.isValidated {
-                ContentView()
-                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                    .environmentObject(authentication)
-            } else {
-                LoginView()
-                    .environmentObject(authentication)
-            }
-        }
+//            if authentication.isValidated {
+//                homeView()
+//                    .environment(\.managedObjectContext, persistenceController.container.viewContext)
+//                    .environmentObject(authentication)
+//            } else {
+//                LoginView()
+//                    .environmentObject(authentication)
+//            }
+//        }
     }
+}
 }
