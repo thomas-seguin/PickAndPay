@@ -50,9 +50,9 @@ struct ProductCard: View {
 
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductCard(product: products[0])
-            .environmentObject(CartManager(quantity: 0))
-    }
-}
+//struct SwiftUIView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProductCard(product: products[0])
+//            .environmentObject(CartManager(quantity: 0))
+//    }
+//}

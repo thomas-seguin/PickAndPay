@@ -72,6 +72,18 @@ struct Product{
             return DBHelper.dbHelper.getProductReviews(productId: productId)
         }
     }
+    var reviewCount : Int{
+        return reviews.count
+    }
+    var averageRating : Double{
+        get{
+           var num = 0.0
+            for review in reviews {
+                num += review.rating
+            }
+            return num/Double(reviewCount)
+        }
+    }
     init(){
         
     }
