@@ -16,6 +16,7 @@
 		7E3707FC2871070800B39321 /* CartDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E3707FB2871070800B39321 /* CartDBHelper.swift */; };
 		7E8751F028772C0600D39227 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8751EF28772C0600D39227 /* WishListView.swift */; };
 		7E8751F228772C2C00D39227 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8751F128772C2C00D39227 /* WishListViewModel.swift */; };
+		7E8751FA28777B7C00D39227 /* BrowseHistoryDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8751F928777B7C00D39227 /* BrowseHistoryDBHelper.swift */; };
 		7EB0231A286D0092008895B0 /* WishListDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB02319286D0092008895B0 /* WishListDBHelper.swift */; };
 		7EBA1D1C2873DBC500B40758 /* CreditCardDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA1D1B2873DBC500B40758 /* CreditCardDBHelper.swift */; };
 		7EBA1D1E2873DC0C00B40758 /* OrderDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA1D1D2873DC0C00B40758 /* OrderDBHelper.swift */; };
@@ -73,6 +74,7 @@
 		7E3707FB2871070800B39321 /* CartDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartDBHelper.swift; sourceTree = "<group>"; };
 		7E8751EF28772C0600D39227 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		7E8751F128772C2C00D39227 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
+		7E8751F928777B7C00D39227 /* BrowseHistoryDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseHistoryDBHelper.swift; sourceTree = "<group>"; };
 		7EB02319286D0092008895B0 /* WishListDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDBHelper.swift; sourceTree = "<group>"; };
 		7EBA1D1B2873DBC500B40758 /* CreditCardDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDBHelper.swift; sourceTree = "<group>"; };
 		7EBA1D1D2873DC0C00B40758 /* OrderDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDBHelper.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				7E3707FB2871070800B39321 /* CartDBHelper.swift */,
 				7EBA1D1B2873DBC500B40758 /* CreditCardDBHelper.swift */,
 				7EBA1D1D2873DC0C00B40758 /* OrderDBHelper.swift */,
+				7E8751F928777B7C00D39227 /* BrowseHistoryDBHelper.swift */,
 			);
 			path = SQLDBHelpers;
 			sourceTree = "<group>";
@@ -407,6 +410,7 @@
 				847853D42875EBE700F393CB /* CartManager.swift in Sources */,
 				847853D22875EA9C00F393CB /* ProductsData.swift in Sources */,
 				847853DC2875F5C800F393CB /* ProductCard.swift in Sources */,
+				7E8751FA28777B7C00D39227 /* BrowseHistoryDBHelper.swift in Sources */,
 				847853D62875EC6000F393CB /* CartView.swift in Sources */,
 				84A0D934286A33AD00FDFC37 /* Persistence.swift in Sources */,
 				7EB0231A286D0092008895B0 /* WishListDBHelper.swift in Sources */,
