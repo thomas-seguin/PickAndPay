@@ -148,9 +148,9 @@ struct tileView: View {
     }
 }
 
-struct SwiftUIView_Previews: PreviewProvider {
-    static var previews: some View {
-        homeView()
-        
-    }
-}
+//struct SwiftUIView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        homeView()
+//        
+//    }
+//}
