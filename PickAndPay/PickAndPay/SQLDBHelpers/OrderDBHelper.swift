@@ -7,7 +7,7 @@
 import Foundation
 import SQLite3
 extension DBHelper{
-//MARK: function when an order is placed overloads
+//MARK: function when an order is placed overloads (automatically sums the total price plus the delivery fee)
     func placeOrder(shipAddress : NSString, payMode : NSString, billAddress : NSString, username : NSString, userCart : [CartItem]){
         //check if everything is in stock and calculate number of products and total order price
         var allInStock = true
@@ -21,6 +21,10 @@ extension DBHelper{
             }
             numberOfProducts += item.quantity
             totalOrderPrice += item.totalPrice
+            //$10 delivery fee if order is less than $200
+            if(totalOrderPrice < 200.0){
+                totalOrderPrice += 10.0
+            }
         }
         if(allInStock){
             insertOrderDetails(shipAddress: shipAddress, numOfProd: numberOfProducts, total: totalOrderPrice, payMode: payMode, billAddress: billAddress, username: username)
