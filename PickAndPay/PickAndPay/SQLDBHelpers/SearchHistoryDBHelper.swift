@@ -112,11 +112,11 @@ extension DBHelper{
         return history
     }
     
-//MARK: get all user's search history/ searched phrases
+//MARK: get all user's search history/ searched phrases starting from most searched
     func getUserSearchHistory(username : NSString) -> [SearchHistoryItem]{
         history.removeAll()
         var stmt : OpaquePointer?
-        let query = "Select * from SearchHistory where UserId = '\(username)'"
+        let query = "Select * from SearchHistory where UserId = '\(username)' order by TimesSearched desc"
         if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) != SQLITE_OK{
             let err = String(cString: sqlite3_errmsg(dbpointer))
             print("Error in creating getUserSearchHistory query", err)
