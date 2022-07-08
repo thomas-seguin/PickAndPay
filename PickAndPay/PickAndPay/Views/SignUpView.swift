@@ -15,12 +15,22 @@ struct SignUpView: View {
             VStack {
                 Text("PickAndPay")
                     .font(.largeTitle)
-                TextField("Email Address", text: $signUpVM.userModel.userId)
-                    .keyboardType(.emailAddress)
+                VStack {
+                    TextField("Email Address", text:$signUpVM.userModel.userId)
+                        .keyboardType(.emailAddress)
+                        .onChange(of: signUpVM.userModel.userId) { newValue in
+                            signUpVM.checkEmail()
+                        }
+                    Text(signUpVM.emailPrompt)
+                }
                 TextField("Name", text: $signUpVM.userModel.name)
                 TextField("Address", text: $signUpVM.userModel.address)
                 TextField("Phone Number", text: $signUpVM.userModel.phoneNumber)
                     .keyboardType(.phonePad)
+                    .onChange(of: signUpVM.userModel.phoneNumber) { newValue in
+                        signUpVM.checkPhone()
+                    }
+                Text(signUpVM.phonePrompt)
                 SecureField("Password", text: $signUpVM.userModel.password)
                 if signUpVM.showProgressView {
                     ProgressView()
