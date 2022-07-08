@@ -13,7 +13,7 @@ class WishListViewModel{
         }
     }
     init(){
-        userId = "UserTest" //assign username from login here
+        userId = UserSingleton.userData.currentUsername
     }
     func getUsername() -> String{
         return userId

@@ -14,8 +14,8 @@ class BrowseHistoryViewModel{
         }
     }
     init(){
-        self.userId = "UserTest" //assign username from login here
-        self.browseSwitch = true // assign bool property for browse history from singleton class
+        self.userId = UserSingleton.userData.currentUsername
+        self.browseSwitch = UserSingleton.userData.browseHistorySwitch
     }
     func getUsername() -> String{
         return userId
@@ -56,7 +56,7 @@ class BrowseHistoryViewModel{
         }
     }
     func toggleBrowseHistorySwitch(toggleValue : Bool){
-        //toggle browserHistory bool property in Singleton class
+        UserSingleton.userData.browseHistorySwitch = toggleValue
         browseSwitch = toggleValue //update browseSwitch in this class
     }
 }
