@@ -4,14 +4,24 @@
 //
 //  Created by Philip Janzel Paradeza on 2022-07-08.
 //
-
 import Foundation
 class BrowseHistoryViewModel{
-    var userId = "UserTest" //assign username ffrom login here
+    private var userId = ""
+    private var browseSwitch : Bool
     var browseHistory : [BrowseHistoryItem]{
         get{
             return DBHelper.dbHelper.getUserBrowseHistory(username: userId as NSString)
         }
+    }
+    init(){
+        self.userId = UserSingleton.userData.currentUsername
+        self.browseSwitch = UserSingleton.userData.browseHistorySwitch
+    }
+    func getUsername() -> String{
+        return userId
+    }
+    func isBrowseHistoryOn() -> Bool{
+        return browseSwitch
     }
     func getRatingString(product : Product) -> String {
         let aveStr = String(format: "%.2f", product.averageRating)
@@ -37,4 +47,17 @@ class BrowseHistoryViewModel{
     func clearHistory(){
         DBHelper.dbHelper.clearUserBrowseHistory(username: userId as NSString)
     }
+    func browseHistoryToggleText(toggleValue : Bool) -> String{
+        if(toggleValue){
+            return "Turn off browse history recording"
+        }
+        else{
+            return "Turn on browse history recording"
+        }
+    }
+    func toggleBrowseHistorySwitch(toggleValue : Bool){
+        UserSingleton.userData.browseHistorySwitch = toggleValue
+        browseSwitch = toggleValue //update browseSwitch in this class
+    }
 }
+

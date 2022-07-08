@@ -9,65 +9,65 @@ import SwiftUI
 struct WishListView: View {
     @State var viewModel = WishListViewModel()
     var body: some View {
-        //Add search bar and navbar with username here
         NavigationView{
-            List{
-                Section(header: Text(viewModel.userId + "'s WishList"), footer: Text("End of List")){
-                    ForEach(viewModel.wishList, id: \.wishListId){ item in
-                        //destiantion : Replace ProductViewTest with the real view for product details
-                        NavigationLink(destination: ProductViewTest(product: item.wishProduct)){
-                            VStack{
-                                HStack{
-                                    Image(item.wishProduct.productImage)
-                                        .resizable()
-                                        .frame(width: 80, height: 80)
-                                    VStack(alignment: .leading){
-                                        Text(item.wishProduct.productName)
-                                            .font(.title)
-                                        Text(viewModel.getRatingString(product: item.wishProduct)).font(.footnote)
-                                        Text(viewModel.getPriceString(product: item.wishProduct))
-                                            .font(.subheadline)
+            VStack{
+                List{
+                    Section(header: Text(viewModel.getUsername() + "'s WishList")
+                        .font(.headline), footer: Text("End of List")){
+                        ForEach(viewModel.wishList, id: \.wishListId){ item in
+                            //destination : Replace ProductViewTest with the real view for product details
+                            NavigationLink(destination: ProductViewTest(product: item.wishProduct)){
+                                VStack{
+                                    HStack{
+                                        Image(item.wishProduct.productImage)
+                                            .resizable()
+                                            .frame(width: 80, height: 80)
+                                        VStack(alignment: .leading){
+                                            Text(item.wishProduct.productName)
+                                                .font(.title)
+                                            Text(viewModel.getRatingString(product: item.wishProduct)).font(.footnote)
+                                            Text(viewModel.getPriceString(product: item.wishProduct))
+                                                .font(.subheadline)
+                                        }
+                                        
                                     }
-                                    
-                                }
-                                HStack(alignment: .center){
-                                    if(viewModel.isInStock(product: item.wishProduct)){
+                                    HStack(alignment: .center){
+                                        if(viewModel.isInStock(product: item.wishProduct)){
+                                            Button(action: {
+                                                viewModel.addToCart(item: item)
+                                                reloadList()
+                                            }){
+                                                Text("Add to Cart")
+                                                    .font(.footnote)
+                                                    .multilineTextAlignment(.center)
+                                            }
+                                            .buttonStyle(BorderedButtonStyle())
+                                            .foregroundColor(Color.black)
+                                            .background(Color.yellow)
+                                            .cornerRadius(5)
+
+                                        }
+                                        else{
+                                            Text("Item not in Stock")
+                                                .font(.footnote)
+                                                .foregroundColor(Color.red)
+                                                .multilineTextAlignment(.center)
+                                                
+                                        }
                                         Button(action: {
-                                            viewModel.addToCart(item: item)
+                                            viewModel.removeFromWishList(id: item.wishListId)
                                             reloadList()
                                         }){
-                                            Text("Add to Cart")
+                                            Text("Remove from WishList")
                                                 .font(.footnote)
                                                 .multilineTextAlignment(.center)
+                                                .lineLimit(2)
                                         }
-                                        .buttonStyle(BorderlessButtonStyle())
-                                        .padding()
+                                        .buttonStyle(BorderedButtonStyle())
                                         .foregroundColor(Color.black)
-                                        .background(Color.yellow)
+                                        .background(Color.white)
                                         .cornerRadius(5)
-
                                     }
-                                    else{
-                                        Text("Item not in Stock")
-                                            .font(.footnote)
-                                            .foregroundColor(Color.red)
-                                            .multilineTextAlignment(.center)
-                                            
-                                    }
-                                    Button(action: {
-                                        viewModel.removeFromWishList(id: item.wishListId)
-                                        reloadList()
-                                    }){
-                                        Text("Remove from WishList")
-                                            .font(.footnote)
-                                            .multilineTextAlignment(.center)
-                                            .lineLimit(2)
-                                    }
-                                    .buttonStyle(BorderlessButtonStyle())
-                                    .padding()
-                                    .foregroundColor(Color.black)
-                                    .background(Color.red)
-                                    .cornerRadius(5)
                                 }
                             }
                         }
