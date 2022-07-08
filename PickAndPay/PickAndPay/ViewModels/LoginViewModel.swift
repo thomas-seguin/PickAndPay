@@ -17,6 +17,14 @@ class LoginViewModel: ObservableObject{
         credentials.email.isEmpty || credentials.password.isEmpty
     }
     
+    func rememberMe(remember: Bool){
+        if remember{
+        print("remembered")
+        } else {
+            print("no")
+        }
+    }
+    
     func login(completion: @escaping (Bool) -> Void){
         userDB.createDB()
         userDB.createTables()

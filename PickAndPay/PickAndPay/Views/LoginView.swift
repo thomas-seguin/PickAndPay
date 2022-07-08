@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginView: View {
     @State private var showingSheet = false
+    @State private var rememberMe = false
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
     var body: some View {
@@ -21,6 +22,10 @@ struct LoginView: View {
             if loginVM.showProgressView {
                 ProgressView()
             }
+            Toggle("Remember Me",isOn: $rememberMe)
+                .onChange(of: rememberMe) { newValue in
+                    loginVM.rememberMe(remember: rememberMe)
+                }
             Button("Login in") {
                 loginVM.login { success in
                     print(success)
