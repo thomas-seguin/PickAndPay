@@ -37,6 +37,8 @@ class LoginViewModel: ObservableObject{
         case true:
             if rememberMe {
                 userDefaults.set(true, forKey: "remember")
+            } else {
+                userDefaults.set(false, forKey: "remember")
             }
             completion(true)
         
