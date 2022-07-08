@@ -9,6 +9,8 @@ import Foundation
 
 class LoginViewModel: ObservableObject{
     let userDB = DBHelper.dbHelper
+    let userDefaults = UserDefaults()
+    private var rememberMe: Bool = false
     @Published var credentials = Credentials()
     @Published var showProgressView = false
     @Published var error: Authentication.AuthenticationError?
@@ -19,9 +21,9 @@ class LoginViewModel: ObservableObject{
     
     func rememberMe(remember: Bool){
         if remember{
-        print("remembered")
+            rememberMe = true
         } else {
-            print("no")
+            rememberMe = false
         }
     }
     
@@ -33,6 +35,9 @@ class LoginViewModel: ObservableObject{
         
         switch result {
         case true:
+            if rememberMe {
+                userDefaults.set(true, forKey: "remember")
+            }
             completion(true)
         
         case false:
