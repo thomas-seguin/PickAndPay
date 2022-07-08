@@ -180,7 +180,6 @@
 				847853DB2875F5C800F393CB /* ProductCard.swift */,
 				847853D52875EC6000F393CB /* CartView.swift */,
 				847853D92875F52300F393CB /* Catalogue.swift */,
-				7EDA66AE2878858B00844ACB /* BrowsingHistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -267,6 +266,7 @@
 				84A0D9B02875EBFF00FDFC37 /* SignUpView.swift */,
 				E9B56C242876285D0020C020 /* videoView.swift */,
 				7E8751EF28772C0600D39227 /* WishListView.swift */,
+				7EDA66AE2878858B00844ACB /* BrowsingHistoryView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";

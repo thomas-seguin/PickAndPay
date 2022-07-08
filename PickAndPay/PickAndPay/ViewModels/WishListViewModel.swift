@@ -6,11 +6,17 @@
 //
 import Foundation
 class WishListViewModel{
-    var userId = "" //assign username from login here
+    private var userId = ""
     var wishList : [WishListItem]{
         get{
             return DBHelper.dbHelper.getUserWishList(username: userId as NSString)
         }
+    }
+    init(){
+        userId = "UserTest" //assign username from login here
+    }
+    func getUsername() -> String{
+        return userId
     }
     func getRatingString(product : Product) -> String {
         let aveStr = String(format: "%.2f", product.averageRating)
