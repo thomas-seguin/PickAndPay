@@ -53,7 +53,7 @@ class DBHelper{
     }
     func createUserTable(){
         
-        let query = "create table if not exists User (UserId text primary key, Name text, Password text, Address text, PhoneNumber text, Balance double)"
+        let query = "create table if not exists User (UserId text primary key, Name text, Password text, Address text, PhoneNumber text, Balance double, Verified Int)"
         if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
             let err = String(cString: sqlite3_errmsg(dbpointer)!)
             print("error in creating User table", err)
