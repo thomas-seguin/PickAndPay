@@ -34,6 +34,9 @@
 		84A0D9B12875EBFF00FDFC37 /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D9B02875EBFF00FDFC37 /* SignUpView.swift */; };
 		84A0D9B32875EC1800FDFC37 /* SignUpViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D9B22875EC1800FDFC37 /* SignUpViewModel.swift */; };
 		84A0D9B52875EC8700FDFC37 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D9B42875EC8700FDFC37 /* UserModel.swift */; };
+		84C0C221287B37DE00D023C6 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C220287B37DE00D023C6 /* OTPViewModel.swift */; };
+		84C0C223287B37EF00D023C6 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C222287B37EF00D023C6 /* OTPView.swift */; };
+		84C0C225287B380B00D023C6 /* OTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C224287B380B00D023C6 /* OTPModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +87,9 @@
 		84A0D9B02875EBFF00FDFC37 /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		84A0D9B22875EC1800FDFC37 /* SignUpViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpViewModel.swift; sourceTree = "<group>"; };
 		84A0D9B42875EC8700FDFC37 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		84C0C220287B37DE00D023C6 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
+		84C0C222287B37EF00D023C6 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
+		84C0C224287B380B00D023C6 /* OTPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +123,7 @@
 				7E28DB10286BAFC10078BB30 /* Models.swift */,
 				84A0D9A32875E47500FDFC37 /* Credentials.swift */,
 				84A0D9B42875EC8700FDFC37 /* UserModel.swift */,
+				84C0C224287B380B00D023C6 /* OTPModel.swift */,
 			);
 			path = "Models-P";
 			sourceTree = "<group>";
@@ -214,6 +221,7 @@
 			children = (
 				84A0D9AC2875E64F00FDFC37 /* LoginView.swift */,
 				84A0D9B02875EBFF00FDFC37 /* SignUpView.swift */,
+				84C0C222287B37EF00D023C6 /* OTPView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -223,6 +231,7 @@
 			children = (
 				84A0D9AA2875E59000FDFC37 /* LoginViewModel.swift */,
 				84A0D9B22875EC1800FDFC37 /* SignUpViewModel.swift */,
+				84C0C220287B37DE00D023C6 /* OTPViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -357,6 +366,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84C0C225287B380B00D023C6 /* OTPModel.swift in Sources */,
 				7E2A410A286E3AA200F69FE8 /* SearchHistoryDBHelper.swift in Sources */,
 				84A0D934286A33AD00FDFC37 /* Persistence.swift in Sources */,
 				7EB0231A286D0092008895B0 /* WishListDBHelper.swift in Sources */,
@@ -371,6 +381,8 @@
 				84A0D9AB2875E59000FDFC37 /* LoginViewModel.swift in Sources */,
 				84A0D9AF2875E88A00FDFC37 /* Authentication.swift in Sources */,
 				84A0D9A72875E4E700FDFC37 /* Keyboard.swift in Sources */,
+				84C0C223287B37EF00D023C6 /* OTPView.swift in Sources */,
+				84C0C221287B37DE00D023C6 /* OTPViewModel.swift in Sources */,
 				84A0D9B32875EC1800FDFC37 /* SignUpViewModel.swift in Sources */,
 				84A0D9AD2875E64F00FDFC37 /* LoginView.swift in Sources */,
 				7EBA1D1E2873DC0C00B40758 /* OrderDBHelper.swift in Sources */,
