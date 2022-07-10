@@ -151,6 +151,23 @@ extension DBHelper{
         return user
     }
     
+    func getVerified(username: NSString) -> Int{
+        let query = "select Verified from User where UserId = '\(username)'"
+        var stmt : OpaquePointer?
+        var res: Int = 10
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
+            while (sqlite3_step(stmt) == SQLITE_ROW){
+                res = Int(sqlite3_column_int(stmt, 0))
+            }
+        }
+        else{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("error in creating getVerified", err)
+        }
+        
+        return res
+    }
+    
 //MARK: Update User details
     func updateUser(username : NSString, password : NSString, name : NSString, address : NSString, number : NSString, balance : Double){
         let query = "update User SET Password = '\(password)', Name = '\(name)', Address = '\(address)' ,PhoneNumber = '\(number)', Balance = \(balance) where UserId = ?;"
