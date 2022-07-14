@@ -28,7 +28,12 @@ struct LoginView: View {
                     .font(.system(size: 40, weight: .bold, design: .rounded))
                     .offset(x: -80, y: -120)
                 
-                TextField("Email Address", text: $loginVM.credentials.email)
+                Text("Email")
+                    .foregroundColor(.text)
+                    .font(.system(size: 25, weight: .semibold, design: .rounded))
+                    .offset(x: -145)
+                
+                TextField("Your Email Address", text: $loginVM.credentials.email)
                     .keyboardType(.emailAddress)
                     .foregroundColor(.text)
                     .textFieldStyle(.plain)
@@ -38,10 +43,16 @@ struct LoginView: View {
                     .foregroundColor(.black)
                     .offset(y:-15)
                 
-                
-                SecureField("Password", text: $loginVM.credentials.password)
-                    .foregroundColor(.text)
-                    .textFieldStyle(.plain)
+                VStack{
+                    Text("Password")
+                        .foregroundColor(.text)
+                        .font(.system(size: 25, weight: .semibold, design: .rounded))
+                        .offset(x: -120)
+                    
+                    SecureField("Your Password", text: $loginVM.credentials.password)
+                        .foregroundColor(.text)
+                        .textFieldStyle(.plain)
+                }
                 
                 Rectangle()
                     .frame(width: 350, height: 1)
@@ -52,6 +63,7 @@ struct LoginView: View {
                 if loginVM.showProgressView {
                     ProgressView()
                 }
+                
                 Toggle("Remember Me",isOn: $rememberMe)
                     .onChange(of: rememberMe) { newValue in
                         loginVM.rememberMe(remember: rememberMe)
@@ -69,23 +81,27 @@ struct LoginView: View {
                     Text("Login")
                         .bold()
                         .frame(width: 200, height: 40)
-                        .background(RoundedRectangle(cornerRadius: 10,style: .continuous).fill(.linearGradient(colors:[.button,.button], startPoint: .top, endPoint: .bottomTrailing)))
+                        .background(RoundedRectangle(cornerRadius: 20,style: .continuous).fill(.linearGradient(colors:[.button,.button], startPoint: .top, endPoint: .bottomTrailing)))
                         .foregroundColor(.white)
                 }.disabled(loginVM.loginDisabled)
+                    .offset(y: -30)
                 
                 Button{
                     showingSheet.toggle()
-                    
                 } label: {
                     Text("Dont have an account? Sign Up")
                         .bold()
                         .foregroundColor(.text)
                 }
+                .offset(y: 50)
                 .sheet(isPresented: $showingSheet) {
                     SignUpView()
                 }
+                
+                
+                
             }
-            .frame(width: 350)
+            .frame(width: 350, height: 600)
             .autocapitalization(.none)
             .textFieldStyle(RoundedBorderTextFieldStyle())
             .padding()
