@@ -37,6 +37,7 @@
 		84C0C221287B37DE00D023C6 /* OTPViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C220287B37DE00D023C6 /* OTPViewModel.swift */; };
 		84C0C223287B37EF00D023C6 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C222287B37EF00D023C6 /* OTPView.swift */; };
 		84C0C225287B380B00D023C6 /* OTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C224287B380B00D023C6 /* OTPModel.swift */; };
+		84EFFBC92880B06D000A1829 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBC82880B06D000A1829 /* Colors.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +91,7 @@
 		84C0C220287B37DE00D023C6 /* OTPViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPViewModel.swift; sourceTree = "<group>"; };
 		84C0C222287B37EF00D023C6 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		84C0C224287B380B00D023C6 /* OTPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModel.swift; sourceTree = "<group>"; };
+		84EFFBC82880B06D000A1829 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -212,6 +214,7 @@
 			isa = PBXGroup;
 			children = (
 				84A0D9A62875E4E700FDFC37 /* Keyboard.swift */,
+				84EFFBC82880B06D000A1829 /* Colors.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				84A0D9AD2875E64F00FDFC37 /* LoginView.swift in Sources */,
 				7EBA1D1E2873DC0C00B40758 /* OrderDBHelper.swift in Sources */,
 				7E2A410C286E567700F69FE8 /* ReviewDBHelper.swift in Sources */,
+				84EFFBC92880B06D000A1829 /* Colors.swift in Sources */,
 				84A0D9B12875EBFF00FDFC37 /* SignUpView.swift in Sources */,
 				84A0D9A42875E47500FDFC37 /* Credentials.swift in Sources */,
 				7E28DB16286BB09B0078BB30 /* UserDBHelper.swift in Sources */,
