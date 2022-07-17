@@ -13,6 +13,7 @@ class SignUpViewModel: ObservableObject {
     let phonePattern = #"^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$"#
     let passwordPattern = #"(?=.{8,})"#
     let textPattern = #"^[a-zA-Z ]*$"#
+    let userDefauts = UserDefaults()
     @Published var userModel = UserModel()
     @Published var showProgressView = false
     @Published var error: Authentication.AuthenticationError?
@@ -20,29 +21,40 @@ class SignUpViewModel: ObservableObject {
     @Published var isPhoneValid = false
     @Published var isPassValid = false
     @Published var isNameValid = false
+    @Published var isAddrValid = false
     
-    func checkEmail() {
+    func checkEmail() ->Bool {
         let emailResult = userModel.userId.range(of: emailPattern, options: .regularExpression)
         isEmailValid = (emailResult != nil)
+        return isEmailValid
         
     }
     
-    func checkName() {
+    func checkName() -> Bool {
         let nameResult = userModel.name.range(of: textPattern, options: .regularExpression)
         isNameValid = (nameResult != nil)
+        return isNameValid
         
     }
     
-    func checkPass() {
+    func checkAddr() -> Bool{
+        let addrResult = userModel.address.range(of: textPattern, options: .regularExpression)
+       isAddrValid = (addrResult != nil)
+        return isAddrValid
+    }
+    
+    func checkPass() -> Bool {
         let passResult = userModel.password.range(of: passwordPattern, options: .regularExpression)
         isPassValid = (passResult != nil)
+        return isPassValid
         
     }
     
     
-    func checkPhone() {
+    func checkPhone() -> Bool {
         let phoneResult = userModel.phoneNumber.range(of: phonePattern, options: .regularExpression)
         isPhoneValid = (phoneResult != nil)
+        return isPhoneValid
         
     }
     
@@ -73,6 +85,8 @@ class SignUpViewModel: ObservableObject {
     
     func signUp(){
         userDB.createDB()
+        userDB.createTables()
+        userDefauts.set(userModel.userId, forKey: "username")
         showProgressView = true
         userDB.insertUser(username: userModel.userId as NSString, password: userModel.password as NSString, name: userModel.name as NSString, address: userModel.address as NSString, number: userModel.phoneNumber as NSString)
         print("signed up")

@@ -151,6 +151,8 @@ extension DBHelper{
         return user
     }
     
+    //MARK: Get Verified Status
+    
     func getVerified(username: NSString) -> Int{
         let query = "select Verified from User where UserId = '\(username)'"
         var stmt : OpaquePointer?

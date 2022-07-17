@@ -27,7 +27,7 @@ struct PickAndPayApp: App {
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
                     .environmentObject(authentication)
             } else {
-                LoginView()
+                MainTabView()
                     .environmentObject(authentication)
             }
         }

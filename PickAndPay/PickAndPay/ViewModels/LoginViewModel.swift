@@ -15,6 +15,10 @@ class LoginViewModel: ObservableObject{
     @Published var showProgressView = false
     @Published var error: Authentication.AuthenticationError?
     
+    func isVerified(username: String) -> Int {
+        return userDB.getVerified(username: username as NSString)
+    }
+    
     var loginDisabled: Bool {
         credentials.email.isEmpty || credentials.password.isEmpty
     }
@@ -35,6 +39,7 @@ class LoginViewModel: ObservableObject{
         
         switch result {
         case true:
+            userDefaults.set(credentials.email, forKey: "username")
             if rememberMe {
                 userDefaults.set(true, forKey: "remember")
             } else {

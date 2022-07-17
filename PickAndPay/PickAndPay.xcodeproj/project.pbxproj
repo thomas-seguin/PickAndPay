@@ -38,6 +38,8 @@
 		84C0C223287B37EF00D023C6 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C222287B37EF00D023C6 /* OTPView.swift */; };
 		84C0C225287B380B00D023C6 /* OTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C224287B380B00D023C6 /* OTPModel.swift */; };
 		84EFFBC92880B06D000A1829 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBC82880B06D000A1829 /* Colors.swift */; };
+		84EFFBCB2884A22D000A1829 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBCA2884A22D000A1829 /* MainTabView.swift */; };
+		84EFFBCD2884A25F000A1829 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBCC2884A25F000A1829 /* AccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,6 +94,8 @@
 		84C0C222287B37EF00D023C6 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		84C0C224287B380B00D023C6 /* OTPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModel.swift; sourceTree = "<group>"; };
 		84EFFBC82880B06D000A1829 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		84EFFBCA2884A22D000A1829 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		84EFFBCC2884A25F000A1829 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,8 @@
 				84A0D9AC2875E64F00FDFC37 /* LoginView.swift */,
 				84A0D9B02875EBFF00FDFC37 /* SignUpView.swift */,
 				84C0C222287B37EF00D023C6 /* OTPView.swift */,
+				84EFFBCA2884A22D000A1829 /* MainTabView.swift */,
+				84EFFBCC2884A25F000A1829 /* AccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -373,6 +379,7 @@
 				7E2A410A286E3AA200F69FE8 /* SearchHistoryDBHelper.swift in Sources */,
 				84A0D934286A33AD00FDFC37 /* Persistence.swift in Sources */,
 				7EB0231A286D0092008895B0 /* WishListDBHelper.swift in Sources */,
+				84EFFBCD2884A25F000A1829 /* AccountView.swift in Sources */,
 				7E28DB14286BB03C0078BB30 /* DBHelper.swift in Sources */,
 				84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */,
 				7EBA1D1C2873DBC500B40758 /* CreditCardDBHelper.swift in Sources */,
@@ -394,6 +401,7 @@
 				84A0D9B12875EBFF00FDFC37 /* SignUpView.swift in Sources */,
 				84A0D9A42875E47500FDFC37 /* Credentials.swift in Sources */,
 				7E28DB16286BB09B0078BB30 /* UserDBHelper.swift in Sources */,
+				84EFFBCB2884A22D000A1829 /* MainTabView.swift in Sources */,
 				7E28DB18286BB0B00078BB30 /* ProductDBHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
