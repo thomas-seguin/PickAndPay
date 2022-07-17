@@ -14,7 +14,7 @@ struct MainTabView: View {
                 .tabItem {
                     Label("Home", systemImage: "house.fill")
                 }
-            AccountView()
+            AccountMenuView()
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
                 }
