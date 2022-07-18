@@ -17,13 +17,16 @@ struct PickAndPayApp: App {
     
     
     @StateObject var authentication = Authentication()
+    
     let persistenceController = PersistenceController.shared
     //hello
     var body: some Scene {
         WindowGroup {
 
-            MainTabView()
-                .environmentObject(authentication)
+          FashionCatalog()
+            
+           // MainTabView()
+                //.environmentObject(authentication)
             //DBHelper.dbHelper.createTables()
 
            //if authentication.isValidated {
