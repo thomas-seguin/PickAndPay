@@ -64,7 +64,7 @@ struct MangeBalanceView: View {
             List(cards, selection: $selection){ card in
                 Button{
                     selection = card.cardNumber
-                    print("card number: \(selection)")
+                    
                 } label:{
                     if card.cardNumber == selection{
                         CardRow(card: card)
