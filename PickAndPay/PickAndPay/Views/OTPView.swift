@@ -41,9 +41,10 @@ struct OTPView: View {
                 if passed{
                     Text("passed")
                         .onAppear {
+                            notificationManager.goodOTP(username: username)
                             authentication.isValidated = true
                             isShowingContentView = true
-                            notificationManager.goodOTP(username: username)
+                            
                             
                         }
                 }
