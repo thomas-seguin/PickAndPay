@@ -21,7 +21,9 @@ struct SignUpView: View {
     var body: some View {
         NavigationView{
             ZStack{
-                Color.background
+                Image("MargoFlipped").resizable().frame(width: UIScreen.main.bounds.width)
+                    .ignoresSafeArea()
+               // Color.background
                 
                 RoundedRectangle(cornerRadius: 30, style: .continuous)
                     .foregroundStyle(.linearGradient(colors: [.white,.white], startPoint: .topLeading, endPoint: .bottomTrailing))

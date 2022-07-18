@@ -17,12 +17,16 @@ struct LoginView: View {
     var body: some View {
     
             ZStack{
+                Image("MargoFlipped").resizable().frame(width: UIScreen.main.bounds.width)
+                    .ignoresSafeArea()
                 NavigationLink(destination: OTPView(), isActive: $isShowingOTPView) { EmptyView()}
                 
                 NavigationLink(destination: MainTabView(), isActive: $isShowingMainView) { EmptyView()}
 
                 
                 Color.background
+
+
                 
                 RoundedRectangle(cornerRadius: 30, style: .continuous)
                     .foregroundStyle(.linearGradient(colors: [.white,.white], startPoint: .topLeading, endPoint: .bottomTrailing))

@@ -21,6 +21,7 @@ struct PickAndPayApp: App {
     //hello
     var body: some Scene {
         WindowGroup {
+
             MainTabView()
             //DBHelper.dbHelper.createTables()
 
@@ -32,6 +33,7 @@ struct PickAndPayApp: App {
                // LoginView()
                   //  .environmentObject(authentication)
           //  }
+
         }
 
     }

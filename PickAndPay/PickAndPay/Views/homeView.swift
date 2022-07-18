@@ -7,6 +7,7 @@
 
 import SwiftUI
 let colors : [Color] = [.red,.blue,.green, .blue]
+let previewLinks : [String] = ["EssentialsAd", "RingAd", "PrimeVideo"]
 struct tiles {
     var id : Int
     var title : String
@@ -18,7 +19,7 @@ struct homeView: View {
         tiles(id: 0, title: "Electronics"),
         tiles(id: 1, title: "Books"),
         tiles(id: 2, title: "Grocery"),
-        tiles(id: 3, title: "Home Supplies"),
+        tiles(id: 3, title: "Essentials"),
         tiles(id: 4, title: "Fashion")
     ]
 
@@ -26,21 +27,30 @@ struct homeView: View {
     @State var searchText = ""
     var body: some View {
         
-      
+
+            ZStack{
+                Image("MargoFlipped").resizable().frame(width: UIScreen.main.bounds.width)
+                    .ignoresSafeArea()
+                
+
             VStack{
                 
                   
                  
                 TextField("Search", text: $searchText)
-                
-                HStack{
-                    ForEach(categories, id: \.id)
-                    {tiles in
-                        tileView(thisTile: tiles)
+                ZStack{
+                    VStack{
+                        HStack{
+                            ForEach(categories, id: \.id)
+                            {tiles in
+                                tileView(thisTile: tiles)
+                            }
+                        }
+                        tabView().frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 0.63333, alignment: .top)
                     }
                 }
                 
-                tabView().frame(height: 200)
+                
                 
                 
                 HStack{
@@ -53,7 +63,8 @@ struct homeView: View {
                 videoView()
                 Spacer()
             }
-            
+                
+            }
             .navigationBarTitle(Text("Home"))
             
         }
@@ -68,8 +79,8 @@ struct homeView: View {
 struct tabView: View{
     var body: some View{
     TabView{
-        ForEach(colors.indices, id: \.self){index in
-            colors[index]
+        ForEach(previewLinks.indices, id: \.self){index in
+            Image(previewLinks[index]).resizable()
             
         }
     }
@@ -83,29 +94,39 @@ struct options: View {
             HStack{
                 
                 VStack {
-                    Rectangle().frame(width: 40, height: 40, alignment: .center)
+                    Image("pay").resizable().frame(width: 40, height: 40)
                     Text("ShopPay")
+                        .foregroundColor(.text)
+                        .font(.system(size: 17, weight: .regular, design: .rounded))
                 }
                 
                 VStack {
-                    Rectangle().frame(width: 40, height: 40, alignment: .center)
+                    Image("qr").resizable().frame(width: 40, height: 40)
                     Text("QR")
+                        .foregroundColor(.text)
+                        .font(.system(size: 17, weight: .regular, design: .rounded))
                 }
                 Spacer()
-        }
+            }.padding()
             HStack{
                 VStack {
-                    Rectangle().frame(width: 40, height: 40, alignment: .center)
+                    Image("giftcard").resizable().frame(width: 40, height: 40)
                     Text("Gift Card")
-                }
+                        
+                    .foregroundColor(.text)
+                    .font(.system(size: 17, weight: .regular, design: .rounded))                }
                 
                 VStack {
-                    Rectangle().frame(width: 40, height: 40, alignment: .center)
+                    Image("track").resizable().frame(width: 40, height: 40)
                     Text("Track ")
+                        
+                        .foregroundColor(.text)
+                    .font(.system(size: 17, weight: .regular, design: .rounded))
+                    
                 }
                 Spacer()
                 
-        }
+            }.padding()
         }
     }
 }
@@ -114,10 +135,14 @@ struct signIn: View {
     @State var isSignUpActive = false
     var body : some View {
         
-        VStack{
+        VStack(alignment: .center){
             Text("Welcome")
-                .bold()
+                .foregroundColor(.text)
+                .font(.system(size: 17, weight: .bold, design: .rounded))
+               
             Text("Sign in for your best experiernce")
+                .foregroundColor(.text)
+                .font(.system(size: 17, design: .rounded))
                 .padding(.bottom)
             NavigationLink( destination: LoginView(), isActive: $isSignInActive)
             {
@@ -135,6 +160,8 @@ struct signIn: View {
             }
             
         }
+        .frame(width: UIScreen.main.bounds.width/2)
+        
     }
 }
 
@@ -142,15 +169,19 @@ struct tileView: View {
     let thisTile : tiles
     var body : some View {
         VStack{
-            Rectangle().frame(width: 20, height: 20, alignment: .center)
+            Image(thisTile.title.lowercased())
+                .resizable()
+                .frame(width: 40, height: 40, alignment: .center)
             Text(thisTile.title)
+                .foregroundColor(.text)
+                .font(.system(size: 17, weight: .regular, design: .rounded))
         }
     }
 }
 
-//struct SwiftUIView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        homeView()
-//        
-//    }
-//}
+struct SwiftUIView_Previews: PreviewProvider {
+    static var previews: some View {
+        homeView()
+        
+    }
+}
