@@ -1,13 +1,10 @@
 import SwiftUI
 
-struct FashionCatalog: View {
+struct EssentialsCatalog: View {
     
-    @State var products:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
+    @State var products:[ProductName] = [ProductName(uuid: "cookware", image: Image("cookware"), title: "8 Peice Black Cookware Set", price: 100.00, description: "Loaded with everyday essentials, the collection includes fry pans, sauce pans, and casserole pans.", reviews: [ReviewBody(name: "John Smith", rating: 3.6, content: "We got them today super easy to clean look great and excellent value for the money . And i am so happy with these . Excellent value for the money . And that is often the deciding factor for me as im on a fixed income")])]
     
- 
-    
-    
-    @State var cart:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
+    @State var cart:[ProductName] = [ProductName(uuid: "cookware", image: Image("cookware"), title: "8 Peice Black Cookware Set", price: 100.00, description: "Loaded with everyday essentials, the collection includes fry pans, sauce pans, and casserole pans.", reviews: [ReviewBody(name: "John Smith", rating: 3.6, content: "We got them today super easy to clean look great and excellent value for the money . And i am so happy with these . Excellent value for the money . And that is often the deciding factor for me as im on a fixed income")])]
     
     var body: some View {
         
@@ -26,7 +23,7 @@ struct FashionCatalog: View {
                         VStack(alignment: .center, spacing: 8) {
                             ForEach(prods[0], id: \.uuid) { prod in
                                 NavigationLink(destination:
-                                    FashionDetail(product: prod, cart: self.$cart)
+                                    EssentialsDetail(product: prod, cart: self.$cart)
                                         .padding(.horizontal, 16)
                                         
                                 ) {
@@ -41,7 +38,7 @@ struct FashionCatalog: View {
                         VStack(alignment: .center, spacing: 8) {
                             ForEach(prods[1], id: \.uuid) { prod in
                                 NavigationLink(destination:
-                                    FashionDetail(product: prod, cart: self.$cart)
+                                    EssentialsDetail(product: prod, cart: self.$cart)
                                         .padding(.horizontal, 16)
                                 ) {
                                     ProductCell(product: prod)
@@ -84,16 +81,4 @@ struct FashionCatalog: View {
     }
 }
 
-//struct FashionCatalog_Previews: PreviewProvider {
-//
-////    @State static var items:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")]
-//
-//    @State static var items:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
-//
-//    @State static var cart:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
-//
-//
-//    static var previews: some View {
-//      //  FashionCatalog(products: $items, cart: $cart)
-//    }
-//}
+

@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FashionDetail: View {
+struct EssentialsDetail: View {
     
     var product:ProductName
     @Binding var cart:[ProductName]
@@ -116,18 +116,18 @@ struct FashionDetail: View {
    // }
 //}
 
-struct FashionDetail_Previews: PreviewProvider {
+struct EssentialsDetail_Previews: PreviewProvider {
     
-    static var product:ProductName = ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget. Faucibus scelerisque eleifend donec pretium vulputate sapien. Luctus accumsan tortor posuere ac ut consequat semper.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "Cool shoes and they're red")])
+    static var product:ProductName = ProductName(uuid: "cookware", image: Image("cookware"), title: "8 Peice Black Cookware Set", price: 100.00, description: "Loaded with everyday essentials, the collection includes fry pans, sauce pans, and casserole pans.", reviews: [ReviewBody(name: "John Smith", rating: 3.6, content: "We got them today super easy to clean look great and excellent value for the money . And i am so happy with these . Excellent value for the money . And that is often the deciding factor for me as im on a fixed income")])
     
     
     
-    @State static var cart:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget. Faucibus scelerisque eleifend donec pretium vulputate sapien. Luctus accumsan tortor posuere ac ut consequat semper.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "Cool shoes and they're red")])]
+    @State static var cart:[ProductName] = [ProductName(uuid: "cookware", image: Image("cookware"), title: "8 Peice Black Cookware Set", price: 100.00, description: "Loaded with everyday essentials, the collection includes fry pans, sauce pans, and casserole pans.", reviews: [ReviewBody(name: "John Smith", rating: 3.6, content: "We got them today super easy to clean look great and excellent value for the money . And i am so happy with these . Excellent value for the money . And that is often the deciding factor for me as im on a fixed income")])]
     
 
     
     static var previews: some View {
-        FashionDetail(product: product, cart: $cart);
+        EssentialsDetail(product: product, cart: $cart);
         
         
     }

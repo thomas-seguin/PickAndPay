@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct FashionDetail: View {
+struct ElectronicsDetail: View {
     
     var product:ProductName
     @Binding var cart:[ProductName]
@@ -116,18 +116,18 @@ struct FashionDetail: View {
    // }
 //}
 
-struct FashionDetail_Previews: PreviewProvider {
+struct ElectronicsDetail_Previews: PreviewProvider {
     
-    static var product:ProductName = ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget. Faucibus scelerisque eleifend donec pretium vulputate sapien. Luctus accumsan tortor posuere ac ut consequat semper.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "Cool shoes and they're red")])
+    static var product:ProductName = ProductName(uuid: "tv", image: Image("tv"), title: "80' LG 8K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
     
     
     
-    @State static var cart:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget. Faucibus scelerisque eleifend donec pretium vulputate sapien. Luctus accumsan tortor posuere ac ut consequat semper.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "Cool shoes and they're red")])]
+    @State static var cart:[ProductName] = [ProductName(uuid: "tv", image: Image("tv"), title: "80' LG 4K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])]
     
 
     
     static var previews: some View {
-        FashionDetail(product: product, cart: $cart);
+        ElectronicsDetail(product: product, cart: $cart);
         
         
     }

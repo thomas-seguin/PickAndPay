@@ -23,7 +23,10 @@ struct PickAndPayApp: App {
     var body: some Scene {
         WindowGroup {
 
-          FashionCatalog()
+          //FashionCatalog()
+           // ElectronicsCatalog()
+            
+            
             
            // MainTabView()
                 //.environmentObject(authentication)

@@ -1,13 +1,10 @@
 import SwiftUI
 
-struct FashionCatalog: View {
+struct GroceryCatalog: View {
     
-    @State var products:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
+    @State var products:[ProductName] = [ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunch snack")])]
     
- 
-    
-    
-    @State var cart:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
+    @State var cart:[ProductName] = [ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunch snack")])]
     
     var body: some View {
         
@@ -26,7 +23,7 @@ struct FashionCatalog: View {
                         VStack(alignment: .center, spacing: 8) {
                             ForEach(prods[0], id: \.uuid) { prod in
                                 NavigationLink(destination:
-                                    FashionDetail(product: prod, cart: self.$cart)
+                                    GroceryDetail(product: prod, cart: self.$cart)
                                         .padding(.horizontal, 16)
                                         
                                 ) {
@@ -41,7 +38,7 @@ struct FashionCatalog: View {
                         VStack(alignment: .center, spacing: 8) {
                             ForEach(prods[1], id: \.uuid) { prod in
                                 NavigationLink(destination:
-                                    FashionDetail(product: prod, cart: self.$cart)
+                                    GroceryDetail(product: prod, cart: self.$cart)
                                         .padding(.horizontal, 16)
                                 ) {
                                     ProductCell(product: prod)
@@ -84,16 +81,4 @@ struct FashionCatalog: View {
     }
 }
 
-//struct FashionCatalog_Previews: PreviewProvider {
-//
-////    @State static var items:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")]
-//
-//    @State static var items:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
-//
-//    @State static var cart:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
-//
-//
-//    static var previews: some View {
-//      //  FashionCatalog(products: $items, cart: $cart)
-//    }
-//}
+
