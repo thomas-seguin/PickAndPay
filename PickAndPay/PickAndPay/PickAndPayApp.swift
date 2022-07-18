@@ -18,10 +18,12 @@ struct PickAndPayApp: App {
     
     @StateObject var authentication = Authentication()
     let persistenceController = PersistenceController.shared
-
+    //hello
     var body: some Scene {
         WindowGroup {
+            homeView()
             //DBHelper.dbHelper.createTables()
+
             if authentication.isValidated {
                 MainTabView()
                     .environment(\.managedObjectContext, persistenceController.container.viewContext)
@@ -31,5 +33,7 @@ struct PickAndPayApp: App {
                     .environmentObject(authentication)
             }
         }
+
     }
+}
 }

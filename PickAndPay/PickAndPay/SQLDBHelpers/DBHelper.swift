@@ -14,6 +14,7 @@ class DBHelper{
     var products = [Product]()
     var wishList = [WishListItem]()
     var history = [SearchHistoryItem]()
+    var browsing = [BrowseHistoryItem]()
     var reviews = [Review]()
     var cart = [CartItem]()
     var cards = [Card]()
@@ -39,6 +40,7 @@ class DBHelper{
         createProductTable()
         createWishListTable()
         createSearchHistoryTable()
+        createBrowseHistoryTable()
         createReviewTable()
         createItemCartTable()
         createCardTable()
@@ -118,6 +120,18 @@ class DBHelper{
         }
         else{
             print("success dropping SearchHistory table")
+        }
+    }
+    
+    func createBrowseHistoryTable(){
+        
+        let query = "create table if not exists BrowseHistory (BrowseHistoryId integer primary key autoincrement, DateTime text, ProductId integer, UserId text)"
+        if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("error in creating BrowseHistoryTable", err)
+        }
+        else{
+            print("success creating BrowseHistory table")
         }
     }
     

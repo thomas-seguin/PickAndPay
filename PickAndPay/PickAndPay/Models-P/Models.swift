@@ -72,6 +72,18 @@ struct Product{
             return DBHelper.dbHelper.getProductReviews(productId: productId)
         }
     }
+    var reviewCount : Int{
+        return reviews.count
+    }
+    var averageRating : Double{
+        get{
+           var num = 0.0
+            for review in reviews {
+                num += review.rating
+            }
+            return num/Double(reviewCount)
+        }
+    }
     init(){
         
     }
@@ -115,7 +127,7 @@ struct WishListItem{
         
     }
 }
-
+//For Search Bar
 struct SearchHistoryItem{
     var searchHistoryId = 0 // assigned by database on creation
     var searchPhrase = ""
@@ -131,7 +143,27 @@ struct SearchHistoryItem{
         self.userId = userId
     }
 }
-
+//For User Browsing History (when user clicks item)
+struct BrowseHistoryItem{
+    var browseHistoryId = 0 // assigned by database on creation
+    var dateTime = ""
+    var productId = 0
+    var userId = ""
+    var browsedProduct : Product{
+        get{
+            return DBHelper.dbHelper.getProduct(productId: productId)
+        }
+    }
+    init(){
+        
+    }
+    init(id : Int, dateTime : String, productId : Int, userId : String){
+        self.browseHistoryId = id
+        self.dateTime = dateTime
+        self.productId = productId
+        self.userId = userId
+    }
+}
 struct Review{
     var reviewId = 0 // assigned by databse on creation
     var body = ""
