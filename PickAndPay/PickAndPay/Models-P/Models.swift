@@ -67,6 +67,7 @@ struct Product{
     var price = 0.0
     var category = Category.NoCategory
     var stock = 0
+    var description = ""
     var reviews : [Review]{
         get{
             return DBHelper.dbHelper.getProductReviews(productId: productId)
@@ -87,23 +88,27 @@ struct Product{
     init(){
         
     }
-    init(id : Int, name : String, image : String, price : Double, category : Category, inStock : Int){
+    init(id : Int, name : String, image : String, price : Double, category : Category, inStock : Int, description : String){
         self.productId = id
         self.productName = name
         self.productImage = image
         self.price = price
         self.category = category
         self.stock = inStock
+        self.description = description
     }
 }
 
 enum Category : String{
-    case Electronics
-    case Fashion
-    case Toys
-    case Entertaiment
-    case Hardware
-    case NoCategory
+case Electronics
+case Fashion
+case Toys
+case Entertaiment
+case Hardware
+case Books
+case Grocery
+case Essentials
+case NoCategory
 }
 
 struct WishListItem{
@@ -171,17 +176,18 @@ struct Review{
     var date = ""
     var userId = ""
     var productId = 0
+    var title = ""
     init(){
         
     }
-    init(id : Int, body : String, rating : Double, date : String, userId : String, productId : Int){
+    init(id : Int, body : String, rating : Double, date : String, userId : String, productId : Int, title : String){
         self.reviewId = id
         self.body = body
         self.rating = rating
         self.date = date
         self.userId = userId
         self.productId = productId
-        
+        self.title = title
     }
 }
 

@@ -102,6 +102,7 @@ struct LoginView: View {
                             } else {
                                 authentication.isValidated = true
                                 isShowingMainView = true
+                                print("show")
                             }
                         }
                         

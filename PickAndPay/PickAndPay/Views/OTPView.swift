@@ -16,16 +16,16 @@ struct OTPView: View {
     @State var otpText: String = ""
     @State private var isShowingContentView = false
     @State private var username: String = ""
-    
+    @EnvironmentObject var authentication: Authentication
     var body: some View {
-        NavigationView {
-           // NavigationLink(destination: ContentView(),isActive: $isShowingContentView){EmptyView()}
+     
+         NavigationLink(destination: MainTabView(),isActive: $isShowingContentView){EmptyView()}
             
             VStack {
                 Text("Enter In Your 4 Digit Code")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .offset(y: -100)
-                    .foregroundColor(.text)
+                    .foregroundColor(.black)
     
                 TextField("1234", text: $otpText)
                     .multilineTextAlignment(.center)
@@ -42,6 +42,9 @@ struct OTPView: View {
                     Text("passed")
                         .onAppear {
                             notificationManager.goodOTP(username: username)
+                            authentication.isValidated = true
+                            isShowingContentView = true
+                            
                             
                         }
                 }
@@ -54,7 +57,7 @@ struct OTPView: View {
             }
         }
     }
-}
+
 
 struct OTPView_Previews: PreviewProvider {
     

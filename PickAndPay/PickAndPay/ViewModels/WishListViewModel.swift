@@ -12,6 +12,12 @@ class WishListViewModel{
             return DBHelper.dbHelper.getUserWishList(username: userId as NSString)
         }
     }
+    var recommended : [Product]{
+        get{
+            guard let cat = wishList.first?.wishProduct.category else { return [Product]() }
+            return DBHelper.dbHelper.searchProducts(category: cat)
+        }
+    }
     init(){
         userId = UserSingleton.userData.currentUsername
     }

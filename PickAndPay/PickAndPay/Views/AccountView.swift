@@ -17,7 +17,7 @@ struct AccountView: View {
             Color.background
         VStack{
             HStack(spacing: 30){
-                Text("\(accountViewModel.userModel.name)")
+                Text("Hello \(accountViewModel.userModel.name)")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .padding()
                 Spacer()

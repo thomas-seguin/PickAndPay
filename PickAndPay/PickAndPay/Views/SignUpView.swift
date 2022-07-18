@@ -19,7 +19,7 @@ struct SignUpView: View {
     @State private var validPhone = false
     @State private var validPass = false
     var body: some View {
-        NavigationView{
+     
             ZStack{
                 Image("MargoFlipped").resizable().frame(width: UIScreen.main.bounds.width)
                     .ignoresSafeArea()
@@ -234,7 +234,7 @@ struct SignUpView: View {
             .ignoresSafeArea()
         }
     }
-}
+
 struct SignUpView_Previews: PreviewProvider {
     static var previews: some View {
         SignUpView()
