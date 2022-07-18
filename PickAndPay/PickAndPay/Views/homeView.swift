@@ -65,7 +65,7 @@ struct homeView: View {
             }
                 
             }
-            .navigationBarTitle(Text("Home"))
+            //.navigationBarTitle(Text("Home"))
             
         }
             
