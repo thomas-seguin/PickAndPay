@@ -11,6 +11,7 @@ struct LoginView: View {
     @State private var showingSheet = false
     @State private var rememberMe = false
     @State private var isShowingOTPView = false
+    @State private var isShowingMainView = false
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
     var body: some View {
