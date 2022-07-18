@@ -1,3 +1,4 @@
+
 //
 //  AccountView.swift
 //  PickAndPay
@@ -7,24 +8,23 @@
 
 import SwiftUI
 
-struct AccountView: View {
-    @StateObject private var accountViewModel = AccountViewModel()
+struct AccountLoginView: View {
     @State private var name: String = "Thomas Seguin"
-    @State private var newName: String = "Thomas Seguin"
-    @State private var newAddr: String = "123 Main Street"
+    @State private var newEmail: String = "Thomas Seguin"
+    @State private var newPass: String = "123456789"
     var body: some View {
         ZStack{
             Color.background
         VStack{
             HStack(spacing: 30){
-                Text("\(accountViewModel.userModel.name)")
+                Text("Login Settings")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .padding()
                 Spacer()
             }
             VStack(){
                 HStack{
-                    Text("Name")
+                    Text("Email")
                         .foregroundColor(.text)
                         .font(.system(size: 25, weight: .semibold, design: .rounded))
                         .padding()
@@ -32,8 +32,8 @@ struct AccountView: View {
                     Spacer()
                 }
                 HStack{
-                    Image(systemName: "person.fill")
-                    TextField("Name", text: $accountViewModel.userModel.name)
+                    Image(systemName: "envelope.fill")
+                    TextField("Name", text: $newEmail)
                         .textFieldStyle(.plain)
                         .font(.system(size: 25))
                     
@@ -45,7 +45,7 @@ struct AccountView: View {
             }
             VStack(){
                 HStack{
-                    Text("Address")
+                    Text("Password")
                         .foregroundColor(.text)
                         .font(.system(size: 25, weight: .semibold, design: .rounded))
                         .padding()
@@ -53,8 +53,8 @@ struct AccountView: View {
                     Spacer()
                 }
                 HStack{
-                    Image(systemName: "house.fill")
-                    TextField("Addres", text: $accountViewModel.userModel.address)
+                    Image(systemName: "eye.slash.fill")
+                    SecureField("Update Password", text: $newPass)
                         .textFieldStyle(.plain)
                         .font(.system(size: 25))
                     
@@ -67,9 +67,9 @@ struct AccountView: View {
             VStack(){
                 
                 Button{
-                    accountViewModel.updateUserDetails()
+                   
                 } label: {
-                    Text("Update Account")
+                    Text("Update Login")
                         .bold()
                         .frame(width: 200, height: 40)
                         .background(RoundedRectangle(cornerRadius: 20,style: .continuous).fill(.linearGradient(colors:[.button,.button], startPoint: .top, endPoint: .bottomTrailing)))
@@ -92,8 +92,8 @@ struct AccountView: View {
 }
 }
 
-struct AccountView_Previews: PreviewProvider {
+struct AccountLoginView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AccountLoginView()
     }
 }

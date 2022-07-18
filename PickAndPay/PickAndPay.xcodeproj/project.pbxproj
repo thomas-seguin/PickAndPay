@@ -41,6 +41,12 @@
 		84EFFBCB2884A22D000A1829 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBCA2884A22D000A1829 /* MainTabView.swift */; };
 		84EFFBCD2884A25F000A1829 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBCC2884A25F000A1829 /* AccountView.swift */; };
 		84EFFBCF2884CB7B000A1829 /* AccountMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBCE2884CB7B000A1829 /* AccountMenuView.swift */; };
+		84EFFBD32884D49A000A1829 /* AccountLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBD22884D49A000A1829 /* AccountLoginView.swift */; };
+		84EFFBD52884D621000A1829 /* MangeCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBD42884D621000A1829 /* MangeCardView.swift */; };
+		84EFFBD72884D7A6000A1829 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBD62884D7A6000A1829 /* AddCardView.swift */; };
+		84EFFBD92884D955000A1829 /* MangeCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBD82884D955000A1829 /* MangeCardViewModel.swift */; };
+		84EFFBDB2884DA2A000A1829 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBDA2884DA2A000A1829 /* AddCardViewModel.swift */; };
+		84EFFBDD2884E07A000A1829 /* AccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBDC2884E07A000A1829 /* AccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +104,12 @@
 		84EFFBCA2884A22D000A1829 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		84EFFBCC2884A25F000A1829 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		84EFFBCE2884CB7B000A1829 /* AccountMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMenuView.swift; sourceTree = "<group>"; };
+		84EFFBD22884D49A000A1829 /* AccountLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLoginView.swift; sourceTree = "<group>"; };
+		84EFFBD42884D621000A1829 /* MangeCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangeCardView.swift; sourceTree = "<group>"; };
+		84EFFBD62884D7A6000A1829 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
+		84EFFBD82884D955000A1829 /* MangeCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MangeCardViewModel.swift; sourceTree = "<group>"; };
+		84EFFBDA2884DA2A000A1829 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
+		84EFFBDC2884E07A000A1829 /* AccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -234,6 +246,9 @@
 				84EFFBCA2884A22D000A1829 /* MainTabView.swift */,
 				84EFFBCC2884A25F000A1829 /* AccountView.swift */,
 				84EFFBCE2884CB7B000A1829 /* AccountMenuView.swift */,
+				84EFFBD22884D49A000A1829 /* AccountLoginView.swift */,
+				84EFFBD42884D621000A1829 /* MangeCardView.swift */,
+				84EFFBD62884D7A6000A1829 /* AddCardView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -244,6 +259,9 @@
 				84A0D9AA2875E59000FDFC37 /* LoginViewModel.swift */,
 				84A0D9B22875EC1800FDFC37 /* SignUpViewModel.swift */,
 				84C0C220287B37DE00D023C6 /* OTPViewModel.swift */,
+				84EFFBD82884D955000A1829 /* MangeCardViewModel.swift */,
+				84EFFBDA2884DA2A000A1829 /* AddCardViewModel.swift */,
+				84EFFBDC2884E07A000A1829 /* AccountViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -379,18 +397,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C0C225287B380B00D023C6 /* OTPModel.swift in Sources */,
+				84EFFBDD2884E07A000A1829 /* AccountViewModel.swift in Sources */,
 				7E2A410A286E3AA200F69FE8 /* SearchHistoryDBHelper.swift in Sources */,
 				84A0D934286A33AD00FDFC37 /* Persistence.swift in Sources */,
 				7EB0231A286D0092008895B0 /* WishListDBHelper.swift in Sources */,
 				84EFFBCD2884A25F000A1829 /* AccountView.swift in Sources */,
 				7E28DB14286BB03C0078BB30 /* DBHelper.swift in Sources */,
 				84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */,
+				84EFFBD92884D955000A1829 /* MangeCardViewModel.swift in Sources */,
 				7EBA1D1C2873DBC500B40758 /* CreditCardDBHelper.swift in Sources */,
 				7E3707FC2871070800B39321 /* CartDBHelper.swift in Sources */,
 				84A0D92B286A33AC00FDFC37 /* PickAndPayApp.swift in Sources */,
+				84EFFBD72884D7A6000A1829 /* AddCardView.swift in Sources */,
 				84A0D937286A33AD00FDFC37 /* PickAndPay.xcdatamodeld in Sources */,
 				7E28DB11286BAFC10078BB30 /* Models.swift in Sources */,
+				84EFFBD52884D621000A1829 /* MangeCardView.swift in Sources */,
 				84A0D9B52875EC8700FDFC37 /* UserModel.swift in Sources */,
+				84EFFBDB2884DA2A000A1829 /* AddCardViewModel.swift in Sources */,
 				84A0D9AB2875E59000FDFC37 /* LoginViewModel.swift in Sources */,
 				84A0D9AF2875E88A00FDFC37 /* Authentication.swift in Sources */,
 				84A0D9A72875E4E700FDFC37 /* Keyboard.swift in Sources */,
@@ -398,6 +421,7 @@
 				84C0C221287B37DE00D023C6 /* OTPViewModel.swift in Sources */,
 				84A0D9B32875EC1800FDFC37 /* SignUpViewModel.swift in Sources */,
 				84A0D9AD2875E64F00FDFC37 /* LoginView.swift in Sources */,
+				84EFFBD32884D49A000A1829 /* AccountLoginView.swift in Sources */,
 				7EBA1D1E2873DC0C00B40758 /* OrderDBHelper.swift in Sources */,
 				7E2A410C286E567700F69FE8 /* ReviewDBHelper.swift in Sources */,
 				84EFFBC92880B06D000A1829 /* Colors.swift in Sources */,

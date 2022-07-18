@@ -1,3 +1,5 @@
+
+
 //
 //  AccountView.swift
 //  PickAndPay
@@ -7,24 +9,24 @@
 
 import SwiftUI
 
-struct AccountView: View {
-    @StateObject private var accountViewModel = AccountViewModel()
+struct AddCardView: View {
+    @StateObject private var addCardViewModel = AddCardViewModel()
     @State private var name: String = "Thomas Seguin"
-    @State private var newName: String = "Thomas Seguin"
-    @State private var newAddr: String = "123 Main Street"
+    @State private var newEmail: String = "Thomas Seguin"
+    @State private var newPass: String = "123456789"
     var body: some View {
         ZStack{
             Color.background
         VStack{
             HStack(spacing: 30){
-                Text("\(accountViewModel.userModel.name)")
+                Text("Add New Card")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .padding()
                 Spacer()
             }
             VStack(){
                 HStack{
-                    Text("Name")
+                    Text("Card Number")
                         .foregroundColor(.text)
                         .font(.system(size: 25, weight: .semibold, design: .rounded))
                         .padding()
@@ -32,8 +34,8 @@ struct AccountView: View {
                     Spacer()
                 }
                 HStack{
-                    Image(systemName: "person.fill")
-                    TextField("Name", text: $accountViewModel.userModel.name)
+                    Image(systemName: "creditcard.fill")
+                    TextField("Card Number", text: $addCardViewModel.cardModel.cardNumber)
                         .textFieldStyle(.plain)
                         .font(.system(size: 25))
                     
@@ -45,7 +47,7 @@ struct AccountView: View {
             }
             VStack(){
                 HStack{
-                    Text("Address")
+                    Text("Billing Address")
                         .foregroundColor(.text)
                         .font(.system(size: 25, weight: .semibold, design: .rounded))
                         .padding()
@@ -54,7 +56,7 @@ struct AccountView: View {
                 }
                 HStack{
                     Image(systemName: "house.fill")
-                    TextField("Addres", text: $accountViewModel.userModel.address)
+                    TextField("Billing Address", text: $addCardViewModel.cardModel.address)
                         .textFieldStyle(.plain)
                         .font(.system(size: 25))
                     
@@ -65,11 +67,33 @@ struct AccountView: View {
                 
             }
             VStack(){
+                HStack{
+                    Text("Card Holder Name")
+                        .foregroundColor(.text)
+                        .font(.system(size: 25, weight: .semibold, design: .rounded))
+                        .padding()
+                        
+                    Spacer()
+                }
+                HStack{
+                    Image(systemName: "person.fill")
+                    TextField("Name", text: $addCardViewModel.cardModel.cardName)
+                        .textFieldStyle(.plain)
+                        .font(.system(size: 25))
+                    
+                }
+                Rectangle()
+                    .frame(width: 350, height: 1)
+                    .foregroundColor(.black)
+                
+            }
+
+            VStack(){
                 
                 Button{
-                    accountViewModel.updateUserDetails()
+                    addCardViewModel.addCard()
                 } label: {
-                    Text("Update Account")
+                    Text("Add Card")
                         .bold()
                         .frame(width: 200, height: 40)
                         .background(RoundedRectangle(cornerRadius: 20,style: .continuous).fill(.linearGradient(colors:[.button,.button], startPoint: .top, endPoint: .bottomTrailing)))
@@ -92,8 +116,8 @@ struct AccountView: View {
 }
 }
 
-struct AccountView_Previews: PreviewProvider {
+struct AddCardView_Previews: PreviewProvider {
     static var previews: some View {
-        AccountView()
+        AddCardView()
     }
 }

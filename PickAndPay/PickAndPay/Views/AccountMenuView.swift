@@ -41,7 +41,7 @@ struct AccountMenuView: View {
                     .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                 }
                 
-                NavigationLink(destination: AccountView()){
+                NavigationLink(destination: AccountLoginView()){
                     HStack{
                     Text("Login & Security")
                         .foregroundColor(.text)
@@ -58,7 +58,7 @@ struct AccountMenuView: View {
                     .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                 }
                 
-                NavigationLink(destination: AccountView()){
+                NavigationLink(destination: MangeCardView()){
                     HStack{
                     Text("Manage Credit Cards")
                         .foregroundColor(.text)
