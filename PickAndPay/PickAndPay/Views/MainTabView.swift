@@ -10,6 +10,7 @@ import SwiftUI
 struct MainTabView: View {
     @ObservedObject var cartManager = CartManager(quantity: 0)
     var body: some View {
+        NavigationView{
         TabView{
             CartView()
                 .tabItem {
@@ -25,9 +26,11 @@ struct MainTabView: View {
                 .tabItem{
                     Label("Home", systemImage: "house.fill")
                 }
-        .accentColor(.hightlight)
-    }.environmentObject(cartManager)
         
+    }.environmentObject(cartManager)
+            .accentColor(.hightlight)
+        
+    }
     }
 }
 

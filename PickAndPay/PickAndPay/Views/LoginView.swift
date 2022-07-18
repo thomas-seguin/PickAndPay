@@ -15,10 +15,13 @@ struct LoginView: View {
     @StateObject private var loginVM = LoginViewModel()
     @EnvironmentObject var authentication: Authentication
     var body: some View {
-        NavigationView{
+    
             ZStack{
                 NavigationLink(destination: OTPView(), isActive: $isShowingOTPView) { EmptyView()}
+                
+                NavigationLink(destination: MainTabView(), isActive: $isShowingMainView) { EmptyView()}
 
+                
                 Color.background
                 
                 RoundedRectangle(cornerRadius: 30, style: .continuous)
@@ -92,7 +95,8 @@ struct LoginView: View {
                             if loginVM.isVerified(username: loginVM.credentials.email) == 0{
                                 isShowingOTPView = true
                             } else {
-                                authentication.isValidated = true
+                                //authentication.isValidated = true
+                                isShowingMainView = true
                             }
                         }
                         
@@ -132,7 +136,7 @@ struct LoginView: View {
             .ignoresSafeArea()
         }
     }
-}
+
 
 struct LoginView_Previews: PreviewProvider {
     static var previews: some View {

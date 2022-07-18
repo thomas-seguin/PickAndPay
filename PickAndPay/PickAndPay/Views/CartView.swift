@@ -37,7 +37,7 @@ struct CartView: View {
             }
             
         }else{
-            NavigationView{
+           
                 VStack {
                     Image(systemName: "cart")
                         .resizable()
@@ -110,7 +110,7 @@ struct CartView: View {
         Text(title)
             .frame(width: w, height: h, alignment: .center)
     }
-}
+
 
 struct CartView_Previews: PreviewProvider {
     static var previews: some View {

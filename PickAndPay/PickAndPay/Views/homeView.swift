@@ -26,7 +26,7 @@ struct homeView: View {
     @State var searchText = ""
     var body: some View {
         
-        NavigationView{
+      
             VStack{
                 
                   
@@ -63,7 +63,7 @@ struct homeView: View {
     }
         
         
-}
+
 
 struct tabView: View{
     var body: some View{

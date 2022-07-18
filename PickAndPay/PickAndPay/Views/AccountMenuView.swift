@@ -9,7 +9,7 @@ import SwiftUI
 
 struct AccountMenuView: View {
     var body: some View {
-        NavigationView{
+       
             ZStack{
                 VStack{
                     HStack{
@@ -141,9 +141,8 @@ struct AccountMenuView: View {
                 }
             }
         }
-        .background(.white)
     }
-}
+
 
 struct AccountMenuView_Previews: PreviewProvider {
     static var previews: some View {
