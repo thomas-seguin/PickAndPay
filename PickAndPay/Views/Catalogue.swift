@@ -16,7 +16,7 @@ struct Catalogue: View {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
                     ForEach(products, id: \.productId){
                         product in
-                        ProductCard(product: product)
+                        ProductCardView(product: product)
                             .environmentObject(cartManager)
                         RatingView()
                     }

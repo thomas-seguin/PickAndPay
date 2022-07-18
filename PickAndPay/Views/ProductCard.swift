@@ -5,7 +5,7 @@
 //  Created by admin on 6/28/22.
 //
 
-import SwiftUI
+/*import SwiftUI
 
 struct ProductCard: View {
     @EnvironmentObject var cartManager: CartManager
@@ -50,7 +50,7 @@ struct ProductCard: View {
 
 }
 
-/*struct SwiftUIView_Previews: PreviewProvider {
+struct SwiftUIView_Previews: PreviewProvider {
     static var previews: some View {
         ProductCard(product: products[0])
             .environmentObject(CartManager(quantity: 0))
