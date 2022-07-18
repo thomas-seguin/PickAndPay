@@ -9,9 +9,9 @@ import SQLite3
 extension DBHelper{
     
 //MARK: Create / Populate product table
-    func insertProduct(name : NSString, image : NSString, price : Double, category : Category, stock : Int){
+    func insertProduct(name : NSString, image : NSString, price : Double, category : Category, stock : Int, description : NSString){
         var stmt : OpaquePointer?
-        let query = "insert into Product (ProductName, Image, Price, Category, InStock) values (?,?,?,?,?);"
+        let query = "insert into Product (ProductName, Image, Price, Category, InStock, Description) values (?,?,?,?,?,?);"
         if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
             //bind parameters
             if sqlite3_bind_text(stmt, 1, name.utf8String, -1, nil) != SQLITE_OK{
@@ -39,10 +39,15 @@ extension DBHelper{
                 print("error in binding stock qty", err)
 
             }
+            if sqlite3_bind_text(stmt, 6, description.utf8String, -1, nil) != SQLITE_OK{
+                let err = String(cString: sqlite3_errmsg(dbpointer)!)
+                print("error in binding password", err)
+
+            }
 
             //insert
             if sqlite3_step(stmt) == SQLITE_DONE{
-                print("PRoduct Created")
+                print("Product Created")
             }
             else{
                 let err = String(cString: sqlite3_errmsg(dbpointer))
@@ -74,7 +79,8 @@ extension DBHelper{
             let price = sqlite3_column_double(stmt, 3)
             let cat = String(cString: sqlite3_column_text(stmt, 4))
             let stock = Int(sqlite3_column_int(stmt, 5))
-            products.append(Product(id: id, name: name, image: img, price: price, category: Category(rawValue: cat) ?? .NoCategory, inStock: stock))
+            let desc = String(cString: sqlite3_column_text(stmt, 6))
+            products.append(Product(id: id, name: name, image: img, price: price, category: Category(rawValue: cat) ?? .NoCategory, inStock: stock, description: desc))
 
         }
 
@@ -97,7 +103,8 @@ extension DBHelper{
             let price = sqlite3_column_double(stmt, 3)
             let cat = String(cString: sqlite3_column_text(stmt, 4))
             let stock = Int(sqlite3_column_int(stmt, 5))
-            products.append(Product(id: id, name: name, image: img, price: price, category: Category(rawValue: cat) ?? .NoCategory, inStock: stock))
+            let desc = String(cString: sqlite3_column_text(stmt, 6))
+            products.append(Product(id: id, name: name, image: img, price: price, category: Category(rawValue: cat) ?? .NoCategory, inStock: stock, description: desc))
 
         }
 
@@ -120,7 +127,8 @@ extension DBHelper{
             let price = sqlite3_column_double(stmt, 3)
             let cat = String(cString: sqlite3_column_text(stmt, 4))
             let stock = Int(sqlite3_column_int(stmt, 5))
-            products.append(Product(id: id, name: name, image: img, price: price, category: Category(rawValue: cat) ?? .NoCategory, inStock: stock))
+            let desc = String(cString: sqlite3_column_text(stmt, 6))
+            products.append(Product(id: id, name: name, image: img, price: price, category: Category(rawValue: cat) ?? .NoCategory, inStock: stock, description: desc))
 
         }
 
@@ -143,7 +151,8 @@ extension DBHelper{
             let price = sqlite3_column_double(stmt, 3)
             let cat = String(cString: sqlite3_column_text(stmt, 4))
             let stock = Int(sqlite3_column_int(stmt, 5))
-            products.append(Product(id: id, name: name, image: img, price: price, category: Category(rawValue: cat) ?? .NoCategory, inStock: stock))
+            let desc = String(cString: sqlite3_column_text(stmt, 6))
+            products.append(Product(id: id, name: name, image: img, price: price, category: Category(rawValue: cat) ?? .NoCategory, inStock: stock, description: desc))
 
         }
 
@@ -164,6 +173,7 @@ extension DBHelper{
                 product.price = sqlite3_column_double(stmt, 3)
                 product.category = Category(rawValue: String(cString: sqlite3_column_text(stmt, 4))) ?? Category.NoCategory
                 product.stock = Int(sqlite3_column_int(stmt, 5))
+                product.description = String(cString: sqlite3_column_text(stmt, 6))
             }
         }
         else{
@@ -342,3 +352,4 @@ extension DBHelper{
     }
         
 }
+
