@@ -93,6 +93,22 @@ struct AccountMenuView: View {
                             .padding(.trailing, 10)
                             .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                         }
+                        NavigationLink(destination: BrowsingHistoryView()){
+                            HStack{
+                            Text("Browsing History")
+                                .foregroundColor(.text)
+                                .padding(.trailing, 250)
+                                .font(.system(size: 20))
+                                
+                                Image(systemName: "chevron.right")
+                                
+                            }
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
+                        }
                         
                     }
                     

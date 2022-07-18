@@ -71,28 +71,30 @@ struct WishListView: View {
                             }
                         }
                     }
-                }
-                ScrollView(.horizontal, showsIndicators: false){
-                    HStack{
-                        ForEach(viewModel.recommended, id: \.productId){ item in
-                            NavigationLink(destination: ProductViewTest(product: item)){
+                    Section(header: Text("You might like these products")
+                        .font(.headline)){
+                            ScrollView(.horizontal, showsIndicators: false){
                                 HStack{
-                                    Image(item.productImage)
-                                        .resizable()
-                                        .frame(width: 80, height: 80)
-                                    VStack(alignment: .leading){
-                                        Text(item.productName)
-                                            .font(.title)
-                                        Text(viewModel.getRatingString(product: item)).font(.footnote)
-                                        Text(viewModel.getPriceString(product: item))
-                                            .font(.subheadline)
+                                    ForEach(viewModel.recommended, id: \.productId){ item in
+                                        NavigationLink(destination: ProductViewTest(product: item)){
+                                            HStack{
+                                                Image(item.productImage)
+                                                    .resizable()
+                                                    .frame(width: 80, height: 80)
+                                                VStack(alignment: .leading){
+                                                    Text(item.productName)
+                                                        .font(.title)
+                                                    Text(viewModel.getRatingString(product: item)).font(.footnote)
+                                                    Text(viewModel.getPriceString(product: item))
+                                                        .font(.subheadline)
+                                                }
+                                            }
+                                        }
+                                        .foregroundColor(Color.black)
                                     }
                                 }
                             }
-                            .cornerRadius(5)
-                            
                         }
-                    }
                 }
             }
     }
