@@ -131,7 +131,7 @@ struct AccountMenuView: View {
                         }
                         Button {
                             authentication.isValidated = false
-                            isShowingMainView = true
+                            //isShowingMainView = true
                         }label: {
                             HStack{
                                 Text("Sign Out")

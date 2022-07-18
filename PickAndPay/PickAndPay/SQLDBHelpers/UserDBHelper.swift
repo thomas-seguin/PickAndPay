@@ -45,7 +45,7 @@ extension DBHelper{
                 print("Error in binding 0.0 balance", err)
             }
             
-            if sqlite3_bind_int(stmt, 7,0) != SQLITE_OK{
+            if sqlite3_bind_int(stmt, 7,1) != SQLITE_OK{
                 let err = String(cString: sqlite3_errmsg(dbpointer))
                 print("Error in binding verified", err)
             }

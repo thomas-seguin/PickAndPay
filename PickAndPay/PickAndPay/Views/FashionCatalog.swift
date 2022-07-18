@@ -20,7 +20,7 @@ struct FashionCatalog: View {
         
         
         
-        return NavigationView {
+        return
             ScrollView(.vertical, showsIndicators: true) {
                 HStack(alignment: .top, spacing: 10) {
                     if prods.count > 0 {
@@ -83,7 +83,7 @@ struct FashionCatalog: View {
         
         
     }
-}
+
 
 //struct FashionCatalog_Previews: PreviewProvider {
 //
