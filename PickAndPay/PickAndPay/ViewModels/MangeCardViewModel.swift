@@ -11,8 +11,8 @@ class MangageCardViewModel: ObservableObject {
     let cardDB = DBHelper.dbHelper
     
     func getCards() -> [Card]{
-        let username = userDefaults.string(forKey: "username")
+        let username = userDefaults.string(forKey: "username") ?? "admin@admin.com"
         
-        return cardDB.getUserCards(username: username! as NSString)
+        return cardDB.getUserCards(username: username as NSString)
     }
 }
