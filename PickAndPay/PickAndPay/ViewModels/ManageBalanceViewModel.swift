@@ -23,7 +23,8 @@ class ManageBalanceViewModel: ObservableObject {
     
     func updateBalance(amount: Double){
         let user = userDefault.string(forKey: "username") ?? "admin@admin.com"
-        dbHelper.updateUserBalance(username: user as NSString, balance:amount )
+        let current = dbHelper.getUserBalance(username: user as NSString)
+        dbHelper.updateUserBalance(username: user as NSString, balance:amount + current)
     }
     
     
