@@ -22,9 +22,12 @@ struct PickAndPayApp: App {
     //hello
     var body: some Scene {
         WindowGroup {
-
-          //FashionCatalog()
-           // ElectronicsCatalog()
+            
+            //FashionCatalog()
+            ElectronicsCatalog()
+            //BookCatalog()
+            //EssentialsCatalog()
+            //GroceryCatalog()
             
             
             

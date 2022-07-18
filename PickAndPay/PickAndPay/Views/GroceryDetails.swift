@@ -118,11 +118,11 @@ struct GroceryDetail: View {
 
 struct GroceryDetail_Previews: PreviewProvider {
     
-    static var product:ProductName = ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunch snack")])
+    static var product:ProductName = ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])
     
     
     
-    @State static var cart:[ProductName] = [ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunch snack")])]
+    @State static var cart:[ProductName] = [ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
     
 
     

@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct GroceryCatalog: View {
+struct BookCatalog: View {
     
-    @State var products:[ProductName] = [ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
+    @State var products:[ProductName] = [ProductName(uuid: "hpbookset", image: Image("hpbookset"), title: "Harry Potter Book Set", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Smith", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])]
     
-    @State var cart:[ProductName] = [ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
+    @State var cart:[ProductName] = [ProductName(uuid: "hpbookset", image: Image("hpbookset"), title: "Harry Potter Book Set", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Smith", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])]
     
     var body: some View {
         
@@ -23,7 +23,7 @@ struct GroceryCatalog: View {
                         VStack(alignment: .center, spacing: 8) {
                             ForEach(prods[0], id: \.uuid) { prod in
                                 NavigationLink(destination:
-                                    GroceryDetail(product: prod, cart: self.$cart)
+                                    BookDetail(product: prod, cart: self.$cart)
                                         .padding(.horizontal, 16)
                                         
                                 ) {
@@ -38,7 +38,7 @@ struct GroceryCatalog: View {
                         VStack(alignment: .center, spacing: 8) {
                             ForEach(prods[1], id: \.uuid) { prod in
                                 NavigationLink(destination:
-                                    GroceryDetail(product: prod, cart: self.$cart)
+                                    BookDetail(product: prod, cart: self.$cart)
                                         .padding(.horizontal, 16)
                                 ) {
                                     ProductCell(product: prod)
