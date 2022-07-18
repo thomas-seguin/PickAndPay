@@ -21,7 +21,7 @@ struct PickAndPayApp: App {
     //hello
     var body: some Scene {
         WindowGroup {
-            homeView()
+            //homeView()
             //DBHelper.dbHelper.createTables()
 
             if authentication.isValidated {
@@ -36,4 +36,4 @@ struct PickAndPayApp: App {
 
     }
 }
-}
+
