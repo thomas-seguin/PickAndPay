@@ -47,15 +47,25 @@ struct CartView: View {
                         .bold()
                         .font(.title)
                     
-                    displayText(title: "Sign in to your account", w: 300, h: 60)
-                        .background(.yellow)
-                        .foregroundColor(.black)
-                        .cornerRadius(10)
+                    NavigationLink(destination: {
+                        LoginView()
+                    }, label: {
+                        displayText(title: "Login yo your account", w: 300, h: 60)
+                            .background(.yellow)
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                    })
+                    
+                    NavigationLink(destination: {
+                        SignUpView()
+                    }, label: {
+                        displayText(title: "Sign Up Now", w: 300, h: 60)
+                            .background(.white)
+                            .foregroundColor(.black)
+                            .cornerRadius(10)
+                    })
+                    
 
-                    displayText(title: "Sign up now", w: 300, h: 60)
-                        .background(.white)
-                        .cornerRadius(10)
-                        .foregroundColor(.black)
                     NavigationLink(destination: {
                         Catalogue()
                     }, label: {
