@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainTabView: View {
     @ObservedObject var cartManager = CartManager(quantity: 0)
+    @EnvironmentObject var authentication: Authentication
     var body: some View {
         NavigationView{
         TabView{
@@ -18,16 +19,19 @@ struct MainTabView: View {
                     .badge(cartManager.products.count)
                     
                 }
+            if authentication.isValidated{
             AccountMenuView()
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
         }
+            }
             homeView()
                 .tabItem{
                     Label("Home", systemImage: "house.fill")
                 }
         
-    }.environmentObject(cartManager)
+    }.environmentObject(cartManager )
+    .environmentObject(authentication)
             .accentColor(.hightlight)
         
     }

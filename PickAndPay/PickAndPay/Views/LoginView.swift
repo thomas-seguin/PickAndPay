@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
+    
     @State private var showingSheet = false
     @State private var rememberMe = false
     @State private var isShowingOTPView = false
@@ -36,19 +37,19 @@ struct LoginView: View {
                 
                 VStack(spacing: 20) {
                     Text("PickAndPay")
-                        .foregroundColor(.text)
+                       
                         .font(.system(size: 40, weight: .bold, design: .rounded))
                         .offset(x: -80, y: -120)
                     
                     Text("Email")
-                        .foregroundColor(.text)
+                        
                         .font(.system(size: 25, weight: .semibold, design: .rounded))
                         .offset(x: -145)
                     HStack{
                         Image(systemName: "envelope.fill")
                         TextField("Your Email Address", text: $loginVM.credentials.email)
                             .keyboardType(.emailAddress)
-                            .foregroundColor(.text)
+                       
                             .textFieldStyle(.plain)
                     }
                     
@@ -59,7 +60,7 @@ struct LoginView: View {
                     
                     VStack{
                         Text("Password")
-                            .foregroundColor(.text)
+                            
                             .font(.system(size: 25, weight: .semibold, design: .rounded))
                             .offset(x: -120)
                         HStack{
@@ -70,7 +71,7 @@ struct LoginView: View {
                                     .foregroundColor(.black)
                             }
                             SecureField("Your Password", text: $loginVM.credentials.password)
-                                .foregroundColor(.text)
+                            
                                 .textFieldStyle(.plain)
                         }
                     }
@@ -99,7 +100,7 @@ struct LoginView: View {
                             if loginVM.isVerified(username: loginVM.credentials.email) == 0{
                                 isShowingOTPView = true
                             } else {
-                                //authentication.isValidated = true
+                                authentication.isValidated = true
                                 isShowingMainView = true
                             }
                         }
@@ -118,7 +119,7 @@ struct LoginView: View {
                     } label: {
                         Text("Dont have an account? Sign Up")
                             .bold()
-                            .foregroundColor(.text)
+                            
                     }
                     .offset(y: 50)
                     .sheet(isPresented: $showingSheet) {

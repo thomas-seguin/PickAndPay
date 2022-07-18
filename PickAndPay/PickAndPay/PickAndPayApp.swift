@@ -23,16 +23,17 @@ struct PickAndPayApp: App {
         WindowGroup {
 
             MainTabView()
+                .environmentObject(authentication)
             //DBHelper.dbHelper.createTables()
 
-          //  if authentication.isValidated {
-              //  MainTabView()
-                 //   .environment(\.managedObjectContext, persistenceController.container.viewContext)
-                 //   .environmentObject(authentication)
+           //if authentication.isValidated {
+                //MainTabView()
+                   // .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                   //.environmentObject(authentication)
            // } else {
                // LoginView()
-                  //  .environmentObject(authentication)
-          //  }
+                   // .environmentObject(authentication)
+           //}
 
         }
 

@@ -27,7 +27,7 @@ struct AccountMenuView: View {
                     NavigationLink(destination: AccountView()){
                         HStack{
                             Text("My Profile")
-                                .foregroundColor(.text)
+                                .foregroundColor(.black)
                                 .padding(.trailing, 250)
                                 .font(.system(size: 20))
                             
@@ -44,7 +44,7 @@ struct AccountMenuView: View {
                     NavigationLink(destination: AccountLoginView()){
                         HStack{
                             Text("Login & Security")
-                                .foregroundColor(.text)
+                                .foregroundColor(.black)
                                 .padding(.trailing, 195)
                                 .font(.system(size: 20))
                             
@@ -61,7 +61,7 @@ struct AccountMenuView: View {
                     NavigationLink(destination: MangeCardView()){
                         HStack{
                             Text("Manage Credit Cards")
-                                .foregroundColor(.text)
+                                .foregroundColor(.black)
                                 .padding(.trailing, 150)
                                 .font(.system(size: 20))
                             
@@ -80,7 +80,7 @@ struct AccountMenuView: View {
                         NavigationLink(destination: WishListView()){
                             HStack{
                             Text("Wish List")
-                                .foregroundColor(.text)
+                                    .foregroundColor(.black)
                                 .padding(.trailing, 250)
                                 .font(.system(size: 20))
                                 
@@ -100,10 +100,10 @@ struct AccountMenuView: View {
                     NavigationLink(destination: AccountView()){
                         HStack{
                             Text("Sign Out")
-                                .foregroundColor(.text)
+                               
                                 .padding(.trailing, 260)
                                 .font(.system(size: 20))
-                            
+                                .foregroundColor(.black)
                             Image(systemName: "chevron.right")
                             
                         }
@@ -124,7 +124,7 @@ struct AccountMenuView: View {
                     NavigationLink(destination: BrowsingHistoryView()){
                         HStack{
                             Text("Order History")
-                                .foregroundColor(.text)
+                                .foregroundColor(.black)
                                 .padding(.trailing, 200)
                                 .font(.system(size: 20))
                             
