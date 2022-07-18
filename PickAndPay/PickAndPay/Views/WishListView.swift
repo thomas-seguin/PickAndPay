@@ -9,7 +9,6 @@ import SwiftUI
 struct WishListView: View {
     @State var viewModel = WishListViewModel()
     var body: some View {
-        NavigationView{
             VStack{
                 List{
                     Section(header: Text(viewModel.getUsername() + "'s WishList")
@@ -74,7 +73,6 @@ struct WishListView: View {
                     }
                 }
             }
-        }
     }
     func reloadList(){
         viewModel = WishListViewModel()
