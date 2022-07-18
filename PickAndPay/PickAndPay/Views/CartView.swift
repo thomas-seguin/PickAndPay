@@ -67,7 +67,7 @@ struct CartView: View {
                     
 
                     NavigationLink(destination: {
-                        MainTabView()
+                        Catalogue()
                     }, label: {
                         displayText(title: "Continue Shopping", w: 300, h: 60)
                             .background(.yellow)
