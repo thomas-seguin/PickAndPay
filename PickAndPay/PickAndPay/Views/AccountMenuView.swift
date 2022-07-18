@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct AccountMenuView: View {
+    @EnvironmentObject var authentication: Authentication
+    @State private var isShowingMainView = false
     var body: some View {
        
             ZStack{
+                NavigationLink(destination: MainTabView(), isActive: $isShowingMainView) { EmptyView()}
                 VStack{
                     HStack{
                         Text("Account Settings")
@@ -93,27 +96,30 @@ struct AccountMenuView: View {
                             .padding(.trailing, 10)
                             .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                         }
+                        Button {
+                            authentication.isValidated = false
+                            isShowingMainView = true
+                        }label: {
+                            HStack{
+                                Text("Sign Out")
+                                   
+                                    .padding(.trailing, 260)
+                                    .font(.system(size: 20))
+                                    .foregroundColor(.black)
+                                Image(systemName: "chevron.right")
+                                
+                            }
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
+                        }
                         
                     }
                     
                     
-                    NavigationLink(destination: AccountView()){
-                        HStack{
-                            Text("Sign Out")
-                               
-                                .padding(.trailing, 260)
-                                .font(.system(size: 20))
-                                .foregroundColor(.black)
-                            Image(systemName: "chevron.right")
-                            
-                        }
-                        .padding(.top, 10)
-                        .padding(.bottom, 10)
-                        .padding(.leading, 10)
-                        .padding(.trailing, 10)
-                        .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
-                    }
-                    
+                                
                     
                     HStack{
                         Text("Orders")

@@ -34,12 +34,12 @@ struct SignUpView: View {
                 
                 VStack() {
                     Text("PickAndPay")
-                        .foregroundColor(.text)
+                        .foregroundColor(.black)
                         .font(.system(size: 40, weight: .bold, design: .rounded))
-                        .offset(x: -80, y: -80)
+                        .offset(x: -80, y: -70)
                     VStack {
                         Text("Email")
-                            .foregroundColor(.text)
+                            .foregroundColor(.black)
                             .font(.system(size: 25, weight: .semibold, design: .rounded))
                             .offset(x: -145)
                         HStack{
@@ -70,7 +70,7 @@ struct SignUpView: View {
                     }
                     VStack {
                         Text("Name")
-                            .foregroundColor(.text)
+                            .foregroundColor(.black)
                             .font(.system(size: 25, weight: .semibold, design: .rounded))
                             .offset(x: -145)
                         HStack{
@@ -101,7 +101,7 @@ struct SignUpView: View {
                     }
                     VStack{
                         Text("Address")
-                            .foregroundColor(.text)
+                            .foregroundColor(.black)
                             .font(.system(size: 25, weight: .semibold, design: .rounded))
                             .offset(x: -130)
                         HStack{
@@ -130,7 +130,7 @@ struct SignUpView: View {
                     
                     VStack{
                         Text("Phone Number")
-                            .foregroundColor(.text)
+                            .foregroundColor(.black)
                             .font(.system(size: 25, weight: .semibold, design: .rounded))
                             .offset(x: -90)
                         HStack{
@@ -162,7 +162,7 @@ struct SignUpView: View {
                     
                     VStack{
                         Text("Password")
-                            .foregroundColor(.text)
+                            .foregroundColor(.black)
                             .font(.system(size: 25, weight: .semibold, design: .rounded))
                             .offset(x: -120)
                         HStack{
