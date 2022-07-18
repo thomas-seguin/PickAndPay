@@ -10,7 +10,6 @@ struct BrowsingHistoryView: View {
     @State var viewModel = BrowseHistoryViewModel()
     @State var isBrowseHistoryOn = BrowseHistoryViewModel().isBrowseHistoryOn()
     var body: some View {
-        NavigationView{
             VStack(alignment: .leading){
                 Toggle(isOn: $isBrowseHistoryOn){
                     Text(viewModel.browseHistoryToggleText(toggleValue: isBrowseHistoryOn))
@@ -75,7 +74,6 @@ struct BrowsingHistoryView: View {
                 }
                 Spacer()
             }
-        }
     }
     func reloadList(){
         viewModel = BrowseHistoryViewModel()
