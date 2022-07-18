@@ -212,9 +212,10 @@ struct CartItem{
     
 }
 
-struct Card{
+struct Card: Identifiable{
+    let id = UUID()
     var cardId = 0 // assigned by database on creation
-    var cardNumber = "00000000000000000000" //16 digits
+    var cardNumber = "" //16 digits
     var address = ""
     var cardName = ""
     var securityCode = "000" //3 digits
