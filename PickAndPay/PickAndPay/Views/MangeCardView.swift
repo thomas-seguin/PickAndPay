@@ -74,7 +74,7 @@ struct MangeCardView: View {
             }
         
         .onAppear{
-            print("appearing")
+            
             cards = manageCardModel.getCards()
         }
     }

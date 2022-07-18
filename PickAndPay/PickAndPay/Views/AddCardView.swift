@@ -100,9 +100,7 @@ struct AddCardView: View {
                         .foregroundColor(.white)
                 }
                 
-                HStack {
-                    
-                }
+                
                 
             }
         }
