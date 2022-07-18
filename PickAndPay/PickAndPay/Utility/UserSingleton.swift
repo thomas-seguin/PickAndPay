@@ -9,7 +9,7 @@ import Foundation
 class UserSingleton{
     let userDefaults = UserDefaults()
     static var userData = UserSingleton()
-    var currentUsername = "UserTest" // set the successfully loggedin username here at login/register for the Navbar's Username
+    var currentUsername = "" // set the successfully loggedin username here at login/register for the Navbar's Username
     
     //when user opens a product details screen,
     //if (UserSingleton.browseHistorySwitch == true), call DBHelper.dbHelper.productBrowsed(productId : Int, username : NSString)

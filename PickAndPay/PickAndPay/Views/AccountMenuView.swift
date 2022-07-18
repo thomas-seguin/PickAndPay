@@ -77,14 +77,28 @@ struct AccountMenuView: View {
                         .padding(.trailing, 10)
                         .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                     }
-                    
-                    
                     VStack{
                         NavigationLink(destination: WishListView()){
                             HStack{
                             Text("Wish List")
                                     .foregroundColor(.black)
                                 .padding(.trailing, 250)
+                                .font(.system(size: 20))
+                                
+                                Image(systemName: "chevron.right")
+                                
+                            }
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
+                        }
+                        NavigationLink(destination: BrowsingHistoryView()){
+                            HStack{
+                            Text("Browse History")
+                                    .foregroundColor(.black)
+                                .padding(.trailing, 200)
                                 .font(.system(size: 20))
                                 
                                 Image(systemName: "chevron.right")
@@ -115,12 +129,7 @@ struct AccountMenuView: View {
                             .padding(.trailing, 10)
                             .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                         }
-                        
                     }
-                    
-                    
-                                
-                    
                     HStack{
                         Text("Orders")
                             .padding()

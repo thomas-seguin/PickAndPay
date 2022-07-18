@@ -13,6 +13,12 @@ class BrowseHistoryViewModel{
             return DBHelper.dbHelper.getUserBrowseHistory(username: userId as NSString)
         }
     }
+    var recommended : [Product]{
+        get{
+            guard let cat = browseHistory.first?.browsedProduct.category else { return [Product]() }
+            return DBHelper.dbHelper.searchProducts(category: cat)
+        }
+    }
     init(){
         self.userId = UserSingleton.userData.currentUsername
         self.browseSwitch = UserSingleton.userData.browseHistorySwitch
