@@ -8,19 +8,26 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @ObservedObject var cartManager = CartManager(quantity: 0)
     var body: some View {
         TabView{
-            ContentView()
+            CartView()
                 .tabItem {
-                    Label("Home", systemImage: "house.fill")
+                    Label("Cart", systemImage: "cart")
+                    .badge(cartManager.products.count)
+                    
                 }
             AccountMenuView()
                 .tabItem {
                     Label("Account", systemImage: "person.fill")
-                }
-        
         }
+            homeView()
+                .tabItem{
+                    Label("Home", systemImage: "house.fill")
+                }
         .accentColor(.hightlight)
+    }.environmentObject(cartManager)
+        
     }
 }
 
