@@ -20,7 +20,7 @@ struct FashionCatalog: View {
         
         
         
-        return NavigationView {
+        return
             ScrollView(.vertical, showsIndicators: true) {
                 HStack(alignment: .top, spacing: 10) {
                     if prods.count > 0 {
@@ -75,10 +75,7 @@ struct FashionCatalog: View {
                 }
                 .padding()
             }
-            .padding(.bottom, 50)
-            .navigationBarTitle("Catalog", displayMode: .inline)
-            .navigationBarHidden(true)
-        }
+            
         
         
         

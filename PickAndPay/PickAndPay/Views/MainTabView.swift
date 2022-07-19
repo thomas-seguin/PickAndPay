@@ -32,7 +32,9 @@ struct MainTabView: View {
         
     }.environmentObject(cartManager )
     .environmentObject(authentication)
-            .accentColor(.hightlight)
+    .accentColor(.red)
+    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            
         
     }
     }

@@ -39,6 +39,8 @@ struct FashionDetail: View {
                     Spacer()
             
                     Button(action: {
+                        
+                        
                         if self.cart.contains(where: { (prod) -> Bool in
                             prod.uuid == self.product.uuid
                         }) {
