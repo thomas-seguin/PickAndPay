@@ -183,6 +183,23 @@ extension DBHelper{
         
         return product
     }
+//MARK: Get product ID
+    func getProductId(productName : String) -> Int{
+        let query = "select * from Product where ProductName = '\(productName)'"
+        var stmt : OpaquePointer?
+        var productId = 0
+        if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
+            while (sqlite3_step(stmt) == SQLITE_ROW){
+                productId = Int(sqlite3_column_int(stmt, 0))
+            }
+        }
+        else{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("error in creating getProductIdQuery", err)
+        }
+        
+        return productId
+    }
     
     
 //MARK: Update product details
