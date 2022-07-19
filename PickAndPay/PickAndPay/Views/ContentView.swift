@@ -28,7 +28,7 @@ struct ContentView: View {
             //Catalogue()
                // .tabItem{Image(systemName: "list.bullet")}
         }.environmentObject(cartManager)
-       /* NavigationView {
+       /* 
             ForEach(products, id: \.productId){ product in
                 Image(product.productImage).resizable()
                 

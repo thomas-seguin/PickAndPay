@@ -8,6 +8,8 @@ class OTPViewModel: ObservableObject {
     var notifs = [Notification]()
     
     init() {
+        print("IN OTP")
+        print(userDB.getUser(username: getUsername() as NSString))
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
             if granted == true && error == nil {
                 //print("notifs permited")
@@ -46,6 +48,6 @@ class OTPViewModel: ObservableObject {
     }
     
     func goodOTP(username: String){
-        userDB.updateVerifyUser(verified: 1, username: username as NSString)
+        userDB.updateVerifyUser(verified: 1, username: getUsername() as NSString)
     }
 }

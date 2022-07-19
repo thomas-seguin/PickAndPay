@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AccountMenuView: View {
+    let userDefaults = UserDefaults()
     @EnvironmentObject var authentication: Authentication
     @State private var isShowingMainView = false
     var body: some View {
@@ -130,8 +131,9 @@ struct AccountMenuView: View {
                             .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                         }
                         Button {
+                            userDefaults.set(false, forKey: "remember")
                             authentication.isValidated = false
-                            isShowingMainView = true
+                            //isShowingMainView = true
                         }label: {
                             HStack{
                                 Text("Sign Out")
@@ -171,6 +173,7 @@ struct AccountMenuView: View {
                         .padding(.trailing, 10)
                         .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                     }
+                    .offset(y: -20)
                     Spacer()
                 }
             }
