@@ -78,21 +78,21 @@ struct ElectronicsCatalog: View {
                 var thing : ProductName
                 
                 for i in prods{
-                    thing = ProductName.init(uuid: 0, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
+                    thing = ProductName.init(uuid: 1, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
                     products.append(thing)
                 }
                  prods = DBHelper.dbHelper.searchProducts(searchParameter: "Xbox Series S")
                 
                 
                 for i in prods{
-                    thing = ProductName.init(uuid: 0, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
+                    thing = ProductName.init(uuid: 2, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
                     products.append(thing)
                 }
                 prods = DBHelper.dbHelper.searchProducts(searchParameter: "Xbox Series X")
                
                
                for i in prods{
-                   thing = ProductName.init(uuid: 0, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
+                   thing = ProductName.init(uuid: 3, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
                    products.append(thing)
                }
                 

@@ -40,10 +40,8 @@ struct ElectronicsDetail: View {
             Button(action: {
                 
                 let user = UserSingleton.userData.currentUsername
-                
-                DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: self.product.uuid, qty: 1)
-                
-                
+                let pid = DBHelper.dbHelper.getProductId(productName: self.product.title)
+                DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: pid, qty: 1)
                 })
             
            
