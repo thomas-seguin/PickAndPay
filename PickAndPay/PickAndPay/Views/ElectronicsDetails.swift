@@ -6,6 +6,7 @@ struct ElectronicsDetail: View {
     @Binding var cart:[ProductName]
     
     
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 8) {
@@ -41,8 +42,12 @@ struct ElectronicsDetail: View {
                 let user = UserSingleton.userData.currentUsername
                 
                 DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: self.product.uuid, qty: 1)
+                
+                
                 })
-    
+            
+           
+            
                 {
                     HStack(alignment: .center, spacing: 20) {
                         Text("ADD TO CART")

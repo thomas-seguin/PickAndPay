@@ -10,15 +10,9 @@ class CartManager: ObservableObject {
     @Published var items : [CartItem]
     
     init(){
-        DBHelper.dbHelper.createDB()
-        //DBHelper.dbHelper.dropProductTable()
-        //DBHelper.dbHelper.dropReviewTable()
-        DBHelper.dbHelper.createTables()
-        //InsertProductData.populate.populateCategories()
-        DBHelper.dbHelper.clearUserCart(username: UserSingleton.userData.currentUsername as NSString)
-                
-        DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: 1, qty: 1)
-        DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: 2, qty: 1)
+        
+//        DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: 1, qty: 1)
+//        DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: 2, qty: 1)
 
         items = DBHelper.dbHelper.getUserCart(username: UserSingleton.userData.currentUsername as NSString)
         updateItems()
