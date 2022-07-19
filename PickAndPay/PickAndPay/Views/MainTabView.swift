@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @ObservedObject var cartManager = CartManager(quantity: 0)
+    @ObservedObject var cartManager = CartManager()
     @EnvironmentObject var authentication: Authentication
     var body: some View {
         NavigationView{

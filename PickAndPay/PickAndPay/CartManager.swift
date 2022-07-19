@@ -11,10 +11,7 @@ class CartManager: ObservableObject {
     @Published private(set) var products: [Product] = []
     @Published private(set) var total = 0.0
     @Published var quantity = 0
-    
-    init(quantity: Int){
-        self.quantity = quantity > 0 ? quantity : 0
-    }
+    @Published var items = DBHelper.dbHelper.getUserCart(username: UserSingleton.userData.currentUsername as NSString)
     
     func addToCart(product: Product){
         products.append(product)
