@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct MainTabView: View {
+    @ObservedObject var cartManager = CartManager()
     @StateObject private var tabViewModel = TabViewModel()
-    @ObservedObject var cartManager = CartManager(quantity: 0)
+    //@ObservedObject var cartManager = CartManager(quantity: 0)
     @EnvironmentObject var authentication: Authentication
     var body: some View {
         NavigationView{
@@ -17,7 +18,7 @@ struct MainTabView: View {
             CartView()
                 .tabItem {
                     Label("Cart", systemImage: "cart")
-                    .badge(cartManager.products.count)
+                    .badge(cartManager.items.count)
                     
                 }
             if authentication.isValidated{

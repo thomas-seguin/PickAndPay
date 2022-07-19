@@ -17,14 +17,14 @@ struct ContentView: View {
         animation: .default)
     private var items: FetchedResults<Item>
 */
-    @ObservedObject var cartManager = CartManager(quantity: 0)
+    @ObservedObject var cartManager = CartManager()
 
     var body: some View {
         
         TabView {
             CartView()
                 .tabItem{Image(systemName: "cart")}
-                .badge(cartManager.products.count)
+                .badge(cartManager.items.count)
             Catalogue()
                 .tabItem{Image(systemName: "list.bullet")}
         }.environmentObject(cartManager)
@@ -99,6 +99,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-            .environmentObject(CartManager(quantity: 0))//.environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+            .environmentObject(CartManager())//.environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

@@ -1,13 +1,13 @@
 //
-//  SwiftUIView.swift
-//  project3Practice
+//  ProductCardView.swift
+//  PickAndPay
 //
-//  Created by admin on 6/28/22.
+//  Created by admin on 7/18/22.
 //
 
 import SwiftUI
 
-struct ProductCard: View {
+struct ProductCardView: View {
     @EnvironmentObject var cartManager: CartManager
     var product: Product
     var body: some View {
@@ -35,24 +35,15 @@ struct ProductCard: View {
             .cornerRadius(20)
             .frame(width: 150, height: 200)
             
-            Button(action: {
-                cartManager.addToCart(product: product)
-            }, label: {
-                Image(systemName: "plus")
-                .padding(10)
-                .foregroundColor(.white)
-                .background(.blue)
-                .cornerRadius(50)
-            })
-
+            AddButtonView(product: product)  //experimental
         }
     }
 
 }
 
-//struct SwiftUIView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        ProductCard(product: products[0])
-//            .environmentObject(CartManager(quantity: 0))
-//    }
-//}
+struct ProductCardView_Previews: PreviewProvider {
+    static var previews: some View {
+        ProductCardView(product: products[0])
+            .environmentObject(CartManager())
+    }
+}
