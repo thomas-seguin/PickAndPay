@@ -36,44 +36,25 @@ struct ElectronicsDetail: View {
                     Spacer()
                     Spacer()
             
-                    Button(action: {
-                        if self.cart.contains(where: { (prod) -> Bool in
-                            prod.uuid == self.product.uuid
-                        }) {
-                            self.cart.removeAll { (prod) -> Bool in
-                                prod.uuid == self.product.uuid
-                            }
-                        } else {
-                            self.cart.append(self.product)
-                        }
-                    }) {
-                        if self.cart.contains(where: { (prod) -> Bool in
-                            prod.uuid == self.product.uuid
-                        }) {
-                            HStack(alignment: .center, spacing: 20) {
-                                Text("IN YOUR CART")
-                                Image(systemName: "checkmark")
-                            }
-                            .padding(.horizontal, 40)
-                            .padding(.vertical, 10)
-                            .foregroundColor(Color.white)
-                            .font(Font.system(size: 17, weight: .semibold, design: .rounded))
-                            .background(Color.gray)
-                            .cornerRadius(10)
-                        } else {
-                            HStack(alignment: .center, spacing: 20) {
-                                Text("ADD TO CART")
-                                Image(systemName: "cart.fill")
-                            }
-                            .padding(.horizontal, 40)
-                            .padding(.vertical, 10)
-                            .foregroundColor(Color.white)
-                            .font(Font.system(size: 17, weight: .semibold, design: .rounded))
-                            .background(Color(red: 111/255, green: 115/255, blue: 210/255))
-                            .cornerRadius(10)
-                        }
-                        
+            Button(action: {
+                
+                let user = UserSingleton.userData.currentUsername
+                
+                DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: self.product.uuid, qty: 1)
+                })
+    
+                {
+                    HStack(alignment: .center, spacing: 20) {
+                        Text("ADD TO CART")
+                        Image(systemName: "cart.fill")
                     }
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 10)
+                    .foregroundColor(Color.white)
+                    .font(Font.system(size: 17, weight: .semibold, design: .rounded))
+                    .background(Color(red: 111/255, green: 115/255, blue: 210/255))
+                    .cornerRadius(10)
+            }
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 10)

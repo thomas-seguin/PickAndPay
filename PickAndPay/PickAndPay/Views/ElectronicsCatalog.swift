@@ -2,9 +2,11 @@ import SwiftUI
 
 struct ElectronicsCatalog: View {
     
-    @State var products:[ProductName] = [ProductName(uuid: 2, image: Image("tv"), title: "80' LG 8K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels. ", reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])]
+    
+    @State var products:[ProductName] = [ProductName(uuid: 2, image: Image("tv"), title: "80' LG 8K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels. ", reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")]), ProductName(uuid: 3, image: Image("PS5"), title: "80' LG 8K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels. ", reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])]
     
     @State var cart:[ProductName] = [ProductName(uuid: 2, image: Image("tv"), title: "80' LG 8K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels. ", reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])]
+    
     
     var body: some View {
         
@@ -16,7 +18,8 @@ struct ElectronicsCatalog: View {
         
         
         
-        return NavigationView {
+        return
+       
             ScrollView(.vertical, showsIndicators: true) {
                 HStack(alignment: .top, spacing: 10) {
                     if prods.count > 0 {
@@ -70,15 +73,34 @@ struct ElectronicsCatalog: View {
                     
                 }
                 .padding()
+            }.onAppear(){
+                var prods = DBHelper.dbHelper.searchProducts(searchParameter: "PS4")
+                var thing : ProductName
+                
+                for i in prods{
+                    thing = ProductName.init(uuid: 0, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
+                    products.append(thing)
+                }
+                 prods = DBHelper.dbHelper.searchProducts(searchParameter: "Xbox Series S")
+                
+                
+                for i in prods{
+                    thing = ProductName.init(uuid: 0, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
+                    products.append(thing)
+                }
+                prods = DBHelper.dbHelper.searchProducts(searchParameter: "Xbox Series X")
+               
+               
+               for i in prods{
+                   thing = ProductName.init(uuid: 0, image: Image(i.productImage), title: i.productName, price: i.price, description: i.description, reviews: [ReviewBody(name: "Jim Smith", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
+                   products.append(thing)
+               }
+                
+                
             }
-            .padding(.bottom, 50)
-            .navigationBarTitle("Catalog", displayMode: .inline)
-            .navigationBarHidden(true)
-        }
-        
-        
         
     }
+        
 }
 
 

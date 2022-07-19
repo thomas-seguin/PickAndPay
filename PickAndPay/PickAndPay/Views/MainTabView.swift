@@ -38,13 +38,15 @@ struct MainTabView: View {
                 DBHelper.dbHelper.createDB()
                 DBHelper.dbHelper.createTables()
                 DBHelper.dbHelper.dropReviewTable()
-                DBHelper.dbHelper.dropProductTable()
+                //DBHelper.dbHelper.dropProductTable()
+                InsertProductData.populate.populateCategories()
             }
         
     }
         .onAppear{
             if tabViewModel.checkRemember(){
                 authentication.isValidated = true
+                
             }
         }
     }
