@@ -26,15 +26,22 @@ struct CartIsNotEmptyView: View {
                         .background(.yellow)
                     .cornerRadius(10)
                 }.background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10))
-                    Button{
-        
-                        showAlert = true
-                        
-                    }label:{Text("Place Order")}
                     
-                        .alert("Order Placed", isPresented: $showAlert) {
-                        Button("OK", role: .cancel) { }
+                   
+                        
             }
+                Button {
+                    showAlert = true
+                    
+                } label: {
+                    Text("Place Order")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(RoundedRectangle(cornerRadius: 20,style: .continuous).fill(.linearGradient(colors:[.button,.button], startPoint: .top, endPoint: .bottomTrailing)))
+                        .foregroundColor(.white)
+                }.alert("Order Placed", isPresented: $showAlert) {
+                    Button("OK", role: .cancel) { }
+                }
                 
             }
             
@@ -49,4 +56,4 @@ struct CartIsNotEmptyView_Previews: PreviewProvider {
         CartIsNotEmptyView()
     }
 }
-}
+
