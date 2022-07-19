@@ -2,11 +2,8 @@ import SwiftUI
 
 struct FashionCatalog: View {
     
-   // @Binding var products:[ProductName]
-   // @Binding var cart:[ProductName]
-    //@Binding var favorites:[ProductName]
-    
     @State var products:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
+    
     
     @State var cart:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Nike Air Force 1", price: 200.00, description: "Limited Edition Nike Air Force 1's are surely to bring you some street cred.", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "This are so good! Best purchase I've made in a long time. Soooo slick!")])]
     
@@ -80,7 +77,7 @@ struct FashionCatalog: View {
         
         
     }
-}
+
 
 //struct FashionCatalog_Previews: PreviewProvider {
 //

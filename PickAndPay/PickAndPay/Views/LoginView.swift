@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var showingAlert = true
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @State private var showingSheet = false
     @State private var rememberMe = false
     @State private var isShowingOTPView = false
@@ -104,7 +104,7 @@ struct LoginView: View {
                                 isShowingOTPView = true
                             } else {
                                 authentication.isValidated = true
-                                isShowingMainView = true
+                                presentationMode.wrappedValue.dismiss()
                                 print("show")
                             }
                         }

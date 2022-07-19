@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct AccountMenuView: View {
+    let userDefaults = UserDefaults()
     @EnvironmentObject var authentication: Authentication
     @State private var isShowingMainView = false
     var body: some View {
@@ -78,6 +79,25 @@ struct AccountMenuView: View {
                         .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                     }
                     VStack{
+                        NavigationLink(destination: MangeBalanceView()){
+                            HStack{
+                                Text("Manage Balance")
+                                    .foregroundColor(.black)
+                                    .padding(.trailing, 180)
+                                    .font(.system(size: 20))
+                                
+                                Image(systemName: "chevron.right")
+                                
+                            }
+                            .padding(.top, 10)
+                            .padding(.bottom, 10)
+                            .padding(.leading, 10)
+                            .padding(.trailing, 10)
+                            .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
+                        }
+                        
+                        
+                        
                         NavigationLink(destination: WishListView()){
                             HStack{
                             Text("Wish List")
@@ -111,8 +131,9 @@ struct AccountMenuView: View {
                             .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                         }
                         Button {
+                            userDefaults.set(false, forKey: "remember")
                             authentication.isValidated = false
-                            isShowingMainView = true
+                            //isShowingMainView = true
                         }label: {
                             HStack{
                                 Text("Sign Out")
@@ -152,6 +173,7 @@ struct AccountMenuView: View {
                         .padding(.trailing, 10)
                         .overlay(RoundedRectangle(cornerRadius: 16).stroke(.gray, lineWidth: 2))
                     }
+                    .offset(y: -20)
                     Spacer()
                 }
             }

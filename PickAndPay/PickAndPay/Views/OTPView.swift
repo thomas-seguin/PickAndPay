@@ -8,9 +8,10 @@
 import SwiftUI
 
 struct OTPView: View {
+    private var msg: String = "1234"
     //8. Observe the notification manager in your SwiftUI view
     @ObservedObject var notificationManager = OTPViewModel()
-    
+    @State private var showingAlert = false
     @State var showFootnote = false
     @State var passed: Bool = false
     @State var otpText: String = ""
@@ -41,20 +42,25 @@ struct OTPView: View {
                 if passed{
                     Text("passed")
                         .onAppear {
+                            notificationManager.goodOTP(username: username)
                             authentication.isValidated = true
                             isShowingContentView = true
-                            notificationManager.goodOTP(username: username)
+                            
                             
                         }
                 }
                 
             }
+            .alert("\(notificationManager.otp.otp)", isPresented: $showingAlert){
+                Button("OK", role: .cancel){}
+            }
             .onAppear {
-               
+               showingAlert = true
                 
                 notificationManager.sendNotif()
             }
         }
+        
     }
 
 

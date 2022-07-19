@@ -22,8 +22,27 @@ struct PickAndPayApp: App {
     //hello
     var body: some Scene {
         WindowGroup {
+            
+            //FashionCatalog()
+            ElectronicsCatalog()
+            //BookCatalog()
+            //EssentialsCatalog()
+            //GroceryCatalog()
+            
+            
+            
+           // MainTabView()
+                //.environmentObject(authentication)
+            //DBHelper.dbHelper.createTables()
 
-            MainTabView().environmentObject(authentication)
+           //if authentication.isValidated {
+                //MainTabView()
+                   // .environment(\.managedObjectContext, persistenceController.container.viewContext)
+                   //.environmentObject(authentication)
+           // } else {
+               // LoginView()
+                   // .environmentObject(authentication)
+           //}
 
         }
 
