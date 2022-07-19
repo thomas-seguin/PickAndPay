@@ -9,31 +9,16 @@ import SwiftUI
 import CoreData
 
 struct ContentView: View {
-    /*
     @Environment(\.managedObjectContext) private var viewContext
 
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Item.timestamp, ascending: true)],
         animation: .default)
     private var items: FetchedResults<Item>
-*/
-    @ObservedObject var cartManager = CartManager(quantity: 0)
 
     var body: some View {
-        
-        TabView {
-            CartView()
-                .tabItem{Image(systemName: "cart")}
-                .badge(cartManager.products.count)
-            Catalogue()
-                .tabItem{Image(systemName: "list.bullet")}
-        }.environmentObject(cartManager)
-       /* 
-            ForEach(products, id: \.productId){ product in
-                Image(product.productImage).resizable()
-                
-            }
-            /*List {
+        NavigationView {
+            List {
                 ForEach(items) { item in
                     NavigationLink {
                         Text("Item at \(item.timestamp!, formatter: itemFormatter)")
@@ -53,10 +38,10 @@ struct ContentView: View {
                     }
                 }
             }
-            Text("Select an item")*/
-        }*/
+            Text("Select an item")
+        }
     }
-/*
+
     private func addItem() {
         withAnimation {
             let newItem = Item(context: viewContext)
@@ -72,8 +57,8 @@ struct ContentView: View {
             }
         }
     }
-*/
-   /* private func deleteItems(offsets: IndexSet) {
+
+    private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { items[$0] }.forEach(viewContext.delete)
 
@@ -86,19 +71,18 @@ struct ContentView: View {
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }*/
+    }
 }
 
-/*private let itemFormatter: DateFormatter = {
+private let itemFormatter: DateFormatter = {
     let formatter = DateFormatter()
     formatter.dateStyle = .short
     formatter.timeStyle = .medium
     return formatter
-}()*/
+}()
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
-            .environmentObject(CartManager(quantity: 0))//.environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
+        ContentView().environment(\.managedObjectContext, PersistenceController.preview.container.viewContext)
     }
 }

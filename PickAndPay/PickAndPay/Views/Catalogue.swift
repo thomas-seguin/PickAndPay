@@ -10,7 +10,7 @@ import SwiftUI
 struct Catalogue: View {
     @EnvironmentObject var cartManager: CartManager
     var body: some View {
-        NavigationView {
+      
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
                     ForEach(products, id: \.productId){
@@ -34,9 +34,9 @@ struct Catalogue: View {
                 
             }*/
         }
-        .navigationViewStyle(StackNavigationViewStyle())
+       
     }
-}
+
 
 struct Catalogue_Previews: PreviewProvider {
     static var previews: some View {

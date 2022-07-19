@@ -33,6 +33,7 @@ struct MainTabView: View {
         
     }.environmentObject(cartManager )
     .environmentObject(authentication)
+<<<<<<< HEAD
             .accentColor(.hightlight)
             .onAppear(){
                 DBHelper.dbHelper.createDB()
@@ -40,6 +41,11 @@ struct MainTabView: View {
                 DBHelper.dbHelper.dropReviewTable()
                 DBHelper.dbHelper.dropProductTable()
             }
+=======
+    .accentColor(.red)
+    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            
+>>>>>>> james
         
     }
         .onAppear{

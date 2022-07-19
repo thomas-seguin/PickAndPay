@@ -32,7 +32,11 @@ struct PickAndPayApp: App {
             
             
             
+<<<<<<< HEAD
            MainTabView()
+=======
+            MainTabView()
+>>>>>>> james
                 .environmentObject(authentication)
             //DBHelper.dbHelper.createTables()
 
