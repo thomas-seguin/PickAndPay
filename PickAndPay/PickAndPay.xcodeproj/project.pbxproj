@@ -56,7 +56,6 @@
 		84C0C223287B37EF00D023C6 /* OTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C222287B37EF00D023C6 /* OTPView.swift */; };
 		84C0C225287B380B00D023C6 /* OTPModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84C0C224287B380B00D023C6 /* OTPModel.swift */; };
 		84EFFBC92880B06D000A1829 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBC82880B06D000A1829 /* Colors.swift */; };
-		84EFFBCB2884A22D000A1829 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBCA2884A22D000A1829 /* MainTabView.swift */; };
 		84EFFBCD2884A25F000A1829 /* AccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBCC2884A25F000A1829 /* AccountView.swift */; };
 		84EFFBCF2884CB7B000A1829 /* AccountMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBCE2884CB7B000A1829 /* AccountMenuView.swift */; };
 		84EFFBD32884D49A000A1829 /* AccountLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84EFFBD22884D49A000A1829 /* AccountLoginView.swift */; };
@@ -82,6 +81,7 @@
 		F5E3EA222885EF550089B3B0 /* BookCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3EA1C2885EF550089B3B0 /* BookCatalog.swift */; };
 		F5E3EA232885EF550089B3B0 /* GroceryCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3EA1D2885EF550089B3B0 /* GroceryCatalog.swift */; };
 		F5E3EA242885EF550089B3B0 /* GroceryDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3EA1E2885EF550089B3B0 /* GroceryDetails.swift */; };
+		F5E3EA2828874F560089B3B0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5E3EA2728874F560089B3B0 /* MainTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,7 +154,6 @@
 		84C0C222287B37EF00D023C6 /* OTPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPView.swift; sourceTree = "<group>"; };
 		84C0C224287B380B00D023C6 /* OTPModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OTPModel.swift; sourceTree = "<group>"; };
 		84EFFBC82880B06D000A1829 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
-		84EFFBCA2884A22D000A1829 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		84EFFBCC2884A25F000A1829 /* AccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountView.swift; sourceTree = "<group>"; };
 		84EFFBCE2884CB7B000A1829 /* AccountMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountMenuView.swift; sourceTree = "<group>"; };
 		84EFFBD22884D49A000A1829 /* AccountLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountLoginView.swift; sourceTree = "<group>"; };
@@ -180,6 +179,7 @@
 		F5E3EA1C2885EF550089B3B0 /* BookCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BookCatalog.swift; sourceTree = "<group>"; };
 		F5E3EA1D2885EF550089B3B0 /* GroceryCatalog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryCatalog.swift; sourceTree = "<group>"; };
 		F5E3EA1E2885EF550089B3B0 /* GroceryDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GroceryDetails.swift; sourceTree = "<group>"; };
+		F5E3EA2728874F560089B3B0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -351,8 +351,8 @@
 				E9B56C2228761E340020C020 /* homeView.swift */,
 				84A0D9AC2875E64F00FDFC37 /* LoginView.swift */,
 				84A0D9B02875EBFF00FDFC37 /* SignUpView.swift */,
+				F5E3EA2728874F560089B3B0 /* MainTabView.swift */,
 				84C0C222287B37EF00D023C6 /* OTPView.swift */,
-				84EFFBCA2884A22D000A1829 /* MainTabView.swift */,
 				84EFFBCC2884A25F000A1829 /* AccountView.swift */,
 				84EFFBCE2884CB7B000A1829 /* AccountMenuView.swift */,
 				84EFFBD22884D49A000A1829 /* AccountLoginView.swift */,
@@ -531,6 +531,7 @@
 				847853D42875EBE700F393CB /* CartManager.swift in Sources */,
 				847853D22875EA9C00F393CB /* ProductsData.swift in Sources */,
 				F5E3EA162885EDDA0089B3B0 /* ElectronicsCatalog.swift in Sources */,
+				F5E3EA2828874F560089B3B0 /* MainTabView.swift in Sources */,
 				F51A3DAE2885BD5600710B1F /* ProductCell.swift in Sources */,
 				F51A3DA82885BB6A00710B1F /* ProductStructs.swift in Sources */,
 				7E8751FA28777B7C00D39227 /* BrowseHistoryDBHelper.swift in Sources */,
@@ -591,7 +592,6 @@
 				84A0D9A42875E47500FDFC37 /* Credentials.swift in Sources */,
 				F51A3DAC2885BB8000710B1F /* FashionDetails.swift in Sources */,
 				7E28DB16286BB09B0078BB30 /* UserDBHelper.swift in Sources */,
-				84EFFBCB2884A22D000A1829 /* MainTabView.swift in Sources */,
 				847853DA2875F52300F393CB /* Catalogue.swift in Sources */,
 				7E28DB18286BB0B00078BB30 /* ProductDBHelper.swift in Sources */,
 				F5E3EA1F2885EF550089B3B0 /* EssentialsDetails.swift in Sources */,
