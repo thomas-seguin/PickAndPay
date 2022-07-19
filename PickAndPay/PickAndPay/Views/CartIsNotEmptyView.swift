@@ -1,10 +1,3 @@
-//
-//  CartIsNotEmptyView.swift
-//  PickAndPay
-//
-//  Created by admin on 7/19/22.
-//
-
 import SwiftUI
 
 struct CartIsNotEmptyView: View {

@@ -13,7 +13,7 @@ struct Catalogue: View {
       
             ScrollView {
                 LazyVGrid(columns: [GridItem(.adaptive(minimum: 150))]){
-                    ForEach(products, id: \.productId){
+                    ForEach(cartManager.items, id: \.productId){
                         product in
                         ProductCardView(product: product)
                             .environmentObject(cartManager)

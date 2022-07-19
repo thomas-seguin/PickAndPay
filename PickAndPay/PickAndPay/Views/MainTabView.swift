@@ -17,7 +17,7 @@ struct MainTabView: View {
             CartView()
                 .tabItem {
                     Label("Cart", systemImage: "cart")
-                    .badge(cartManager.products.count)
+                    .badge(cartManager.items.count)
 
                 }
             if authentication.isValidated{
@@ -34,7 +34,7 @@ struct MainTabView: View {
     }.environmentObject(cartManager )
     .environmentObject(authentication)
     .accentColor(.red)
-    .foregroundColor(/@START_MENU_TOKEN@/.blue/@END_MENU_TOKEN@/)
+   // .foregroundColor(/@START_MENU_TOKEN@/.blue/@END_MENU_TOKEN@/)
 
 
     }

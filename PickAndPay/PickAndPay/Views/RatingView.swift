@@ -1,10 +1,3 @@
-//
-//  RatingView.swift
-//  PickAndPay
-//
-//  Created by admin on 7/18/22.
-//
-
 import SwiftUI
 
 struct RatingView: View {

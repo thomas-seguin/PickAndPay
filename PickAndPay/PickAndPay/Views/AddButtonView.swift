@@ -28,10 +28,10 @@ struct AddButtonView: View {
     }
 }
 
-struct AddButtonView_Previews: PreviewProvider {
-    static var previews: some View {
-        AddButtonView(product: products[0])
-            .environmentObject(CartManager())
-
-    }
-}
+//struct AddButtonView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AddButtonView(product: products[0])
+//            .environmentObject(CartManager())
+//
+//    }
+//}

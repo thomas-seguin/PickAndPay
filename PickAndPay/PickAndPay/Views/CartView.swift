@@ -1,10 +1,3 @@
-//
-//  CartView.swift
-//  PickAndPay
-//
-//  Created by admin on 7/6/22.
-//
-
 import SwiftUI
 
 struct CartView: View {
