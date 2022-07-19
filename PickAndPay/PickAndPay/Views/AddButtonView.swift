@@ -15,7 +15,7 @@ struct AddButtonView: View {
         Button(action: {
             //DBHelper.dbHelper.insertToCart(username : product.productName as NSString, productId : product.productId, qty : 1)
             
-            cartManager.addToCart(product: product)
+           // cartManager.addToCart(product: product)
             
         }, label: {
             Image(systemName: "plus")

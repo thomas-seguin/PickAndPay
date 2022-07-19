@@ -18,7 +18,7 @@ struct MainTabView: View {
             CartView()
                 .tabItem {
                     Label("Cart", systemImage: "cart")
-                    .badge(cartManager.products.count)
+                    .badge(cartManager.items.count)
                     
                 }
             if authentication.isValidated{

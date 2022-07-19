@@ -12,7 +12,7 @@ struct CartIsNotEmptyView: View {
     var body: some View {
         ScrollView {
             Text("My Cart").bold().font(.largeTitle)
-            ForEach(cartManager.products, id: \.productId){ product in
+            ForEach(cartManager.items, id: \.productId){ product in
                     ProductRow(product: product)
                 }
             VStack {
@@ -20,7 +20,7 @@ struct CartIsNotEmptyView: View {
                         Text("Your cart total is")
                             .bold()
                         Spacer()
-                        Text(String(format:"$%.2f", cartManager.total))
+                    Text(String(format:"$%.2f", cartManager.total))
                             .bold()
                 }.frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
                 .background(.gray, in: RoundedRectangle(cornerRadius: 10))
@@ -36,6 +36,7 @@ struct CartIsNotEmptyView: View {
         }
 
     }
+    func loadList(){}
 }
 
 struct CartIsNotEmptyView_Previews: PreviewProvider {

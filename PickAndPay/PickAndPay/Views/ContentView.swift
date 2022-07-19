@@ -24,7 +24,7 @@ struct ContentView: View {
         TabView {
             CartView()
                 .tabItem{Image(systemName: "cart")}
-                .badge(cartManager.products.count)
+                .badge(cartManager.items.count)
             Catalogue()
                 .tabItem{Image(systemName: "list.bullet")}
         }.environmentObject(cartManager)

@@ -10,19 +10,13 @@ import SwiftUI
 struct CartView: View {
     @EnvironmentObject var cartManager : CartManager
     var body: some View {
-        if cartManager.products.count > 0 {
-            CartIsNotEmptyView()
-        }else{
-           CartIsEmptyView()
-                
-            }
-        /*
+        
         if cartManager.items.count > 0 {
             CartIsNotEmptyView()
         }else{
            CartIsEmptyView()
                 
-            }*/
+            }
 
         }
 

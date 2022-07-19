@@ -10,7 +10,7 @@ import SwiftUI
 struct CartIsEmptyView: View {
     @EnvironmentObject var cartManager : CartManager
     var body: some View {
-        NavigationView{
+
                     VStack {
                         Image(systemName: "cart")
                             .resizable()
@@ -20,15 +20,22 @@ struct CartIsEmptyView: View {
                             .bold()
                             .font(.title)
                         
-                        displayText(title: "Sign in to your account", w: 300, h: 60)
+                        NavigationLink(destination: {
+                            LoginView()
+                        }, label: {
+                            displayText(title: "Sign in to your account", w: 300, h: 60)
                             .background(.yellow)
                             .foregroundColor(.black)
-                            .cornerRadius(10)
-
-                        displayText(title: "Sign up now", w: 300, h: 60)
+                            .cornerRadius(10)})
+                        
+                        NavigationLink(destination: {
+                            SignUpView()
+                        }, label: {
+                            displayText(title: "Sign up now", w: 300, h: 60)
                             .background(.white)
                             .cornerRadius(10)
-                            .foregroundColor(.black)
+                            .foregroundColor(.black)})
+                        
                         NavigationLink(destination: {
                             Catalogue()
                         }, label: {
@@ -39,7 +46,7 @@ struct CartIsEmptyView: View {
                         })
                     }
                     
-                }
+                
 
         }
         @ViewBuilder private func displayText(title: String, w: CGFloat, h: CGFloat) -> some View{
