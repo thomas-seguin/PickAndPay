@@ -25,10 +25,10 @@ struct ContentView: View {
             CartView()
                 .tabItem{Image(systemName: "cart")}
                 .badge(cartManager.products.count)
-            //Catalogue()
-               // .tabItem{Image(systemName: "list.bullet")}
+            Catalogue()
+                .tabItem{Image(systemName: "list.bullet")}
         }.environmentObject(cartManager)
-       /* NavigationView {
+       /* 
             ForEach(products, id: \.productId){ product in
                 Image(product.productImage).resizable()
                 

@@ -8,6 +8,7 @@
 import Foundation
 
 class LoginViewModel: ObservableObject{
+    let userSingleton = UserSingleton.userData
     let userDB = DBHelper.dbHelper
     let userDefaults = UserDefaults()
     private var rememberMe: Bool = false
@@ -39,6 +40,7 @@ class LoginViewModel: ObservableObject{
         
         switch result {
         case true:
+            userSingleton.currentUsername = credentials.email
             userDefaults.set(credentials.email, forKey: "username")
             if rememberMe {
                 userDefaults.set(true, forKey: "remember")

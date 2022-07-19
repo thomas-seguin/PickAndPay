@@ -4,9 +4,7 @@ struct FashionDetail: View {
     
     var product:ProductName
     @Binding var cart:[ProductName]
-    //@Binding var favorites:[ProductName]
     
-   // @State private var showShareSheet = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
@@ -39,6 +37,8 @@ struct FashionDetail: View {
                     Spacer()
             
                     Button(action: {
+                        
+                        
                         if self.cart.contains(where: { (prod) -> Bool in
                             prod.uuid == self.product.uuid
                         }) {

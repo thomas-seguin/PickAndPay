@@ -87,10 +87,13 @@ class SignUpViewModel: ObservableObject {
         userDB.createDB()
         userDB.createTables()
         userDefauts.set(userModel.userId, forKey: "username")
+        let name = userDefauts.string(forKey: "username")
         showProgressView = true
         userDB.insertUser(username: userModel.userId as NSString, password: userModel.password as NSString, name: userModel.name as NSString, address: userModel.address as NSString, number: userModel.phoneNumber as NSString)
         print("signed up")
         showProgressView = false
         userModel = UserModel()
+        print("After Sign UP: --------")
+        print(userDB.getUser(username: name! as NSString))
     }
 }

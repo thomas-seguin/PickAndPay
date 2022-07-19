@@ -17,9 +17,9 @@ extension DBHelper{
     }
 //MARK: Create / Insert REview
     //sets date to current date "yyyy/mm/dd"
-    func insertReview(body : NSString, rating : Double, username : NSString, productId : Int){
+    func insertReview(body : NSString, rating : Double, username : NSString, productId : Int, title : NSString){
         var stmt : OpaquePointer?
-        let query = "insert into Review (Body, Rating, Date, UserId, ProductId) values (?,?,?,?,?);"
+        let query = "insert into Review (Body, Rating, Date, UserId, ProductId, title) values (?,?,?,?,?,?);"
         
             if sqlite3_prepare(dbpointer, query, -1, &stmt, nil) == SQLITE_OK{
                 //bind parameters
@@ -46,6 +46,11 @@ extension DBHelper{
                 if sqlite3_bind_int(stmt, 5, Int32(productId)) != SQLITE_OK{
                     let err = String(cString: sqlite3_errmsg(dbpointer)!)
                     print("error in binding productId", err)
+
+                }
+                if sqlite3_bind_text(stmt, 6, title.utf8String, -1, nil) != SQLITE_OK{
+                    let err = String(cString: sqlite3_errmsg(dbpointer)!)
+                    print("error in binding title", err)
 
                 }
 
@@ -81,7 +86,8 @@ extension DBHelper{
             let date = String(cString: sqlite3_column_text(stmt, 3))
             let username = String(cString: sqlite3_column_text(stmt, 4))
             let prodId = Int(sqlite3_column_int(stmt, 5))
-            reviews.append(Review(id: id, body: body, rating: rating, date: date, userId: username, productId: prodId))
+            let title = String(cString: sqlite3_column_text(stmt, 6))
+            reviews.append(Review(id: id, body: body, rating: rating, date: date, userId: username, productId: prodId, title: title))
             
         }
 
@@ -104,7 +110,8 @@ extension DBHelper{
             let date = String(cString: sqlite3_column_text(stmt, 3))
             let username = String(cString: sqlite3_column_text(stmt, 4))
             let prodId = Int(sqlite3_column_int(stmt, 5))
-            reviews.append(Review(id: id, body: body, rating: rating, date: date, userId: username, productId: prodId))
+            let title = String(cString: sqlite3_column_text(stmt, 6))
+            reviews.append(Review(id: id, body: body, rating: rating, date: date, userId: username, productId: prodId, title: title))
             
         }
 
@@ -127,7 +134,8 @@ extension DBHelper{
                 let date = String(cString: sqlite3_column_text(stmt, 3))
                 let username = String(cString: sqlite3_column_text(stmt, 4))
                 let prodId = Int(sqlite3_column_int(stmt, 5))
-                reviews.append(Review(id: id, body: body, rating: rating, date: date, userId: username, productId: prodId))
+                let title = String(cString: sqlite3_column_text(stmt, 6))
+                reviews.append(Review(id: id, body: body, rating: rating, date: date, userId: username, productId: prodId, title: title))
                 
             }
 

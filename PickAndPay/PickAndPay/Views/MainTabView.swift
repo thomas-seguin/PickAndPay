@@ -9,6 +9,8 @@ import SwiftUI
 
 struct MainTabView: View {
     @ObservedObject var cartManager = CartManager()
+    @StateObject private var tabViewModel = TabViewModel()
+    //@ObservedObject var cartManager = CartManager(quantity: 0)
     @EnvironmentObject var authentication: Authentication
     var body: some View {
         NavigationView{
@@ -32,9 +34,16 @@ struct MainTabView: View {
         
     }.environmentObject(cartManager )
     .environmentObject(authentication)
-            .accentColor(.hightlight)
+    .accentColor(.red)
+    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
+            
         
     }
+        .onAppear{
+            if tabViewModel.checkRemember(){
+                authentication.isValidated = true
+            }
+        }
     }
 }
 

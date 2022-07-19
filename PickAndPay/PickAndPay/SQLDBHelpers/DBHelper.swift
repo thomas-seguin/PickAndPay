@@ -78,13 +78,23 @@ class DBHelper{
     
     func createProductTable(){
         
-        let query = "create table if not exists Product (ProductId integer primary key autoincrement, ProductName text, Image text, Price double, Category text, InStock integer)"
+        let query = "create table if not exists Product (ProductId integer primary key autoincrement, ProductName text, Image text, Price double, Category text, InStock integer, Description text)"
         if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
             let err = String(cString: sqlite3_errmsg(dbpointer)!)
             print("error in creating Product table", err)
         }
         else{
             print("success creatingProduct table")
+        }
+    }
+    func dropProductTable(){
+        let query = "DROP TABLE IF EXISTS Product"
+        if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
+            let err = String(cString: sqlite3_errmsg(dbpointer)!)
+            print("error in dropping Product table", err)
+        }
+        else{
+            print("success dropping Product table")
         }
     }
     
@@ -137,7 +147,7 @@ class DBHelper{
     
     func createReviewTable(){
         
-        let query = "create table if not exists Review (ReviewId integer primary key autoincrement, Body text, Rating double, Date text, UserId text, ProductId integer)"
+        let query = "create table if not exists Review (ReviewId integer primary key autoincrement, Body text, Rating double, Date text, UserId text, ProductId integer, Title text)"
         if sqlite3_exec(dbpointer, query, nil, nil, nil) != SQLITE_OK{
             let err = String(cString: sqlite3_errmsg(dbpointer)!)
             print("error in creating Review Table", err)

@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    
+    @Environment(\.presentationMode) private var presentationMode: Binding<PresentationMode>
     @State private var showingSheet = false
     @State private var rememberMe = false
     @State private var isShowingOTPView = false
@@ -18,8 +18,11 @@ struct LoginView: View {
     var body: some View {
     
             ZStack{
+                
                 Image("MargoFlipped").resizable().frame(width: UIScreen.main.bounds.width)
                     .ignoresSafeArea()
+                
+                
                 NavigationLink(destination: OTPView(), isActive: $isShowingOTPView) { EmptyView()}
                 
                 NavigationLink(destination: MainTabView(), isActive: $isShowingMainView) { EmptyView()}
@@ -101,7 +104,7 @@ struct LoginView: View {
                                 isShowingOTPView = true
                             } else {
                                 authentication.isValidated = true
-                                isShowingMainView = true
+                                presentationMode.wrappedValue.dismiss()
                                 print("show")
                             }
                         }
@@ -112,8 +115,10 @@ struct LoginView: View {
                             .frame(width: 200, height: 40)
                             .background(RoundedRectangle(cornerRadius: 20,style: .continuous).fill(.linearGradient(colors:[.button,.button], startPoint: .top, endPoint: .bottomTrailing)))
                             .foregroundColor(.white)
-                    }.disabled(loginVM.loginDisabled)
+                    }
+                    .disabled(loginVM.loginDisabled)
                         .offset(y: -30)
+                        
                     
                     Button{
                         showingSheet.toggle()
@@ -125,6 +130,7 @@ struct LoginView: View {
                     .offset(y: 50)
                     .sheet(isPresented: $showingSheet) {
                         SignUpView()
+                            
                     }
                     
                     
@@ -149,3 +155,6 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
     }
 }
+
+  
+
