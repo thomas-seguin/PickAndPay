@@ -118,11 +118,11 @@ struct BookDetail: View {
 
 struct BookDetail_Previews: PreviewProvider {
     
-    static var product:ProductName = ProductName(uuid: "hpbookset", image: Image("hpbookset"), title: "Harry Potter Bookset", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Doe", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])
+    static var product:ProductName = ProductName(uuid: 2, image: Image("hpbookset"), title: "Harry Potter Bookset", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Doe", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])
     
     
     
-    @State static var cart:[ProductName] = [ProductName(uuid: "hpbookset", image: Image("hpbookset"), title: "Harry Potter Bookset", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Doe", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])]
+    @State static var cart:[ProductName] = [ProductName(uuid: 2, image: Image("hpbookset"), title: "Harry Potter Bookset", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Doe", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])]
     
 
     

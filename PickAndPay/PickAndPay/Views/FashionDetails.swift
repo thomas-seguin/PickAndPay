@@ -118,11 +118,11 @@ struct FashionDetail: View {
 
 struct FashionDetail_Previews: PreviewProvider {
     
-    static var product:ProductName = ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget. Faucibus scelerisque eleifend donec pretium vulputate sapien. Luctus accumsan tortor posuere ac ut consequat semper.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "Cool shoes and they're red")])
+    static var product:ProductName = ProductName(uuid: 1, image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget. Faucibus scelerisque eleifend donec pretium vulputate sapien. Luctus accumsan tortor posuere ac ut consequat semper.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "Cool shoes and they're red")])
     
     
     
-    @State static var cart:[ProductName] = [ProductName(uuid: "redshoe", image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget. Faucibus scelerisque eleifend donec pretium vulputate sapien. Luctus accumsan tortor posuere ac ut consequat semper.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "Cool shoes and they're red")])]
+    @State static var cart:[ProductName] = [ProductName(uuid: 1, image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Leo vel fringilla est ullamcorper eget. Faucibus scelerisque eleifend donec pretium vulputate sapien. Luctus accumsan tortor posuere ac ut consequat semper.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "Cool shoes and they're red")])]
     
 
     

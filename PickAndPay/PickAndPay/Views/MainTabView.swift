@@ -33,6 +33,12 @@ struct MainTabView: View {
     }.environmentObject(cartManager )
     .environmentObject(authentication)
             .accentColor(.hightlight)
+            .onAppear(){
+                DBHelper.dbHelper.createDB()
+                DBHelper.dbHelper.createTables()
+                DBHelper.dbHelper.dropReviewTable()
+                DBHelper.dbHelper.dropProductTable()
+            }
         
     }
     }

@@ -21,6 +21,7 @@ class InsertProductData{
     }
     
     private func electronics(){
+        db.insertProduct(name: "LG 8K LCD TV", image: "tv", price: 1629.99, category: .Electronics, stock: 5, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.")
         db.insertProduct(name: "PS5", image: "PS5", price: 629.99, category: .Electronics, stock: 5, description: "God of WAR Nov.11 Disc Edtion")
         db.insertProduct(name: "PS4", image: "PS4", price: 379.99, category: .Electronics, stock: 20, description: "good for gamers")
         db.insertProduct(name: "Xbox Series S", image: "Xbox Series S", price: 379.99, category: .Electronics, stock: 20, description: "Lesser New Xbox (Doesn't have disc drive)")
@@ -37,6 +38,14 @@ class InsertProductData{
         db.insertProduct(name: "Teleporter", image: "Teleport Machine", price: 1099.00, category: .Essentials, stock: 1, description: "Mr Hankey's Teleportation Device toally legit")
         db.insertProduct(name: "Towelie", image: "Towelie", price: 39.95, category: .Essentials, stock: 3, description: "Weed Smoking Towel")
         db.insertProduct(name: "Old sword", image: "Finns", price: 100.00, category: .Essentials, stock: 12, description: "Probably used by finn in adventure time")
+    }
+    
+    private func fashion(){
+        
+    }
+    
+    private func grocery(){
+        
     }
 }
 
