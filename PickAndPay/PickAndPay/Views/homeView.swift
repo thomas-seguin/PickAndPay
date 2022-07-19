@@ -215,9 +215,31 @@ struct tileView: View {
                 .frame(width: 40, height: 40, alignment: .center)
                 .onTapGesture {
                     a.toggle()
+                    
                    }
            
+           
+            
+            if (thisTile.title.lowercased() == "electronics")
+            {
+            NavigationLink( "", destination: ElectronicsCatalog(), isActive: $a)
+            }
+            if (thisTile.title.lowercased() == "essential")
+            {
+            NavigationLink( "", destination: EssentialsCatalog(), isActive: $a)
+            }
+            if (thisTile.title.lowercased() == "fashion")
+            {
             NavigationLink( "", destination: FashionCatalog(), isActive: $a)
+            }
+            if (thisTile.title.lowercased() == "books")
+            {
+            NavigationLink( "", destination: BookCatalog(), isActive: $a)
+            }
+            if (thisTile.title.lowercased() == "grocery")
+            {
+            NavigationLink( "", destination: GroceryCatalog(), isActive: $a)
+            }
             
             Text(thisTile.title)
                 .foregroundColor(.text)
