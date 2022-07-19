@@ -10,6 +10,7 @@ import SwiftUI
 struct ProductRow: View {
     @EnvironmentObject var cartManager : CartManager
     var product: Product
+    //var product: CartItem
     var body: some View {
         HStack(spacing:10){
             Image(product.productImage)

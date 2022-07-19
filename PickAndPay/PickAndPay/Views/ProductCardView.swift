@@ -36,17 +36,6 @@ struct ProductCardView: View {
             .frame(width: 150, height: 200)
             
             AddButtonView(product: product)  //experimental
-            /*Button(action: {
-                cartManager.addToCart(product: product)
-            }, label: {
-                Image(systemName: "plus")
-                .padding(10)
-                .foregroundColor(.white)
-                .background(.blue)
-                .cornerRadius(50)
-            })
-            */
-
         }
     }
 
