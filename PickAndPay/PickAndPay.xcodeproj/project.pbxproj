@@ -33,8 +33,8 @@
 		8488B436288647DF00331D25 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488B435288647DF00331D25 /* RatingView.swift */; };
 		8488B438288647F000331D25 /* ProductCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488B437288647F000331D25 /* ProductCardView.swift */; };
 		8488B43A2886F34D00331D25 /* CartIsNotEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488B4392886F34D00331D25 /* CartIsNotEmptyView.swift */; };
-		8488B43E288702C700331D25 /* CartIsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488B43D288702C700331D25 /* CartIsEmptyView.swift */; };
 		8488B4402887159D00331D25 /* QuantityModifierView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488B43F2887159D00331D25 /* QuantityModifierView.swift */; };
+		8488B44428871A6500331D25 /* CartIsEmptyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8488B44328871A6500331D25 /* CartIsEmptyView.swift */; };
 		84A0D92B286A33AC00FDFC37 /* PickAndPayApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */; };
 		84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 84A0D92C286A33AC00FDFC37 /* ContentView.swift */; };
 		84A0D92F286A33AD00FDFC37 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 84A0D92E286A33AD00FDFC37 /* Assets.xcassets */; };
@@ -128,8 +128,8 @@
 		8488B435288647DF00331D25 /* RatingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		8488B437288647F000331D25 /* ProductCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductCardView.swift; sourceTree = "<group>"; };
 		8488B4392886F34D00331D25 /* CartIsNotEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartIsNotEmptyView.swift; sourceTree = "<group>"; };
-		8488B43D288702C700331D25 /* CartIsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartIsEmptyView.swift; sourceTree = "<group>"; };
 		8488B43F2887159D00331D25 /* QuantityModifierView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuantityModifierView.swift; sourceTree = "<group>"; };
+		8488B44328871A6500331D25 /* CartIsEmptyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartIsEmptyView.swift; sourceTree = "<group>"; };
 		84A0D927286A33AC00FDFC37 /* PickAndPay.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PickAndPay.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		84A0D92A286A33AC00FDFC37 /* PickAndPayApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickAndPayApp.swift; sourceTree = "<group>"; };
 		84A0D92C286A33AC00FDFC37 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 				847853D52875EC6000F393CB /* CartView.swift */,
 				8488B4392886F34D00331D25 /* CartIsNotEmptyView.swift */,
 				847853D92875F52300F393CB /* Catalogue.swift */,
-				8488B43D288702C700331D25 /* CartIsEmptyView.swift */,
+				8488B44328871A6500331D25 /* CartIsEmptyView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -535,6 +535,7 @@
 				F51A3DA82885BB6A00710B1F /* ProductStructs.swift in Sources */,
 				7E8751FA28777B7C00D39227 /* BrowseHistoryDBHelper.swift in Sources */,
 				F5E3EA232885EF550089B3B0 /* GroceryCatalog.swift in Sources */,
+				8488B44428871A6500331D25 /* CartIsEmptyView.swift in Sources */,
 				7EDA66AD287884C600844ACB /* BrowseHistoryViewModel.swift in Sources */,
 				847853D62875EC6000F393CB /* CartView.swift in Sources */,
 				84A0D934286A33AD00FDFC37 /* Persistence.swift in Sources */,
@@ -563,7 +564,6 @@
 				F5E3EA182885EE250089B3B0 /* ElectronicsDetails.swift in Sources */,
 				84A0D9B52875EC8700FDFC37 /* UserModel.swift in Sources */,
 				84EFFBDB2884DA2A000A1829 /* AddCardViewModel.swift in Sources */,
-				8488B43E288702C700331D25 /* CartIsEmptyView.swift in Sources */,
 				8488B434288647CF00331D25 /* AddButtonView.swift in Sources */,
 				7EDA66B42878DBF900844ACB /* UserSingleton.swift in Sources */,
 				84A0D9B52875EC8700FDFC37 /* UserModel.swift in Sources */,
