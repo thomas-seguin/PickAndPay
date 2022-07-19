@@ -92,3 +92,4 @@ struct FashionCatalog: View {
 //      //  FashionCatalog(products: $items, cart: $cart)
 //    }
 //}
+}
