@@ -15,7 +15,7 @@ struct WishListView: View {
                         .font(.headline), footer: Text("End of List")){
                         ForEach(viewModel.wishList, id: \.wishListId){ item in
                             //destination : Replace ProductViewTest with the real view for product details
-                            NavigationLink(destination: ProductViewTest(product: item.wishProduct)){
+                            NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: item.wishProduct))){
                                 VStack{
                                     HStack{
                                         Image(item.wishProduct.productImage)
@@ -76,7 +76,7 @@ struct WishListView: View {
                             ScrollView(.horizontal, showsIndicators: false){
                                 HStack{
                                     ForEach(viewModel.recommended, id: \.productId){ item in
-                                        NavigationLink(destination: ProductViewTest(product: item)){
+                                        NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: item))){
                                             HStack{
                                                 Image(item.productImage)
                                                     .resizable()

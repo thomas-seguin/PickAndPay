@@ -40,7 +40,7 @@ struct OrderDetailsView: View {
                             .bold()
                         ForEach(viewModel.orderDetails.productOrders, id: \.productOrderId){ item in
                         //destination : Replace ProductViewTest with the real view for product details
-                            NavigationLink(destination: ProductViewTest(product: item.orderedProduct)){
+                            NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: item.orderedProduct))){
                             VStack{
                                 HStack{
                                     Image(item.orderedProduct.productImage)
@@ -119,7 +119,7 @@ struct OrderDetailsView: View {
                         ScrollView(.horizontal, showsIndicators: false){
                             HStack{
                                 ForEach(viewModel.recommended, id: \.productId){ item in
-                                    NavigationLink(destination: ProductViewTest(product: item)){
+                                    NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: item))){
                                         HStack{
                                             Image(item.productImage)
                                                 .resizable()

@@ -54,7 +54,7 @@ struct OrderHistoryView: View {
                         ScrollView(.horizontal, showsIndicators: false){
                             HStack{
                                 ForEach(viewModel.recommended, id: \.productId){ item in
-                                    NavigationLink(destination: ProductViewTest(product: item)){
+                                    NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: item))){
                                         HStack{
                                             Image(item.productImage)
                                                 .resizable()

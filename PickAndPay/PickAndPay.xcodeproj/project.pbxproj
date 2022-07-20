@@ -17,6 +17,8 @@
 		7E8751F028772C0600D39227 /* WishListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8751EF28772C0600D39227 /* WishListView.swift */; };
 		7E8751F228772C2C00D39227 /* WishListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8751F128772C2C00D39227 /* WishListViewModel.swift */; };
 		7E8751FA28777B7C00D39227 /* BrowseHistoryDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E8751F928777B7C00D39227 /* BrowseHistoryDBHelper.swift */; };
+		7E9ED82028886D2D000B2887 /* ProductDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9ED81F28886D2D000B2887 /* ProductDetailsViewModel.swift */; };
+		7E9ED82228886D75000B2887 /* ProductDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7E9ED82128886D75000B2887 /* ProductDetailsView.swift */; };
 		7EB0231A286D0092008895B0 /* WishListDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EB02319286D0092008895B0 /* WishListDBHelper.swift */; };
 		7EBA1D1C2873DBC500B40758 /* CreditCardDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA1D1B2873DBC500B40758 /* CreditCardDBHelper.swift */; };
 		7EBA1D1E2873DC0C00B40758 /* OrderDBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7EBA1D1D2873DC0C00B40758 /* OrderDBHelper.swift */; };
@@ -116,6 +118,8 @@
 		7E8751EF28772C0600D39227 /* WishListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListView.swift; sourceTree = "<group>"; };
 		7E8751F128772C2C00D39227 /* WishListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListViewModel.swift; sourceTree = "<group>"; };
 		7E8751F928777B7C00D39227 /* BrowseHistoryDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseHistoryDBHelper.swift; sourceTree = "<group>"; };
+		7E9ED81F28886D2D000B2887 /* ProductDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsViewModel.swift; sourceTree = "<group>"; };
+		7E9ED82128886D75000B2887 /* ProductDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductDetailsView.swift; sourceTree = "<group>"; };
 		7EB02319286D0092008895B0 /* WishListDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WishListDBHelper.swift; sourceTree = "<group>"; };
 		7EBA1D1B2873DBC500B40758 /* CreditCardDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditCardDBHelper.swift; sourceTree = "<group>"; };
 		7EBA1D1D2873DC0C00B40758 /* OrderDBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderDBHelper.swift; sourceTree = "<group>"; };
@@ -384,6 +388,7 @@
 				F5E3EA1E2885EF550089B3B0 /* GroceryDetails.swift */,
 				7ED0BB232887DCC4008D36CB /* OrderHistoryView.swift */,
 				7ED0BB252887DD30008D36CB /* OrderDetailsView.swift */,
+				7E9ED82128886D75000B2887 /* ProductDetailsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -403,6 +408,7 @@
 				84EFFBE62886458C000A1829 /* TabViewModel.swift */,
 				7ED0BB1F2887DC5C008D36CB /* OrderHistoryViewModel.swift */,
 				7ED0BB212887DC8F008D36CB /* OrderDetailsViewModel.swift */,
+				7E9ED81F28886D2D000B2887 /* ProductDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -560,6 +566,7 @@
 				E9B56C252876285D0020C020 /* videoView.swift in Sources */,
 				7EDA66AF2878858B00844ACB /* BrowsingHistoryView.swift in Sources */,
 				84A0D92D286A33AC00FDFC37 /* ContentView.swift in Sources */,
+				7E9ED82028886D2D000B2887 /* ProductDetailsViewModel.swift in Sources */,
 				84EFFBD92884D955000A1829 /* MangeCardViewModel.swift in Sources */,
 				F51A3DAA2885BB7700710B1F /* FashionCatalog.swift in Sources */,
 				847853D82875ED4A00F393CB /* ProductRow.swift in Sources */,
@@ -575,6 +582,7 @@
 				7E28DB11286BAFC10078BB30 /* Models.swift in Sources */,
 				F5E3EA202885EF550089B3B0 /* BookDetails.swift in Sources */,
 				84EFFBD52884D621000A1829 /* MangeCardView.swift in Sources */,
+				7E9ED82228886D75000B2887 /* ProductDetailsView.swift in Sources */,
 				F5E3EA182885EE250089B3B0 /* ElectronicsDetails.swift in Sources */,
 				84A0D9B52875EC8700FDFC37 /* UserModel.swift in Sources */,
 				84EFFBDB2884DA2A000A1829 /* AddCardViewModel.swift in Sources */,

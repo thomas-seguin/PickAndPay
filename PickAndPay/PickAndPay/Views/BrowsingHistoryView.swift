@@ -37,7 +37,7 @@ struct BrowsingHistoryView: View {
                         .font(.headline), footer: Text("End of List")){
                         ForEach(viewModel.browseHistory, id: \.browseHistoryId){ item in
                             //destination : Replace ProductViewTest with the real view for product details
-                            NavigationLink(destination: ProductViewTest(product: item.browsedProduct)){
+                            NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: item.browsedProduct))){
                                 VStack{
                                     HStack{
                                         Image(item.browsedProduct.productImage)
@@ -76,7 +76,7 @@ struct BrowsingHistoryView: View {
                             ScrollView(.horizontal, showsIndicators: false){
                                 HStack{
                                     ForEach(viewModel.recommended, id: \.productId){ item in
-                                        NavigationLink(destination: ProductViewTest(product: item)){
+                                        NavigationLink(destination: ProductDetailView(viewModel: ProductDetailViewModel(product: item))){
                                             HStack{
                                                 Image(item.productImage)
                                                     .resizable()
