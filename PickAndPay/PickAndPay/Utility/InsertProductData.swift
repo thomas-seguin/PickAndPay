@@ -23,15 +23,15 @@ class InsertProductData{
     }
     
     private func electronics(){
-        db.insertProduct(name: "LG 8K LCD TV", image: "tv", price: 1629.99, category: .Electronics, stock: 5, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.")
-        db.insertProduct(name: "PS5", image: "PS5", price: 629.99, category: .Electronics, stock: 5, description: "God of WAR Nov.11 Disc Edtion")
+        db.insertProduct(name: "LG 8K LCD TV", image: "tv", price: 1629.99, category: .Electronics, stock: 15, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.")
+        db.insertProduct(name: "PS5", image: "PS5", price: 629.99, category: .Electronics, stock: 25, description: "God of WAR Nov.11 Disc Edtion")
         db.insertProduct(name: "PS4", image: "PS4", price: 379.99, category: .Electronics, stock: 20, description: "good for gamers")
         db.insertProduct(name: "Xbox Series S", image: "Xbox Series S", price: 379.99, category: .Electronics, stock: 20, description: "Lesser New Xbox (Doesn't have disc drive)")
         db.insertProduct(name: "Xbox Series X", image: "Xbox Series X", price: 629.99, category: .Electronics, stock: 10, description: "Greater New Xbox (Has Disc Drive)")
     }
     
     private func books(){
-        db.insertProduct(name: "Harry Potter book set", image: "hpbookset", price: 89.86, category: .Books, stock: 32, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films.")
+        db.insertProduct(name: "Harry Potter book set", image: "hpbookset", price: 90.00, category: .Books, stock: 32, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films.")
         db.insertProduct(name: "Lord of the Rings book set", image: "lotrbookset", price: 69.99, category: .Books, stock: 32, description: "The Lord of the Rings, features striking black covers based on Tolkien's own design, the definitive text, and three maps including a detailed map of Middle-earth")
         db.insertProduct(name: "Catcher in the Rye", image: "Catcher in the Rye", price: 12.86, category: .Books, stock: 32, description: "The Catcher in the Rye, novel by J.D. Salinger published in 1951. The novel details two days in the life of 16-year-old Holden Caulfield after he has been expelled from prep school")
         db.insertProduct(name: "The Little Prince", image: "The Little Prince", price: 12.00, category: .Books, stock: 12, description: "The story follows a young prince who visits various planets in space, including Earth, and addresses themes of loneliness, friendship, love, and loss.")

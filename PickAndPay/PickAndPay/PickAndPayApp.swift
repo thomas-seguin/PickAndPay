@@ -23,15 +23,7 @@ struct PickAndPayApp: App {
     var body: some Scene {
         WindowGroup {
             
-            
-            //FashionCatalog()
-            //ElectronicsCatalog()
-            //BookCatalog()
-            //EssentialsCatalog()
-            //GroceryCatalog()
-            
-            
-            
+        
            MainTabView()
                 .environmentObject(authentication)
             //DBHelper.dbHelper.createTables()

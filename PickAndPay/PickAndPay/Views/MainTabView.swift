@@ -41,7 +41,7 @@ struct MainTabView: View {
         .onAppear{
             DBHelper.dbHelper.createDB()
             DBHelper.dbHelper.createTables()
-            DBHelper.dbHelper.dropReviewTable()
+           // DBHelper.dbHelper.dropProductTable()
             InsertProductData.populate.populateCategories()
             
             if tabViewModel.checkRemember(){

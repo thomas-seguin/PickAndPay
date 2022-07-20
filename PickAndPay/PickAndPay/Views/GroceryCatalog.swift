@@ -2,9 +2,9 @@ import SwiftUI
 
 struct GroceryCatalog: View {
     
-    @State var products:[ProductName] = [ProductName(uuid: 4, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
+    @State var products:[ProductName] = [ProductName(uuid: 21, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
     
-    @State var cart:[ProductName] = [ProductName(uuid: 4, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
+    @State var cart:[ProductName] = [ProductName(uuid: 21, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
     
     var body: some View {
         

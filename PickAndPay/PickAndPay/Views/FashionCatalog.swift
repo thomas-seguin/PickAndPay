@@ -18,6 +18,7 @@ struct FashionCatalog: View {
         
         
         return
+        
             ScrollView(.vertical, showsIndicators: true) {
                 HStack(alignment: .top, spacing: 10) {
                     if prods.count > 0 {

@@ -2,9 +2,9 @@ import SwiftUI
 
 struct BookCatalog: View {
     
-    @State var products:[ProductName] = [ProductName(uuid: 2, image: Image("hpbookset"), title: "Harry Potter Book Set", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Smith", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])]
+    @State var products:[ProductName] = [ProductName(uuid: 6, image: Image("hpbookset"), title: "Harry Potter Book Set", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Smith", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])]
     
-    @State var cart:[ProductName] = [ProductName(uuid: 2, image: Image("hpbookset"), title: "Harry Potter Book Set", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Smith", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])]
+    @State var cart:[ProductName] = [ProductName(uuid: 6, image: Image("hpbookset"), title: "Harry Potter Book Set", price: 90.00, description: "The enduringly popular adventures of Harry, Ron and Hermione have gone on to sell over 500 million copies, be translated into over 80 languages and made into eight blockbuster films. ", reviews: [ReviewBody(name: "John Smith", rating: 4.7, content: "Harry Potter is one of the best book series out there for children and adults alike. My review will not focus on the stories but on the product itself.")])]
     
     var body: some View {
         
@@ -16,7 +16,8 @@ struct BookCatalog: View {
         
         
         
-        return NavigationView {
+        return
+        
             ScrollView(.vertical, showsIndicators: true) {
                 HStack(alignment: .top, spacing: 10) {
                     if prods.count > 0 {
@@ -71,13 +72,6 @@ struct BookCatalog: View {
                 }
                 .padding()
             }
-            .padding(.bottom, 50)
-            .navigationBarTitle("Catalog", displayMode: .inline)
-            .navigationBarHidden(true)
-        }
-        
-        
-        
     }
 }
 

@@ -24,15 +24,6 @@ struct GroceryDetail: View {
                         
                     }
                     Spacer()
-//                    Button(action: {
-//                        self.showShareSheet = !self.showShareSheet
-//                    }) {
-//                        Image(systemName: "square.and.arrow.up")
-//                        .foregroundColor(Color.black)
-//                        .frame(width: 40, height: 40, alignment: .center)
-//                        .background(Color.gray.opacity(0.2))
-//                        .cornerRadius(10)
-//                    }
                     Spacer()
                     Spacer()
             
@@ -99,11 +90,11 @@ struct GroceryDetail: View {
 
 struct GroceryDetail_Previews: PreviewProvider {
     
-    static var product:ProductName = ProductName(uuid: 4, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])
+    static var product:ProductName = ProductName(uuid: 21, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])
     
     
     
-    @State static var cart:[ProductName] = [ProductName(uuid: 4, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
+    @State static var cart:[ProductName] = [ProductName(uuid: 21, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
     
 
     
