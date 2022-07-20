@@ -157,7 +157,7 @@ struct AccountMenuView: View {
                             .font(.system(size: 25, weight: .semibold, design: .rounded))
                         Spacer()
                     }
-                    NavigationLink(destination: BrowsingHistoryView()){
+                    NavigationLink(destination: OrderHistoryView()){
                         HStack{
                             Text("Order History")
                                 .foregroundColor(.black)
