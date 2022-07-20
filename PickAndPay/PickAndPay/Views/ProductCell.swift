@@ -23,7 +23,7 @@ struct ProductCell: View {
 
 struct ProductCell_Previews: PreviewProvider {
     
-    static var product:ProductName = ProductName(uuid: "shoe", image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Limited Edition Air Force !'s are surely to bring you some street cred", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "This are sick! Best purchase I've made in a long time.")])
+    static var product:ProductName = ProductName(uuid: 0, image: Image("redshoe"), title: "Red Nike Air Force 1", price: 200.00, description: "Limited Edition Air Force !'s are surely to bring you some street cred", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "This are sick! Best purchase I've made in a long time.")])
     
     static var previews: some View {
         ProductCell(product: product)

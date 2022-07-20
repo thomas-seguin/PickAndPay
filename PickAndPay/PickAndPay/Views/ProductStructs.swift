@@ -2,7 +2,7 @@ import Foundation
 import SwiftUI
 
 struct ProductName {
-    var uuid : String
+    var uuid : Int
     var image : Image
     var title : String
     var price : Double

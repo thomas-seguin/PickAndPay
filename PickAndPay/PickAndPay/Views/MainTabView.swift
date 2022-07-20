@@ -8,18 +8,36 @@
 import SwiftUI
 
 struct MainTabView: View {
-    @ObservedObject var cartManager = CartManager()
     @StateObject private var tabViewModel = TabViewModel()
-    //@ObservedObject var cartManager = CartManager(quantity: 0)
+    @ObservedObject var cartManager = CartManager()
     @EnvironmentObject var authentication: Authentication
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+
+    }
     var body: some View {
+        
+        
+            
         NavigationView{
-        TabView{
+            ZStack{
+                Color.red.edgesIgnoringSafeArea(.all)
+       
+            TabView{
+            
+                    homeView()
+                
+                        .tabItem{
+                            Label("Home", systemImage: "house.fill")
+                        }
+                        
+                
+           
             CartView()
                 .tabItem {
                     Label("Cart", systemImage: "cart")
                     .badge(cartManager.items.count)
-                    
+
                 }
             if authentication.isValidated{
             AccountMenuView()
@@ -27,24 +45,27 @@ struct MainTabView: View {
                     Label("Account", systemImage: "person.fill")
         }
             }
-            homeView()
-                .tabItem{
-                    Label("Home", systemImage: "house.fill")
-                }
-        
+            
+
     }.environmentObject(cartManager )
     .environmentObject(authentication)
-    .accentColor(.red)
-    .foregroundColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
-            
-        
+    .accentColor(.hightlight)
+    
+
+
     }
         .onAppear{
+            DBHelper.dbHelper.createDB()
+            DBHelper.dbHelper.createTables()
+           // DBHelper.dbHelper.dropProductTable()
+            InsertProductData.populate.populateCategories()
+            
             if tabViewModel.checkRemember(){
                 authentication.isValidated = true
             }
         }
     }
+}
 }
 
 struct TabView_Previews: PreviewProvider {

@@ -6,6 +6,7 @@ struct ElectronicsDetail: View {
     @Binding var cart:[ProductName]
     
     
+    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 8) {
@@ -36,44 +37,27 @@ struct ElectronicsDetail: View {
                     Spacer()
                     Spacer()
             
-                    Button(action: {
-                        if self.cart.contains(where: { (prod) -> Bool in
-                            prod.uuid == self.product.uuid
-                        }) {
-                            self.cart.removeAll { (prod) -> Bool in
-                                prod.uuid == self.product.uuid
-                            }
-                        } else {
-                            self.cart.append(self.product)
-                        }
-                    }) {
-                        if self.cart.contains(where: { (prod) -> Bool in
-                            prod.uuid == self.product.uuid
-                        }) {
-                            HStack(alignment: .center, spacing: 20) {
-                                Text("IN YOUR CART")
-                                Image(systemName: "checkmark")
-                            }
-                            .padding(.horizontal, 40)
-                            .padding(.vertical, 10)
-                            .foregroundColor(Color.white)
-                            .font(Font.system(size: 17, weight: .semibold, design: .rounded))
-                            .background(Color.gray)
-                            .cornerRadius(10)
-                        } else {
-                            HStack(alignment: .center, spacing: 20) {
-                                Text("ADD TO CART")
-                                Image(systemName: "cart.fill")
-                            }
-                            .padding(.horizontal, 40)
-                            .padding(.vertical, 10)
-                            .foregroundColor(Color.white)
-                            .font(Font.system(size: 17, weight: .semibold, design: .rounded))
-                            .background(Color(red: 111/255, green: 115/255, blue: 210/255))
-                            .cornerRadius(10)
-                        }
-                        
+            Button(action: {
+                
+                let user = UserSingleton.userData.currentUsername
+                let pid = DBHelper.dbHelper.getProductId(productName: self.product.title)
+                DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: pid, qty: 1)
+                })
+            
+           
+            
+                {
+                    HStack(alignment: .center, spacing: 20) {
+                        Text("ADD TO CART")
+                        Image(systemName: "cart.fill")
                     }
+                    .padding(.horizontal, 40)
+                    .padding(.vertical, 10)
+                    .foregroundColor(Color.white)
+                    .font(Font.system(size: 17, weight: .semibold, design: .rounded))
+                    .background(Color(red: 111/255, green: 115/255, blue: 210/255))
+                    .cornerRadius(10)
+            }
                 }
                 .padding(.horizontal, 10)
                 .padding(.vertical, 10)
@@ -118,11 +102,11 @@ struct ElectronicsDetail: View {
 
 struct ElectronicsDetail_Previews: PreviewProvider {
     
-    static var product:ProductName = ProductName(uuid: "tv", image: Image("tv"), title: "80' LG 8K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
+    static var product:ProductName = ProductName(uuid: 2, image: Image("tv"), title: "80' LG 8K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])
     
     
     
-    @State static var cart:[ProductName] = [ProductName(uuid: "tv", image: Image("tv"), title: "80' LG 4K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])]
+    @State static var cart:[ProductName] = [ProductName(uuid: 2, image: Image("tv"), title: "80' LG 4K LCD TV", price: 1200.00, description: "LG 8K NanoCell TV NANO99 is our best 8K LED TV. It’s four times the resolution of 4K across 33+ million pixels.", reviews: [ReviewBody(name: "John Doe", rating: 5.0, content: "I been wanting to buy this tv for months maybe a full year even! I got a call 1 hour after purchasing it and was delievered to me within a hr after that call... all setup up a hour after that too... so.. the tv i wanted.. i got everything i could have asked for.. thank you very much!")])]
     
 
     

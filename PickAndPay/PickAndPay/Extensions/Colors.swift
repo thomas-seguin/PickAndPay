@@ -13,4 +13,5 @@ extension Color {
     static let text = Color("text")
     static let button = Color("button")
     static let hightlight = Color("highlight")
+    static let nav = Color("nav")
 }

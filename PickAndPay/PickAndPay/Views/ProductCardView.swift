@@ -1,27 +1,20 @@
-//
-//  ProductCardView.swift
-//  PickAndPay
-//
-//  Created by admin on 7/18/22.
-//
-
 import SwiftUI
 
 struct ProductCardView: View {
     @EnvironmentObject var cartManager: CartManager
-    var product: Product
+    var product: CartItem
     var body: some View {
         ZStack(alignment: .topTrailing) {
             ZStack(alignment: .bottom){
                 
-                Image(product.productImage)
+                Image(product.cartProduct.productImage)
                     .resizable()
                     .frame(width: 150, height: 200)
                     .scaledToFit()
                 
                 VStack{
-                    Text(product.productName).bold()
-                    Text(String( format: "$%.2f", product.price))
+                    Text(product.cartProduct.productName).bold()
+                    Text(String( format: "$%.2f", product.quantity))
                         .font(.caption)
                 }
         
@@ -35,15 +28,15 @@ struct ProductCardView: View {
             .cornerRadius(20)
             .frame(width: 150, height: 200)
             
-            AddButtonView(product: product)  //experimental
+           // AddButtonView(product: product)  //experimental
         }
     }
 
 }
 
-struct ProductCardView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductCardView(product: products[0])
-            .environmentObject(CartManager())
-    }
-}
+//struct ProductCardView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProductCardView(product: products[0])
+//            .environmentObject(CartManager())
+//    }
+//}

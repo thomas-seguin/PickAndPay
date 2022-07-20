@@ -1,10 +1,3 @@
-//
-//  ProductRow.swift
-//  PickAndPay
-//
-//  Created by admin on 7/6/22.
-//
-
 import SwiftUI
 
 struct ProductRow: View {
@@ -66,11 +59,3 @@ struct ProductRow: View {
     }
 
 }
-/*
-struct ProductRow_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductRow(product: cartManager.items[0])
-            .environmentObject(CartManager())
-    }
-}
-*/

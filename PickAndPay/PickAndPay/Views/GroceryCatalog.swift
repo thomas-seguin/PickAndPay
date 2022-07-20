@@ -2,9 +2,9 @@ import SwiftUI
 
 struct GroceryCatalog: View {
     
-    @State var products:[ProductName] = [ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
+    @State var products:[ProductName] = [ProductName(uuid: 21, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
     
-    @State var cart:[ProductName] = [ProductName(uuid: "carrots", image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
+    @State var cart:[ProductName] = [ProductName(uuid: 21, image: Image("carrots"), title: "2LB Carrots", price: 8.00, description: "Fresh pack of carrots", reviews: [ReviewBody(name: "John Smith", rating: 5.0, content: "Healthy and crunchy snack")])]
     
     var body: some View {
         
@@ -16,7 +16,8 @@ struct GroceryCatalog: View {
         
         
         
-        return NavigationView {
+        return
+        
             ScrollView(.vertical, showsIndicators: true) {
                 HStack(alignment: .top, spacing: 10) {
                     if prods.count > 0 {
@@ -70,13 +71,8 @@ struct GroceryCatalog: View {
                     
                 }
                 .padding()
-            }
-            .padding(.bottom, 50)
-            .navigationBarTitle("Catalog", displayMode: .inline)
-            .navigationBarHidden(true)
+           
         }
-        
-        
         
     }
 }

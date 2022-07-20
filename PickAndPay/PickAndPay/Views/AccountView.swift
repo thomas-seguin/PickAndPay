@@ -17,7 +17,8 @@ struct AccountView: View {
             Color.background
         VStack{
             HStack(spacing: 30){
-                Text("Hello \(accountViewModel.userModel.name)")
+                
+                Text("Hello \(DBHelper.dbHelper.getUser(username: accountViewModel.userModel.userId as NSString).name)")
                     .font(.system(size: 30, weight: .bold, design: .rounded))
                     .padding()
                 Spacer()

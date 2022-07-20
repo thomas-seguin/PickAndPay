@@ -1,14 +1,8 @@
-//
-//  CartIsNotEmptyView.swift
-//  PickAndPay
-//
-//  Created by admin on 7/19/22.
-//
-
 import SwiftUI
 
 struct CartIsNotEmptyView: View {
     @EnvironmentObject var cartManager : CartManager
+    @State var showAlert = false
     var body: some View {
         ScrollView {
             Text("My Cart").bold().font(.largeTitle)
@@ -26,17 +20,35 @@ struct CartIsNotEmptyView: View {
                 .background(.gray, in: RoundedRectangle(cornerRadius: 10))
                 
                 HStack {
+                    NavigationLink(destination: AddCardView()){
                     Text("Payment Options")
                         .frame(width: UIScreen.main.bounds.width, height: 60, alignment: .center)
                         .background(.yellow)
                     .cornerRadius(10)
                 }.background(.ultraThinMaterial, in: RoundedRectangle(cornerRadius: 10))
+                    
+                   
+                        
+            }
+                Button {
+                    showAlert = true
+                    
+                } label: {
+                    Text("Place Order")
+                        .bold()
+                        .frame(width: 200, height: 40)
+                        .background(RoundedRectangle(cornerRadius: 20,style: .continuous).fill(.linearGradient(colors:[.button,.button], startPoint: .top, endPoint: .bottomTrailing)))
+                        .foregroundColor(.white)
+                }.alert("Order Placed", isPresented: $showAlert) {
+                    Button("OK", role: .cancel) { }
+                }
+                
             }
             
         }
 
     }
-    func loadList(){}
+  
 }
 
 struct CartIsNotEmptyView_Previews: PreviewProvider {
@@ -44,3 +56,4 @@ struct CartIsNotEmptyView_Previews: PreviewProvider {
         CartIsNotEmptyView()
     }
 }
+
