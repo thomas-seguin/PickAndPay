@@ -21,11 +21,12 @@ extension DBHelper{
             }
             numberOfProducts += item.quantity
             totalOrderPrice += item.totalPrice
-            //$10 delivery fee if order is less than $200
-            if(totalOrderPrice < 200.0){
-                totalOrderPrice += 10.0
-            }
         }
+        //$10 delivery fee if total purchase is less then $200
+        if(totalOrderPrice < 200.0){
+            totalOrderPrice += 10.0
+        }
+        totalOrderPrice = ((totalOrderPrice * 1.05) * 100).rounded() / 100 // 5%gst
         if(allInStock){
             insertOrderDetails(shipAddress: shipAddress, numOfProd: numberOfProducts, total: totalOrderPrice, payMode: payMode, billAddress: billAddress, username: username)
             let currentOrderId = getCurrentOrderId(username: username)
