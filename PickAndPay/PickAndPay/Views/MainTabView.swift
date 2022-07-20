@@ -11,9 +11,28 @@ struct MainTabView: View {
     @StateObject private var tabViewModel = TabViewModel()
     @ObservedObject var cartManager = CartManager()
     @EnvironmentObject var authentication: Authentication
+    init() {
+        UITabBar.appearance().backgroundColor = UIColor.white
+
+    }
     var body: some View {
+        
+        
+            
         NavigationView{
-        TabView{
+            ZStack{
+                Color.red.edgesIgnoringSafeArea(.all)
+       
+            TabView{
+            
+                    homeView()
+                
+                        .tabItem{
+                            Label("Home", systemImage: "house.fill")
+                        }
+                        
+                
+           
             CartView()
                 .tabItem {
                     Label("Cart", systemImage: "cart")
@@ -26,15 +45,12 @@ struct MainTabView: View {
                     Label("Account", systemImage: "person.fill")
         }
             }
-            homeView()
-                .tabItem{
-                    Label("Home", systemImage: "house.fill")
-                }
+            
 
     }.environmentObject(cartManager )
     .environmentObject(authentication)
-    .accentColor(.red)
-   // .foregroundColor(/@START_MENU_TOKEN@/.blue/@END_MENU_TOKEN@/)
+    .accentColor(.hightlight)
+    
 
 
     }
@@ -49,6 +65,7 @@ struct MainTabView: View {
             }
         }
     }
+}
 }
 
 struct TabView_Previews: PreviewProvider {
