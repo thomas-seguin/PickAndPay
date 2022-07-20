@@ -17,7 +17,7 @@ struct CartView: View {
     }
         .onAppear{
             cartManager.updateItems()
-            
+            cartManager.initialCost()
         }
             
         

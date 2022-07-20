@@ -16,6 +16,7 @@ struct tiles {
 }
 
 struct homeView: View {
+    
     @EnvironmentObject var authentication: Authentication
     let categories : [tiles] = [
         tiles(id: 0, title: "Electronics"),
@@ -29,16 +30,20 @@ struct homeView: View {
     @State var searchText = ""
     var body: some View {
         ZStack{
-            //Color.background.
-        ScrollView{
+            Color.background
+                .edgesIgnoringSafeArea(.top)
             
+        ScrollView{
+            Text("PickAndPay")
+               
+                .font(.system(size: 40, weight: .bold, design: .rounded))
+                .offset(x: -80, y: 0)
         VStack{
 //            Rectangle()
 //                .frame(width: UIScreen.main.bounds.width, height: 200)
         ZStack{
             //Image("MargoFlipped").resizable().frame(width: UIScreen.main.bounds.width,height: UIScreen.main.bounds.height, alignment: .top)
                 
-        
             
                 
 
@@ -46,13 +51,21 @@ struct homeView: View {
                 
                   
                  
-                TextField("Search", text: $searchText)
+                
                 ZStack{
                     VStack{
-                        HStack{
-                            ForEach(categories, id: \.id)
-                            {tiles in
-                                tileView(thisTile: tiles)
+                        
+                        ZStack {
+                            
+                            RoundedRectangle(cornerRadius: 15, style: .continuous)
+                                .foregroundColor(Color.nav)
+                                .offset()
+//                                .frame(width: (UIScreen.main.bounds.width/2)-20)
+                            HStack{
+                                ForEach(categories, id: \.id)
+                                {tiles in
+                                    tileView(thisTile: tiles)
+                                }
                             }
                         }
                         tabView().frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.width * 0.63333, alignment: .top)
@@ -105,8 +118,17 @@ struct tabView: View{
 
 struct options: View {
     var body : some View {
-        VStack{
-            HStack{
+        ZStack{
+            
+            RoundedRectangle(cornerRadius: 30, style: .continuous)
+                .foregroundStyle(.linearGradient(colors: [.white,.white], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .offset()
+                .frame(width: (UIScreen.main.bounds.width/2)-20)
+                
+                
+            VStack{
+            
+                HStack{
                 
                 VStack {
                     Image("pay").resizable().frame(width: 40, height: 40)
@@ -123,6 +145,7 @@ struct options: View {
                 }
                 Spacer()
             }.padding()
+                    .offset(x: 25)
             HStack{
                 VStack {
                     Image("giftcard").resizable().frame(width: 40, height: 40)
@@ -142,6 +165,9 @@ struct options: View {
                 Spacer()
                 
             }.padding()
+                    .offset(x: 25)
+            }
+            .accentColor(/*@START_MENU_TOKEN@*/.blue/*@END_MENU_TOKEN@*/)
         }
     }
 }
@@ -149,7 +175,12 @@ struct signIn: View {
     @State var isSignInActive = false
     @State var isSignUpActive = false
     var body : some View {
-        
+        ZStack{
+            
+            RoundedRectangle(cornerRadius: 30, style: .continuous)
+                .foregroundStyle(.linearGradient(colors: [.white,.white], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .offset()
+                .frame(width: (UIScreen.main.bounds.width/2)-20)
         VStack(alignment: .center){
             Text("Welcome")
                 .foregroundColor(.text)
@@ -163,14 +194,14 @@ struct signIn: View {
             {
                 Button("Sign In"){
                     self.isSignInActive = true
-                }
+                }.foregroundColor(.blue)
             }
             NavigationLink( destination: SignUpView(), isActive: $isSignUpActive)
             {
                 Button("Create an Account"){
                     self.isSignUpActive = true
                     
-                }
+                }.foregroundColor(.blue)
                 
             }
             
@@ -178,13 +209,19 @@ struct signIn: View {
         .frame(width: UIScreen.main.bounds.width/2)
         
     }
+    }
 }
 
 struct signOut: View {
     @EnvironmentObject var authentication: Authentication
     @State var isSignOutActive = false
     var body : some View {
-        
+        ZStack{
+            
+            RoundedRectangle(cornerRadius: 30, style: .continuous)
+                .foregroundStyle(.linearGradient(colors: [.white,.white], startPoint: .topLeading, endPoint: .bottomTrailing))
+                .offset()
+                .frame(width: (UIScreen.main.bounds.width/2)-20)
         VStack(alignment: .center){
             Text("Welcome")
                 .foregroundColor(.text)
@@ -196,12 +233,13 @@ struct signOut: View {
                 .padding(.bottom)
             Button("Sign Out"){
                 authentication.isValidated = false
-            }
+            }.foregroundColor(.blue)
             
         }
         .frame(width: UIScreen.main.bounds.width/2)
         
-    }
+        }
+        }
 }
 
 struct tileView: View {
@@ -242,10 +280,11 @@ struct tileView: View {
             }
             
             Text(thisTile.title)
-                .foregroundColor(.text)
+                .foregroundColor(.white)
                 .font(.system(size: 17, weight: .regular, design: .rounded))
         }
     }
+        
     
 }
 
