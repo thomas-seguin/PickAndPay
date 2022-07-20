@@ -17,13 +17,15 @@ struct CartView: View {
     }
         .onAppear{
             cartManager.updateItems()
+            cartManager.initialCost()
+            
             
         }
             
         
     }
 
-    }
+}
 
 
 struct CartView_Previews: PreviewProvider {

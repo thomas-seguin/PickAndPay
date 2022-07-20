@@ -5,7 +5,6 @@ struct EssentialsDetail: View {
     var product:ProductName
     @Binding var cart:[ProductName]
     
-    
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             VStack(alignment: .leading, spacing: 8) {

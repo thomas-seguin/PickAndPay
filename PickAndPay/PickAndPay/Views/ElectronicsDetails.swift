@@ -4,6 +4,7 @@ struct ElectronicsDetail: View {
     
     var product:ProductName
     @Binding var cart:[ProductName]
+
     
     
     
