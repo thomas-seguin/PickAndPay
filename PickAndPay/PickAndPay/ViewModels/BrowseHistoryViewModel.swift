@@ -6,7 +6,7 @@
 //
 import Foundation
 class BrowseHistoryViewModel{
-    private var userId = ""
+    private var userId = UserSingleton.userData.currentUsername
     private var browseSwitch : Bool
     var browseHistory : [BrowseHistoryItem]{
         get{

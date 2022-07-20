@@ -13,6 +13,25 @@ struct MainTabView: View {
     @EnvironmentObject var authentication: Authentication
     init() {
         UITabBar.appearance().backgroundColor = UIColor.white
+        DBHelper.dbHelper.createDB()
+//        DBHelper.dbHelper.dropProductTable()
+//        DBHelper.dbHelper.dropOrderDetailsTable()
+//        DBHelper.dbHelper.dropProductOrderTable()
+//        DBHelper.dbHelper.dropUserTable()
+//        DBHelper.dbHelper.dropReviewTable()
+//        DBHelper.dbHelper.dropCardTable()
+        DBHelper.dbHelper.createTables()
+        
+        //InsertProductData.populate.populateCategories()
+//        DBHelper.dbHelper.insertToWishList(userId: "tester@gmail.com", productId: 2)
+//        DBHelper.dbHelper.productBrowsed(productId: 10, username: "tester@gmail.com")
+//        DBHelper.dbHelper.insertToCart(username: "tester@gmail.com", productId: 9, qty: 1)
+       DBHelper.dbHelper.placeOrder(shipAddress: "nowhere", payMode: "credit", billAddress: "somewhere", username: "tester@gmail.com")
+        
+        var arr = DBHelper.dbHelper.getUserOrders(username: "tester@gmail.com")
+        for item in arr{
+            print(item)
+        }
 
     }
     var body: some View {
@@ -55,10 +74,8 @@ struct MainTabView: View {
 
     }
         .onAppear{
-            DBHelper.dbHelper.createDB()
-            DBHelper.dbHelper.createTables()
-           // DBHelper.dbHelper.dropProductTable()
-            InsertProductData.populate.populateCategories()
+            
+            
             
             if tabViewModel.checkRemember(){
                 authentication.isValidated = true

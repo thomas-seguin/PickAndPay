@@ -6,7 +6,7 @@
 //
 import Foundation
 class WishListViewModel{
-    private var userId = ""
+    private var userId = UserSingleton.userData.currentUsername
     var wishList : [WishListItem]{
         get{
             return DBHelper.dbHelper.getUserWishList(username: userId as NSString)

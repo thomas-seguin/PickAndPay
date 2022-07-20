@@ -13,6 +13,10 @@ class ProductDetailViewModel{
         self.product = product
         let cat = product.category
         recommended = DBHelper.dbHelper.searchProducts(category: cat)
+        if(UserSingleton.userData.browseHistorySwitch)
+        {
+            DBHelper.dbHelper.productBrowsed(productId: product.productId, username: userId as NSString)
+        }
     }
     
     func getRatingString() -> String {

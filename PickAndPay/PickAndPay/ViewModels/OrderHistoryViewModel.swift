@@ -6,7 +6,7 @@
 //
 import Foundation
 class OrderHistoryViewModel{
-    private var userId = ""
+    private var userId = UserSingleton.userData.currentUsername
     var orderHistory : [Order]{
         get{
             return DBHelper.dbHelper.getUserOrders(username: userId as NSString)
