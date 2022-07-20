@@ -15,7 +15,7 @@ class CartManager: ObservableObject {
 //        DBHelper.dbHelper.insertToCart(username: UserSingleton.userData.currentUsername as NSString, productId: 2, qty: 1)
 
         items = DBHelper.dbHelper.getUserCart(username: UserSingleton.userData.currentUsername as NSString)
-        updateItems()
+        intialCost()
     }
 
     func addToCart(product: CartItem){
@@ -36,23 +36,34 @@ class CartManager: ObservableObject {
             print(amount)
             DBHelper.dbHelper.updateCartItemQty(qty: amount, itemCartId: product.itemCartId)
             updateItems()
+            
+            if amount == 0 {
+                deleteFromCart(product: product)
+            }
 
 
         }
     }
     
     func deleteFromCart(product: CartItem){
-        //items = items.filter{$0.productId != product.productId}
+        if product.quantity >= 1{
+            total = total - (product.cartProduct.price * Double(product.quantity))
+        }
         DBHelper.dbHelper.removeFromCart(itemCartId: product.itemCartId)
         updateItems()
     }
     func updateItems(){
-        var count = 0
         items = DBHelper.dbHelper.getUserCart(username: UserSingleton.userData.currentUsername as NSString)
+
+    }
+    func intialCost(){
+        var count = 0
+        
         while (items.count > count && items.count != 0){
             total += items[count].cartProduct.price
             count += 1
         }
 
     }
+    
 }
